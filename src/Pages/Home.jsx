@@ -13,6 +13,7 @@ import consilia_img from "../Images/Homepageimgs/Somos/compañias/mainConcilia_l
 import Somos_logistica_img2 from "../Images/Homepageimgs/Somos/Descripcion/Logistica.jpg";
 import bgimage_3 from "../Images/Homepageimgs/Background/bgimg_3.jpg";
 import PuertoCaucedo from "../Images/Homepageimgs/Swiper/Puerto_caucedo.jpg";
+import high_performance from "../Images/Logos/high-performace.png";
 
 //Animacion
 import Aos from "aos";
@@ -38,12 +39,12 @@ export default function Homepage() {
         Aos.init({ duration: 1000 });
     }, []);
 
-    const ServiceCard = ({ imgSrc, title, description, link }) => (
-        <div className="flex flex-col bg-white h-auto lg:h-4/5 md:h-5/6 w-full p-8 shadow-lg rounded-sm text-center items-center">
-            <img className="p-4 h-16 w-full" src={imgSrc} alt={title} />
+    const ServiceCard = ({ className, imgSrc, title, description, link }) => (
+        <div className="flex flex-col bg-white h-auto lg:h-4/5 md:h-5/6 w-full p-6 shadow-lg rounded-sm text-center items-center">
+            <img className={className} src={imgSrc} alt={title} />
             <hr className="w-full" />
             <h1 className="text-md lg:text-xl font-semibold pt-4">{title}</h1>
-            <p className="pt-4  overflow-y-auto">{description}</p>
+            <p className="pt-4 overflow-y-auto">{description}</p>
             <div className="mt-auto">
                 <button className="h-10 w-auto bg-cyan-500 hover:bg-cyan-600 my-4 rounded-md">
                     <a className="p-4 text-white" href={link}>Saber Más</a>
@@ -51,6 +52,7 @@ export default function Homepage() {
             </div>
         </div>
     );
+
 
 
     const ContactInfo = ({ label, value, link, linkText }) => (
@@ -111,19 +113,22 @@ export default function Homepage() {
                     <div className="flex flex-col w-full h-full items-center justify-center px-10 sm:px-10 md:px-20 lg:px-40">
                         <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-20 gap-x-10 gap-y-8  w-full h-full py-10  items-center">
                             <ServiceCard
+                                className={" h-24 w-32"}
                                 imgSrc={figibox_img}
                                 title="FigiBox"
                                 description="División de correo expreso con servicio a domicilio y casilleros en Miami, FL y Guangzhou, China en adición a nuestros servicios desde el proveedor a sus manos."
                                 link="https://figibox.do/"
                             />
                             <ServiceCard
-                                imgSrc={""}
+                                className={"pb-4 h-24 w-32 "}
+                                imgSrc={consilia_img}
                                 title="Consilia"
                                 description="Bajo el régimen de deposito logístico, nos encargamos del manejo de mercancías dentro de zona primaria para el país y la región. Con sede en el puerto de Caucedo, garantizamos conexiones a mas 20 islas en el caribe; así como centro, norte y sur américa."
                                 link="https://www.consilialogistics.com/"
                             />
                             <ServiceCard
-                                imgSrc={""}
+                                className={"p-4 h-24 w-32 "}
+                                imgSrc={high_performance}
                                 title="High Performance Cl"
                                 description="Con sede en Miami, Fl, y 100% parte de nuestra empresa, es el contacto con sus proveedores y clientes en los Estados Unidos."
                                 link="https://figibox.do/"
@@ -151,28 +156,29 @@ export default function Homepage() {
                     </div>
                 </div>
             </div>
-{/* 
+            {/* 
             <div className="h-56 w-full py-10">
                 <div className="flex h-full bg-center relative bg-fixed" style={{ backgroundImage: `url(${bgimage_3})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
                 </div>
             </div> */}
 
             <div className="h-screen w-full pt-8">
-                <div className="flex flex-col px-4 sm:px-10 md:px-20 lg:px-40">
+                <div className="flex flex-col h-full justify-center px-4 sm:px-10 md:px-20 lg:px-40">
 
-                    <div className="flex w-full h-auto">
-                        <div className="h-auto w-auto">
-                            <h1 className="text-7xl font-medium">Por qué elegirnos</h1>
-                            <hr className="h-0.5 bg-slate-50" />
-                        </div>
-                    </div>
 
-                    <div className="flex xl:flex-row lg:flex-row md:flex-col sm:flex-col flex-col">
+
+                    <div className="flex xl:flex-row lg:flex-row md:flex-col sm:flex-col flex-col h-auto w-full lg:h-full items-center">
                         <div className="flex flex-col pt-8 lg:w-1/2">
+                            <div className="flex w-full h-auto">
+                                <div className="h-auto w-auto py-8">
+                                    <h1 className="text-7xl font-medium">Por qué elegirnos</h1>
+                                    <hr className="h-0.5 bg-slate-50" />
+                                </div>
+                            </div>
                             <p className="font-light text-2xl">Integramos los actores de la cadena de suministro mediante el flujo constante de información rápida y certera para asegurar que nuestros clientes tomen, siempre, la decisión correcta.
                                 Porque lo que somos lo debemos a nuestros clientes, encontrarán siempre en nosotros el apoyo deseado. Siempre prestos a servir.</p>
-                            
-                            <div className="w-full h-auto flex lg:flex-row md:flex-col flex-col justify-center gap-x-8 py-10 md:gap-y-12 gap-y-12 md:items-center items-center">
+
+                            <div className="w-full h-auto flex flex-row justify-center gap-x-8 py-10 md:gap-y-12 gap-y-12 md:items-center items-center">
                                 <div className="h-28 w-32 flex flex-col justify-center items-center bg-white shadow-md rounded-sm" data-aos="fade-down" >
                                     <img className="h-12 w-12" src={confiable} alt="" />
                                     <p className="text-sm">Confiabilidad</p>
@@ -202,7 +208,7 @@ export default function Homepage() {
                                     style={{ width: '80%', maxWidth: '1200px', height: '100%' }}
                                 >
                                     <SwiperSlide style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
-                                        <img src={PuertoCaucedo} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                        <img src={bgimage_2} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                                     </SwiperSlide>
                                     <SwiperSlide style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
                                         <img src={bgimage_2} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />

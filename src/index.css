@@ -8,19 +8,3 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-50px);
-  }
-}
-
-.animate-float {
-  animation: float 5s infinite alternate ease-in-out;
-}
-
-.iframe-container {
-  border-radius: 20px; 
-}

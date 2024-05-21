@@ -23,8 +23,8 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="w-full pt-6 bg-white">
-      <div className="flex justify-center items-center h-auto w-full">
+    <footer className="w-full pt-6 bg-slate-100">
+      <div className="flex justify-center items-center h-auto w-full px-4 sm:px-10 md:px-20 lg:px-40">
         <div className="grid grid-rows-4 sm:grid-rows-4 md:grid-rows-4 lg:grid-rows-1 grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-4 gap-x-6 px-16">
           <div className="h-auto col-span-1 lg:col-span-1 row-start-1 sm:row-start-1 md:row-start-1 lg:row-start-1">
             <div>
