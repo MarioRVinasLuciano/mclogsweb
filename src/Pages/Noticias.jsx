@@ -25,7 +25,7 @@ const [noticias, setNoticias] = useState([]);
         return (
             <div className="h-sreen w-full font-quicksand  pb-12">
             <div className="flex h-44 w-full justify-center items-center" >
-                <h1 className="text-4xl">Noticias</h1>
+                <h1 className="text-5xl">Noticias</h1>
             </div> 
           <div className="grid lg:grid-cols-4 grid-cols-1 lg:grid-rows-2 grid-rows-5 lg:px-10 sm:px-4 gap-6 lg:gap-10">
             {noticias.map((contenido, index) => (

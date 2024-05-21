@@ -1,239 +1,296 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
-//importo Navbar
-import Navbar from "../Components/Navbar";
-
-//importacion de datos
+//Datos
 import serviciosdatos from "../Datos/Servicios_datos/serviciosdatos";
+
+//Componentes
 import Nuestros_servicios from "../Components/Nuestros_servicios_card";
 
-//Importacion - Imagenes
-import background_img from "../Images/Homepageimgs/Somos/Backgroundimg2.jpg";
+//Imagenes
+import bgimage_2 from "../Images/Homepageimgs/Background/bgimg_2.jpg";
 import figibox_img from "../Images/Homepageimgs/Somos/compañias/figibox-logo.svg";
 import consilia_img from "../Images/Homepageimgs/Somos/compañias/mainConcilia_logo.png";
-import Somos_logistica_img from '../Images/Homepageimgs/Somos/Descripcion/logistica_idea.webp';
+import Somos_logistica_img2 from "../Images/Homepageimgs/Somos/Descripcion/Logistica.jpg";
+import bgimage_3 from "../Images/Homepageimgs/Background/bgimg_3.jpg";
+import PuertoCaucedo from "../Images/Homepageimgs/Swiper/Puerto_caucedo.jpg";
 
-//Animacion de AOS
+//Animacion
 import Aos from "aos";
 import 'aos/dist/aos.css';
 
-
-//Videos
+//Swiper 
+import { Swiper, SwiperSlide } from "swiper/react";
+import 'swiper/css';
+//Importacion de video
 import Video from "../Videos/Video.mp4";
 
 
+//Iconos
+import confiable from "../Icons/Confiable.png";
+import innovacion from "../Icons/Innovacion.png";
+import flexible from "../Icons/Flexible.png";
+import tecnologia from "../Icons/Tecnologia.png";
+
+
+
 export default function Homepage() {
-
-
     useEffect(() => {
         Aos.init({ duration: 1000 });
-    }, [])
+    }, []);
+
+    const ServiceCard = ({ imgSrc, title, description, link }) => (
+        <div className="flex flex-col bg-white h-auto lg:h-4/5 md:h-5/6 w-full p-8 shadow-lg rounded-sm text-center items-center">
+            <img className="p-4 h-16 w-full" src={imgSrc} alt={title} />
+            <hr className="w-full" />
+            <h1 className="text-md lg:text-xl font-semibold pt-4">{title}</h1>
+            <p className="pt-4  overflow-y-auto">{description}</p>
+            <div className="mt-auto">
+                <button className="h-10 w-auto bg-cyan-500 hover:bg-cyan-600 my-4 rounded-md">
+                    <a className="p-4 text-white" href={link}>Saber Más</a>
+                </button>
+            </div>
+        </div>
+    );
 
 
+    const ContactInfo = ({ label, value, link, linkText }) => (
+        <div className="py-4" data-aos="fade-left">
+            <div className="h-auto w-64 bg-white shadow-md rounded-md">
+                <div className="p-4 flex flex-col">
+                    <h1 className="text-xl">{label}:</h1>
+                    <p>{value}</p>
+                    <button className="bg-cyan-600 text-white rounded-sm">
+                        <a className="px-4" href={link}>{linkText}</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    );
 
     return (
-        <div className="flex flex-col w-full h-auto font-quicksand">
-            {/* Navbar comienza*/}
+        <div className=" w-full h-auto font-Encode-Sans">
 
-            {/* Primer Div Comienza */}
-            <div className="relative  w-full" style={{ height: "700px" }}>
-            <Navbar className="bg-gray/20 backdrop-blur-md"/>
-                <video className="absolute inset-0 w-full h-full object-cover" src={Video} loop autoPlay muted></video>
-                <div className="absolute top-0 left-0 w-full h-full grid lg:grid-cols-8 text-white p-4">
-                    <div className="relative top-28 left-16 sm:left-0 h-72 w-auto text-wrap lg:col-span-6 lg:col-start-1 ml-16">
-                        <h1 className="w-auto lg:text-6xl sm:text-4xl py-4" data-aos="fade-down" data-aos-duration="500">MC LOGISTICS</h1>
-                        <p className="w-auto lg:text-8xl sm:text-6xl" data-aos="fade-up" data-aos-duration="400" data-aos-delay="600">CENTRADOS EN EL CLIENTE</p>
+            {/* Primera seccion  */}
+            <div className="relative w-full h-screen">
+                {/* Navbar */}
+                <video className="absolute inset-0 w-full h-full object-cover items-center filter brightness-75 z-0" src={Video} loop autoPlay muted></video>
+                <div className="flex flex-col text-white px-10 sm:px-10 md:px-20 lg:px-40 py-24 h-full w-auto justify-center z-10">
+                    <div className="">
+                        <h1 className="w-auto lg:text-4xl sm:text-2xl text-2xl py-4" data-aos="fade-down" data-aos-duration="500">MC LOGISTICS</h1>
+                        <p className="w-auto lg:text-8xl sm:text-6xl text-3xl font-semibold" data-aos="fade-up" data-aos-duration="400" data-aos-delay="600">CENTRADOS EN EL CLIENTE</p>
                         <p className="text-lg font-semibold py-4" data-aos="fade-up" data-aos-duration="500" data-aos-delay="1300">Impulsados por la DATA</p>
                     </div>
                 </div>
             </div>
 
+            {/* Seccion de Somos */}
+            <div className="w-full lg:h-screen h-auto bg-white flex px-10 sm:px-10 md:px-20 lg:px-40">
+                <div className="flex flex-col lg:flex-row items-center h-full pt-12 gap-8 pb-12">
 
-
-
-            {/* Primer Div se acava*/}
-
-            <div className="w-full h-auto bg-white">
-                <div className="py-6 text-center" data-aos="fade-up-left">
-                    <h1 className="text-3xl">Somos</h1>
-                </div>
-                <div className="flex flex-col sm:flex-col md:flex-col lg:flex-row py-20 justify-center items-center">
-                    <div className="h-auto w-2/3 sm:w-2/3 md:2/3 lg:w-1/3 bg-blue-50 rounded-sm" data-aos="fade-up" >
-                        <div className="p-4">
-                            <h1 className="text-teal-500 text-xl font-semibold">MC Logistics</h1>
-                            <p className="py-4 font-bold text-xl">Tu socio estratégico en logística a nivel global. Desde el origen hasta el destino final, maximizando la rentabilidad de nuestros clientes y socios con una gestión eficiente de mercancías, energía e información.</p>
-                            <p className="py-4">Nacemos en el 2005 de la inquietud de crear valor en el proceso de gestión de la cadena de suministro, viendo oportunidades en el sector logístico de mejor flujo de información.</p>
-                        </div>
-                        <div className="p-4 ">
-                            <button className="bg-cyan-500 hover:bg-cyan-600 h-12 w-32 rounded-md"><a className="text-white" href="/#/nosotros">Leer más</a></button>
-                        </div>
+                    <div className="h-auto lg:w-[50%] w-auto">
+                        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl">Somos</h1>
+                        <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-6xl font-semibold pt-4">MC Logistics</h1>
+                        <p className="py-4 font-thin text-md sm:text-xl md:text-xl lg:text-2xl">Tu socio estratégico en logística a nivel global. Desde el origen hasta el destino final, maximizando la rentabilidad de nuestros clientes y socios con una gestión eficiente de mercancías, energía e información.</p>
+                        <hr className="h-0.5 bg-slate-50" />
+                        <p className="py-4 text-sm">Nacemos en el 2005 de la inquietud de crear valor en el proceso de gestión de la cadena de suministro, viendo oportunidades en el sector logístico de mejor flujo de información.</p>
+                        <button className="h-12 w-32 rounded-sm bg-slate-100 hover:bg-slate-50">
+                            <a className="text-black" href="/#/nosotros">Leer más</a>
+                        </button>
                     </div>
-                    <div>
-                        <img className="animate-float" src={Somos_logistica_img} alt="" />
+
+                    <div className="h-auto lg:w-[50%] w-full lg:pt-16 p-0 flex lg:justify-end justify-center">
+                        <img className="h-1/2 w-[80%] object-contain" src={Somos_logistica_img2} alt="Logistics" />
                     </div>
                 </div>
             </div>
 
 
-            <div className="w-full h-auto">
-                <div className="flex h-auto bg-center relative bg-fixed" style={{ backgroundImage: `url(${background_img})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-                    <div className="flex flex-col w-full h-auto items-center justify-center">
-                        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-rows-3 sm:grid-rows-3 md:grid-rows-3 lg:grid-rows-1 gap-20 py-20">
-
-                            <div className="flex flex-col bg-white h-auto w-80 p-8 shadow-lg rounded-sm text-center items-center">
-                                <div className="">
-                                    <img className="h-24 w-36" src={figibox_img} alt="" />
-                                </div>
-                                <hr className="w-full"></hr>
-                                <div>
-                                    <h1 className="text-xl font-semibold py-2">FigiBox</h1>
-                                </div>
-                                <div>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque quia vel, magni nostrum placeat provident suscipit consequatur quidem amet architecto error nihil accusamus molestias facere, reiciendis quaerat. A, cum alias!</p>
-                                    <button className="h-10 w-auto bg-cyan-500 hover:bg-cyan-600 my-4 rounded-sm"><a className="p-4 text-white" href="https://figibox.do/">Saber Mas</a></button>
-                                </div>
-                            </div>
-
-                            <div className="flex flex-col bg-white h-auto w-80 p-8 shadow-lg rounded-sm text-center items-center">
-                                <div className="">
-                                    <img className="h-24 w-36" src={consilia_img} alt="" />
-                                </div>
-                                <hr className="w-full"></hr>
-                                <div>
-                                    <h1 className="text-xl font-semibold py-2">Consilia</h1>
-                                </div>
-                                <div>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque quia vel, magni nostrum placeat provident suscipit consequatur quidem amet architecto error nihil accusamus molestias facere, reiciendis quaerat. A, cum alias!</p>
-                                    <button className="h-10 w-auto bg-cyan-500 hover:bg-cyan-600 my-4 rounded-sm"><a className="p-4 text-white" href="https://www.consilialogistics.com/">Saber Mas</a></button>
-                                </div>
-                            </div>
-
-                            <div className="flex flex-col bg-white h-auto w-80 p-8 shadow-lg rounded-sm text-center items-center">
-                                <div className="">
-                                    <img className="h-24 w-36" src={consilia_img} alt="" />
-                                </div>
-                                <hr className="w-full"></hr>
-                                <div>
-                                    <h1 className="text-xl font-semibold py-2">High Performance Cl</h1>
-                                </div>
-                                <div>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque quia vel, magni nostrum placeat provident suscipit consequatur quidem amet architecto error nihil accusamus molestias facere, reiciendis quaerat. A, cum alias!</p>
-                                    <button className="h-10 w-auto bg-cyan-500 hover:bg-cyan-600 my-4 rounded-sm"><a className="p-4 text-white" href="https://figibox.do/">Saber Mas</a></button>
-                                </div>
-                            </div>
-
-
+            {/* Seccion de compañias */}
+            <div className="w-full lg:h-screen h-auto">
+                <div className="flex bg-center bg-fixed w-full h-full" style={{ backgroundImage: `url(${bgimage_2})`, backgroundSize: 'cover' }}>
+                    <div className="flex flex-col w-full h-full items-center justify-center px-10 sm:px-10 md:px-20 lg:px-40">
+                        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-20 gap-x-10 gap-y-8  w-full h-full py-10  items-center">
+                            <ServiceCard
+                                imgSrc={figibox_img}
+                                title="FigiBox"
+                                description="División de correo expreso con servicio a domicilio y casilleros en Miami, FL y Guangzhou, China en adición a nuestros servicios desde el proveedor a sus manos."
+                                link="https://figibox.do/"
+                            />
+                            <ServiceCard
+                                imgSrc={""}
+                                title="Consilia"
+                                description="Bajo el régimen de deposito logístico, nos encargamos del manejo de mercancías dentro de zona primaria para el país y la región. Con sede en el puerto de Caucedo, garantizamos conexiones a mas 20 islas en el caribe; así como centro, norte y sur américa."
+                                link="https://www.consilialogistics.com/"
+                            />
+                            <ServiceCard
+                                imgSrc={""}
+                                title="High Performance Cl"
+                                description="Con sede en Miami, Fl, y 100% parte de nuestra empresa, es el contacto con sus proveedores y clientes en los Estados Unidos."
+                                link="https://figibox.do/"
+                            />
                         </div>
-
                     </div>
                 </div>
             </div>
 
 
-            <div className="w-full h-auto">
+
+            {/* Nuestros Servicios */}
+            <div className="w-full h-auto pt-12">
                 <div className="flex w-full h-24 items-center justify-center">
-                    <h3 className="pl-10 text-3xl font-semibold"> Nuestros Servicios Logisticos</h3>
+                    <h3 className="text-3xl ">Nuestros Servicios Logísticos</h3>
                 </div>
-                <div className="flex justify-center h-auto w-full py-20">
-                    <div className=" grid lg:grid-cols-3 lg:grid-rows-2 md:grid-cols-2 md:grid-rows-3 gap-8 gap-x-16">
-                    {
-                               serviciosdatos.map(props=> (
-                                <Nuestros_servicios
+                <div className="flex justify-center h-auto w-full pt-8 px-4 sm:px-10 md:px-20 lg:px-40">
+                    <div className="grid lg:grid-cols-3 md:grid-cols-2  gap-y-12 gap-x-12 justify-items-center w-full">
+                        {serviciosdatos.map((props) => (
+                            <Nuestros_servicios
                                 key={props.id}
-                                espacio={props.espacio}
-                                imagen={props.imagen}
-                                titulo={props.titulo}
-                                texto={props.texto}
-                                transicion={props.transicion}
-                                delay={props.delay}
-                                duracion={props.duracion}
-                                />
-                               ))
-                            }
+                                {...props}
+                            />
+                        ))}
                     </div>
                 </div>
             </div>
+{/* 
+            <div className="h-56 w-full py-10">
+                <div className="flex h-full bg-center relative bg-fixed" style={{ backgroundImage: `url(${bgimage_3})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+                </div>
+            </div> */}
 
-            <>
-                <div className="w-full h-auto bg-white">
-                    <div className="flex flex-col sm:flex-col md:flex-col lg:flex-row h-auto w-full items-center justify-center pl-10 pb-10">
+            <div className="h-screen w-full pt-8">
+                <div className="flex flex-col px-4 sm:px-10 md:px-20 lg:px-40">
 
-                        <div className="flex-col w-1/3  " data-aos="fade-right">
-                            <div className="">
-                                <h1 className="text-3xl font-semibold">Donde nos ubicamos?</h1>
-                            </div>
-                            <div className="pt-10">
-                                <div className="flex flex-col h-80 w-96 rounded-md bg-white shadow-md items-center">
-                                    <div className="pt-4">
-                                        <iframe
-                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30270.719272893064!2d-69.9722908283497!3d18.490909364070806!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eaf8987ea6ea207%3A0x7bcfa7fa8182db54!2sM.C.%20Logistics%20SRL!5e0!3m2!1sen!2sdo!4v1715034805315!5m2!1sen!2sdo"
-                                            width="full"
-                                            height="240"
-                                            allowFullScreen
-                                            loading="lazy"
-                                            referrerPolicy="no-referrer-when-downgrade"
-                                            title="Google Map"
-                                        ></iframe>
-                                    </div>
-                                    <div className="pt-4">
-                                        <button className="bg-cyan-600 text-white rounded-sm w-34 h-8"><a className="px-4" href="https://www.google.com/maps/place/M.C.+Logistics+SRL/@18.4909094,-69.9722908,14z/data=!4m16!1m9!3m8!1s0x8eaf8987ea6ea207:0x7bcfa7fa8182db54!2sM.C.+Logistics+SRL!8m2!3d18.5010223!4d-69.9536097!9m1!1b1!16s%2Fg%2F11b5wpm5pg!3m5!1s0x8eaf8987ea6ea207:0x7bcfa7fa8182db54!8m2!3d18.5010223!4d-69.9536097!16s%2Fg%2F11b5wpm5pg?entry=ttu">Ver ubicacion</a></button>
-                                    </div>
+                    <div className="flex w-full h-auto">
+                        <div className="h-auto w-auto">
+                            <h1 className="text-7xl font-medium">Por qué elegirnos</h1>
+                            <hr className="h-0.5 bg-slate-50" />
+                        </div>
+                    </div>
+
+                    <div className="flex xl:flex-row lg:flex-row md:flex-col sm:flex-col flex-col">
+                        <div className="flex flex-col pt-8 lg:w-1/2">
+                            <p className="font-light text-2xl">Integramos los actores de la cadena de suministro mediante el flujo constante de información rápida y certera para asegurar que nuestros clientes tomen, siempre, la decisión correcta.
+                                Porque lo que somos lo debemos a nuestros clientes, encontrarán siempre en nosotros el apoyo deseado. Siempre prestos a servir.</p>
+                            
+                            <div className="w-full h-auto flex lg:flex-row md:flex-col flex-col justify-center gap-x-8 py-10 md:gap-y-12 gap-y-12 md:items-center items-center">
+                                <div className="h-28 w-32 flex flex-col justify-center items-center bg-white shadow-md rounded-sm" data-aos="fade-down" >
+                                    <img className="h-12 w-12" src={confiable} alt="" />
+                                    <p className="text-sm">Confiabilidad</p>
+                                </div>
+                                <div className="h-28 w-32 flex flex-col justify-center items-center bg-white shadow-md rounded-sm" data-aos="fade-down" data-aos-delay="200">
+                                    <img className="h-12 w-12" src={innovacion} alt="" />
+                                    <p>Innovación</p>
+                                </div>
+                                <div className="h-28 w-32 flex flex-col justify-center items-center bg-white shadow-md rounded-sm" data-aos="fade-down" data-aos-delay="300">
+                                    <img className="h-12 w-12" src={flexible} alt="" />
+                                    <p>Flexibilidad</p>
+                                </div>
+                                <div className="h-28 w-32 flex flex-col justify-center items-center bg-white shadow-md rounded-sm" data-aos="fade-down" data-aos-delay="400">
+                                    <img className="h-12 w-12" src={tecnologia} alt="" />
+                                    <p>Tecnología</p>
                                 </div>
                             </div>
 
                         </div>
-
-
-                        <div className="flex flex-row items-center h-96 w-2/5 pt-16">
-                            <div className="flex flex-col">
-                                <div data-aos="fade-up-left"> 
-                                    <h1 className="text-2xl">Contactos</h1>
-                                </div>
-                                <div className="flex lg:flex-row sm:flex-col md:flex-col gap-x-8">
-                                <div className="py-4" data-aos="fade-left" data-aos-delay="100">
-                                <div className=" h-auto w-64 bg-white shadow-md rounded-md">
-                                    <div className="p-4 flex flex-col">
-                                        <div>
-                                            <h1 className="text-xl">Correo: </h1>
-                                        </div>
-                                        <div>
-                                            <p>info@mclogs.com</p>
-                                        </div>
-                                        <div className="py-2">
-                                            <button className="bg-cyan-600 text-white rounded-sm"><a className="px-4" href="mailto:info@mclogs.com">Enviar correo</a></button>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <div className="py-4" data-aos="fade-left" data-aos-delay="200">
-                                <div className=" h-auto w-64 bg-white shadow-md rounded-md">
-                                    <div className="p-4 flex flex-col">
-                                        <div>
-                                            <h1 className="text-xl">Telefono: </h1>
-                                        </div>
-                                        <div>
-                                            <p>+1 (809)-565-3265</p>
-                                        </div>
-                                        <div className="py-2">
-                                            <button className="bg-cyan-600 text-white rounded-sm"><a className="px-4" href="tel:+18095653265">Llamar</a></button>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                                </div>
+                        <div className="flex flex-col lg:w-1/2 items-center pt-10">
+                            <div style={{ width: '100%', display: 'flex', justifyContent: 'end' }}>
+                                <Swiper
+                                    spaceBetween={50}
+                                    slidesPerView={1}
+                                    onSlideChange={() => console.log('Slide change')}
+                                    onSwiper={(swiper) => console.log(swiper)}
+                                    style={{ width: '80%', maxWidth: '1200px', height: '100%' }}
+                                >
+                                    <SwiperSlide style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
+                                        <img src={PuertoCaucedo} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                    </SwiperSlide>
+                                    <SwiperSlide style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
+                                        <img src={bgimage_2} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                    </SwiperSlide>
+                                    <SwiperSlide style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
+                                        <img src={bgimage_2} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                    </SwiperSlide>
+                                </Swiper>
                             </div>
                         </div>
+                    </div>
 
+
+
+                </div>
+            </div>
+
+            {/* Contact Section */}
+            {/* <div className="w-full h-auto bg-white pt-12">
+                <div className="flex flex-col lg:flex-row h-auto w-full items-center justify-between pl-10 pb-10 px-4 sm:px-10 md:px-20 lg:px-40">
+                    <div className="flex-col w-1/3" data-aos="fade-right">
+                        <div className="pt-10">
+                            <div className="flex flex-col pt-2 h-80 w-96 rounded-md bg-white shadow-md items-center">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30270.719272893064!2d-69.9722908283497!3d18.490909364070806!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eaf8987ea6ea207%3A0x7bcfa7fa8182db54!2sM.C.%20Logistics%20SRL!5e0!3m2!1sen!2sdo!4v1715034805315!5m2!1sen!2sdo"
+                                    width="90%"
+                                    height="280"
+                                    allowFullScreen
+                                    loading="lazy"
+                                    referrerPolicy="no-referrer-when-downgrade"
+                                    title="Google Map"
+                                ></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="flex-col w-1/3" data-aos="fade-right">
+                        <div className="pt-10">
+                            <div className="flex flex-col pt-2 h-80 w-96 rounded-md bg-white shadow-md items-center">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30270.719272893064!2d-69.9722908283497!3d18.490909364070806!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eaf8987ea6ea207%3A0x7bcfa7fa8182db54!2sM.C.%20Logistics%20SRL!5e0!3m2!1sen!2sdo!4v1715034805315!5m2!1sen!2sdo"
+                                    width="90%"
+                                    height="280"
+                                    allowFullScreen
+                                    loading="lazy"
+                                    referrerPolicy="no-referrer-when-downgrade"
+                                    title="Google Map"
+                                ></iframe>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div className="bg-white">
-                    <hr className=" h-px my-8 bg-gray-200 border-0" />
+                <div className="flex flex-col lg:flex-row h-auto w-full items-center justify-center pl-10 pb-10">
+                <div className="flex-col w-1/3" data-aos="fade-right">
+                        <div className="pt-10">
+                            <div className="flex flex-col pt-2 h-80 w-96 rounded-md bg-white shadow-md items-center">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30270.719272893064!2d-69.9722908283497!3d18.490909364070806!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eaf8987ea6ea207%3A0x7bcfa7fa8182db54!2sM.C.%20Logistics%20SRL!5e0!3m2!1sen!2sdo!4v1715034805315!5m2!1sen!2sdo"
+                                    width="90%"
+                                    height="280"
+                                    allowFullScreen
+                                    loading="lazy"
+                                    referrerPolicy="no-referrer-when-downgrade"
+                                    title="Google Map"
+                                ></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="flex-col w-1/3" data-aos="fade-right">
+                        <div className="pt-10">
+                            <div className="flex flex-col pt-2 h-80 w-96 rounded-md bg-white shadow-md items-center">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30270.719272893064!2d-69.9722908283497!3d18.490909364070806!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eaf8987ea6ea207%3A0x7bcfa7fa8182db54!2sM.C.%20Logistics%20SRL!5e0!3m2!1sen!2sdo!4v1715034805315!5m2!1sen!2sdo"
+                                    width="90%"
+                                    height="280"
+                                    allowFullScreen
+                                    loading="lazy"
+                                    referrerPolicy="no-referrer-when-downgrade"
+                                    title="Google Map"
+                                ></iframe>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </>
+                
+            <div className="bg-white">
+                    <hr className="h-px my-8 bg-gray-200 border-0" />
+                </div>
+            </div> */}
         </div>
-    )
+    );
 }
-

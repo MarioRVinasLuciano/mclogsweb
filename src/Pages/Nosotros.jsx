@@ -45,13 +45,13 @@ export default function Nosotros() {
                             <p className="text-2xl">Nacemos en el 2005 de la inquietud de crear valor en el proceso de gestión de la cadena de suministro, viendo oportunidades en el sector logístico de mejor flujo de información.</p>
                         </div>
                     </div>
-                    <div class="absolute lg:w-1/2 h-auto  z-[-10] right-24 top-0" data-aos="fade-left" >
+                    <div className="absolute lg:w-1/2 h-auto  z-[-10] right-24 top-0" data-aos="fade-left" >
                         <img className="w-[101rem] h-[35rem]" src={bote} alt="" />
                     </div>
                 </div>
             </div>
 
-            <div class="w-auto h-full pb-10">
+            <div className="w-auto h-full pb-10">
 
                 <div className="h-12 w-auto pl-24">
                     <h1 className="text-2xl font-semibold">Linea de tiempo</h1>
@@ -83,7 +83,7 @@ export default function Nosotros() {
                     <h1 className="text-4xl pl-24">Quienes Somos</h1>
                 </div>
 
-                <div className="h-64 w-full flex flex-row px-24 lg:justify-end md:justify-end sm:justify-center justify-center">
+                <div className="lg:h-64 h-auto w-full flex lg:flex-row flex-col px-24 sm:items-center items-center lg:justify-end md:justify-end sm:justify-center justify-center">
                     <div className="pt-6" data-aos="fade-left">
                         <img className="h-[14rem] " src={mision} alt="" />
                     </div>
@@ -97,21 +97,21 @@ export default function Nosotros() {
                     </div>
                 </div>
 
-                <div className="mt-12 h-64 w-full flex flex-row px-24 lg:justify-start md:justify-start sm:justify-center justify-center">
+                <div className="mt-12 lg:h-64 h-auto w-full flex lg:flex-row flex-col px-24 sm:items-center items-center lg:justify-start md:justify-start sm:justify-center justify-center">
                     <div className="h-full w-[26rem] flex flex-col bg-white shadow-md rounded-sm p-4" data-aos="fade-right">
                         <h2 className="text-2xl">
                             Visión
                         </h2>
-                        <p className="pt-4">
+                        <p className="pt-4 text-sm sm:text-sm md:text-md lg:text-lg">
                         <b>Ser líder</b> en la integración de los servicios logísticos, mediante la innovación, agilidad, honestidad y compromiso con nuestros clientes y colaboradores, generando rentabilidad a nuestros clientes, socios y colaboradores a través de la eficiencia.
                         </p>
                     </div>
-                    <div className="pt-6" data-aos="fade-right">
+                    <div className="lg:pt-6" data-aos="fade-right">
                         <img className="h-[14rem] " src={vision} alt="" />
                     </div>
                 </div>
 
-                <div className="mt-12 h-64 w-full flex flex-row px-24 lg:justify-end md:justify-end sm:justify-center justify-center">
+                <div className="mt-12 lg:h-64 h-auto w-full flex lg:flex-row flex-col px-24 sm:items-center items-center lg:justify-end md:justify-end sm:justify-center justify-center">
                     <div className="pt-6" data-aos="fade-left">
                         <img className="h-[14rem] " src={valores} alt="" />
                     </div>
@@ -140,7 +140,7 @@ export default function Nosotros() {
                     <div className="pl-24">
                         <h1 className="text-4xl">Por qué elegirnos</h1>
                     </div>
-                    <div className="px-24 w-full h-auto flex lg:flex-row md:flex-col flex-col justify-center gap-x-24 py-24">
+                    <div className="px-24 w-full h-auto flex lg:flex-row md:flex-col flex-col justify-center gap-x-24 py-24 md:gap-y-12 gap-y-12 md:items-center items-center">
                         <div className="h-44 w-44 flex flex-col justify-center items-center bg-white shadow-md rounded-sm" data-aos="fade-down" >
                             <img className="h-24 w-24" src={confiable} alt="" />
                             <p>Confiabilidad</p>

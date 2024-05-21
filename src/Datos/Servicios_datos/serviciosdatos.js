@@ -13,64 +13,64 @@ import Paqueteria from "/Users/macuser/mclogs/src/Images/Nuestros_servicios_logi
 const serviciosdatos = [
     {
         id: 1,
-        espacio:`bg-white h-98 w-72 lg:col-span-1 lg:col-start-1 md:col-span-1 md:col-start-1 rounded-md shadow-md`,
+        espacio: `bg-white lg:h-auto h-96  w-full lg:col-span-1 lg:col-start-1 md:col-span-1 md:col-start-1 rounded-md shadow-md`,
         imagen: Transporte_Maritimo,
-        titulo: "Transporte Maritimo",
-        texto: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea saepe numquam ex, officiis cum temporibus est ut, vel officia provident libero iure nam quia esse explicabo, beatae doloribus repellat? Earum",
-        transicion: "zoom-out-left",
-        delay: "100",
+        titulo: "Transporte Marítimo",
+        texto: "Combinar dos modalidades de transporte, reduciendo los tiempos de tránsito y costos al comparar uno sobre otro de manera individual, garantiza al cliente una eficiente solución al transporte de sus cargas críticas.",
+        transicion: "",
+        delay: "",
         duracion: ""
     },
     {
         id: 2,
-        espacio:`bg-white h-98 w-72 lg:col-span-1 lg:col-start-2 md:col-span-1 md:col-start-2 rounded-md shadow-md`,
+        espacio:`bg-white lg:h-auto h-96 w-full lg:col-span-1 lg:col-start-2 md:col-span-1 md:col-start-2 rounded-md shadow-md`,
         imagen: Transporte_Aereo,
-        titulo: "Transporte Aereo",
-        texto: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea saepe numquam ex, officiis cum temporibus est ut, vel officia provident libero iure nam quia esse explicabo, beatae doloribus repellat? Earum",
-        transicion: "zoom-out",
-        delay: "200",
+        titulo: "Transporte Aéreo",
+        texto: "China, India, España, nunca habían estado tan cerca para envíos urgentes, carga o expreso, a la puerta de su empresa.",
+        transicion: "",
+        delay: "",
         duracion: ""
     },
     {
         id: 3,
-        espacio:`bg-white h-98 w-72 lg:col-span-1 lg:col-start-3 md:col-span-1 md:col-start-1 rounded-md shadow-md`,
+        espacio:`bg-white lg:h-auto h-96 w-full lg:col-span-1 lg:col-start-3 md:col-span-1 md:col-start-1 rounded-md shadow-md`,
         imagen: Transporte_terrestre,
         titulo: "Transporte Terrestre",
-        texto:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea saepe numquam ex, officiis cum temporibus est ut, vel officia provident libero iure nam quia esse explicabo, beatae doloribus repellat? Earum",
-        transicion: "zoom-out-right",
-        delay: "300",
+        texto: "Nuestras alianzas en territorio dominicano con servicios de geolocalización, ofrecen seguridad y garantía para el transporte de mercancías.",
+        transicion: "",
+        delay: "",
         duracion: ""
     },
     {
         id: 4,
-        espacio:`bg-white h-98 w-72 lg:col-span-1 lg:col-start-1 rounded-md shadow-md`,
+        espacio:`bg-white lg:h-auto h-96 w-full lg:col-span-1 lg:col-start-1 rounded-md shadow-md`,
         imagen: Almacenaje,
         titulo:"Almacenaje",
-        texto:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea saepe numquam ex, officiis cum temporibus est ut, vel officia provident libero iure nam quia esse explicabo, beatae doloribus repellat? Earum",
-        transicion: "zoom-out-left",
-        delay: "100",
+        texto:"Ofrecemos soluciones de almacenaje seguro y eficiente para sus mercancías, garantizando su integridad y disponibilidad en todo momento.",
+        transicion: "",
+        delay: "",
         duracion: ""
     },
     {
         id: 5,
-        espacio:`bg-white h-98 w-72 lg:col-span-1 lg:col-start-2 rounded-md shadow-md`,
+        espacio:`bg-white lg:h-auto h-96 w-full lg:col-span-1 lg:col-start-2 rounded-md shadow-md`,
         imagen: Gestion_aduanal,
-        titulo:"Gestion Aduanal",
-        texto:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea saepe numquam ex, officiis cum temporibus est ut, vel officia provident libero iure nam quia esse explicabo, beatae doloribus repellat? Earum",
-        transicion: "zoom-out",
-        delay: "200",
+        titulo:"Gestión Aduanal",
+        texto:"Nuestro equipo de expertos en aduanas ofrece servicios de gestión aduanal integral, facilitando los trámites y asegurando el cumplimiento de todas las regulaciones.",
+        transicion: "",
+        delay: "",
         duracion: ""
     },
     {
         id: 6,
-        espacio:`bg-white h-98 w-72 lg:col-span-1 lg:col-start-3 rounded-md shadow-md`,
+        espacio:`bg-white lg:h-auto h-96 w-full lg:col-span-1 lg:col-start-3 rounded-md shadow-md`,
         imagen: Paqueteria,
-        titulo:"Paqueteria",
-        texto:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea saepe numquam ex, officiis cum temporibus est ut, vel officia provident libero iure nam quia esse explicabo, beatae doloribus repellat? Earum",
-        transicion: "zoom-out-right",
-        delay: "300",
+        titulo:"Paquetería",
+        texto:"Servicio de paquetería ágil y seguro para envíos locales e internacionales, garantizando la entrega oportuna y en perfectas condiciones de sus paquetes y documentos.",
+        transicion: "",
+        delay: "",
         duracion: ""
-    },
+    }
     
 ];
 

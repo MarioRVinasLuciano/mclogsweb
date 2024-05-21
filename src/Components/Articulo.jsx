@@ -6,6 +6,7 @@ function ArticulosPagina() {
 
     const [noticias, setNoticias] = useState([]);
 
+
     useEffect (() => {
       const fetchData = async () => {
         try {
@@ -33,7 +34,7 @@ function ArticulosPagina() {
     }
 
     return (
-        <div className='h-full w-full font-quicksand'>
+        <div className='h-full w-full relative font-Encode-Sans pt-12'>
             <div className='flex flex-col justify-center items-center px-24 pb-12'>
                 <div className="flex flex-col justify-center items-center p-4">
                     <div className='w-2/3'>

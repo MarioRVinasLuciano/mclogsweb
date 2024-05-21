@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import contenedor from "../Images/Rastrear/contenedor_bg.jpg";
+import contenedor1 from "../Images/Rastrear/contenedor_bg_2.jpg";
+import contenedor2 from "../Images/Rastrear/contenedor_bg_3.jpg";
 import Tracker from "../Components/Trak";
 
-//import imagenes
+// Import images
 import procesando from "../Icons/procesando.png";
 import en_transito from "../Icons/en_transito.png";
 import en_puerto from "../Icons/en_puerto.png";
@@ -12,6 +14,8 @@ export default function Rastreo() {
     const [embarque, setEmbarque] = useState("");
     const [error, setError] = useState(false);
     const [formattedDate, setFormattedDate] = useState("");
+    const [searchPerformed, setSearchPerformed] = useState(false);
+    const scrollRef = useRef(null); 
 
     const manejoBusqueda = async (valor_entrada) => {
         console.log("Search value:", valor_entrada);
@@ -24,6 +28,7 @@ export default function Rastreo() {
                 `https://api.mclogs.com/odata/public/GetOrderByText(Value='${valor_entrada}')?$select=Oid,State,ETD,ETA,TelexRelease,TransportMode,MovementType,Freights,Summary&$expand=Freights,Summary`
             );
             const datos = await respuesta.json();
+            setSearchPerformed(true);
             setEmbarque(datos)
             console.log(datos);
             setError(false);
@@ -47,11 +52,16 @@ export default function Rastreo() {
         }
     }, [embarque]);
 
+    useEffect(() => {
+        if (searchPerformed && scrollRef.current) {
+            scrollRef.current.scrollIntoView({ behavior: "smooth" });
+        }
+    }, [searchPerformed]);
 
     return (
-        <div className="h-full w-full font-quicksand">
+        <div className="h-full w-full font-Encode-Sans">
             <div className="w-auto h-screen" style={{ height: "700px" }}>
-                <div className="flex flex-col relative h-full bg-center" style={{ backgroundImage: `url(${contenedor})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+                <div className="flex flex-col relative h-full bg-center" style={{ backgroundImage: `url(${contenedor})`, backgroundSize: 'cover', backgroundPosition: 'bo' }}>
                     <div className="w-full">
                         <h1 className="text-4xl pt-20 pl-24 font-semibold">Rastrea tu embarque</h1>
                     </div>
@@ -60,12 +70,12 @@ export default function Rastreo() {
                     </div>
                 </div>
             </div>
-
-            {
-                !error && embarque?.Summary?.length >= 3 ?
-                    <div className="h-auto w-full">
+            {searchPerformed ? 
+                (
+             !error && embarque?.Summary?.length >= 3 ? (
+                    <div className="h-auto w-full" ref={scrollRef}>
                         <div className="flex flex-col px-24 py-24">
-
+                            {/* Content to display when search is successful */}
                             {/* Estatus espacio */}
                             <div className="flex flex-row justify-center gap-x-24">
                                 <div className="flex flex-col">
@@ -87,7 +97,7 @@ export default function Rastreo() {
 
                             <div className="flex flex-row justify-center pt-4">
                                 <div className="flex flex-row justify-end">
-                                    <div className={embarque.Summary[0]?.Happened === true ? "bg-green-400 rounded-full h-6 w-6" : "bg-slate-100 rounded-full h-6 w-6"}></div>
+                                    <div className={embarque.Summary[0]?.Happened === true ? "bg-green-400 rounded-full h-6 w-6 " : "bg-slate-100 rounded-full h-6 w-6"}></div>
                                     <div className={embarque.Summary[1]?.Happened === true ? "bg-green-400 h-1 w-36 mt-3" : "bg-slate-100 h-1 w-36 mt-3"}></div>
                                 </div>
                                 <div className="flex flex-row justify-end">
@@ -101,13 +111,13 @@ export default function Rastreo() {
 
                             <div className="flex flex-row justify-center pt-4 gap-x-16">
                                 <div className="flex flex-row w-32 justify-center">
-                                    {embarque.Summary[0]?.Happened === true && embarque.Summary[1]?.Happened === false && embarque.Summary[2]?.Happened === false ? <p>En coordinación</p> : ""}
+                                    {embarque.Summary[0]?.Happened === true && embarque.Summary[1]?.Happened === false && embarque.Summary[2]?.Happened === false ? <p className="animate-bounce">En coordinación</p> : ""}
                                 </div>
                                 <div className="flex flex-row w-24 justify-center">
-                                    {embarque.Summary[0]?.Happened === true && embarque.Summary[1]?.Happened === true && embarque.Summary[2]?.Happened === false ? <p>En transito</p> : ""}
+                                    {embarque.Summary[0]?.Happened === true && embarque.Summary[1]?.Happened === true && embarque.Summary[2]?.Happened === false ? <p className="animate-bounce">En transito</p> : ""}
                                 </div>
                                 <div className="flex flex-row w-24 justify-center">
-                                    {embarque.Summary[2]?.Happened === true ? <p>En puerto</p> : ""}
+                                    {embarque.Summary[2]?.Happened === true ? <p className="animate-bounce">En puerto</p> : ""}
                                 </div>
                             </div>
 
@@ -118,12 +128,10 @@ export default function Rastreo() {
                                     <h1 className="font-semibold">Fecha estimada de llegada: {formattedDate}</h1>
                                 </div>
                                 <div className="pt-8">
-                                    <h1 className="font-semibold">Estado de HBL: Copia</h1>
+                                    <h1 className="font-semibold">Estado de HBL: {embarque.TelexRelease === true ? "Telex Release": "Copia"}</h1>
                                 </div>
                             </div>
 
-
-                            {/* tabla */}
                             <div class="flex items-center justify-center h-auto pt-16">
                                 <div class="overflow-x-auto relative shadow-md sm:rounded-lg">
                                     <div class="overflow-x-auto relative shadow-md sm:rounded-lg">
@@ -139,40 +147,38 @@ export default function Rastreo() {
                                             </thead>
                                             <tbody>
                                                 {
-                                                    
-                                                    <tr class="bg-white border-b">
-                                                    <td class="py-4 px-6">En Coordinación</td>
-                                                    <td class="py-4 px-6">82926417</td>
-                                                    <td class="py-4 px-6">Wed May 15 2024, 16:08:47</td>
-                                                    <td class="py-4 px-6">BABUN EXPRESS</td>
-                                                    <td class="py-4 px-6">264S</td>
+                                                    embarque.Summary.map((contenido) => (
+                                                    <tr className="bg-white border-b">
+                                                    <td className="py-4 px-6">{contenido.Status}</td>
+                                                    <td className="py-4 px-6">{contenido.ActivityPlace}</td>
+                                                    <td className="py-4 px-6">{contenido.Date}</td>
+                                                    <td className="py-4 px-6">{contenido.Ship}</td>
+                                                    <td className="py-4 px-6">{contenido.TravelNumber}</td>
                                                     </tr>
+                                                    ))
                                                 }
-                                                
                                             </tbody>
                                         </table>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
-
-
-
+                        <div className="bg-white">
+                            <hr className=" h-px my-8 bg-gray-200 border-0" />
+                        </div>
                     </div>
-
-                    :
-
-
-                    <div className="w-full py-44 flex justify-center items-center">
-                        <h1 className="text-4xl">No se encontró un contendor con este número</h1>
+                    ) : (
+                    // Content to display when search is unsuccessful
+                    <div className="w-full py-44 flex justify-center items-center" ref={scrollRef}>
+                        <h1 className="text-4xl">No se encontró un contenedor con este número</h1>
+                        <div className="bg-white">
+                            <hr className=" h-px my-8 bg-gray-200 border-0" />
+                        </div>
                     </div>
-            }
-
-
-            <div className="bg-white">
-                <hr className=" h-px my-8 bg-gray-200 border-0" />
-            </div>
+                    )
+                ) : null}
         </div>
     );
 }
+
+                           

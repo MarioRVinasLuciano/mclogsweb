@@ -83,28 +83,35 @@ export default function Agentes() {
 
 
         <div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
-            {uniqueCountryNames.length > 0 ? (
-              uniqueCountryNames.map(countryName => (
-                <div key={countryName}>
-                  <h1>{countryName}</h1>
-                  {agentsInContinent
-                    .filter(agent => agent.country === countryName)
-                    .map(agent => (
-                      <div key={agent.oid} className="bg-white shadow-md rounded-md p-4 mb-4">
-                        <p className="font-semibold">{agent.name}</p>
-                        <p>Pagina:<a href={agent.web_page} className="text-blue-600">{agent.web_page}</a></p>
-                        <p>Ciudad: {agent.town}</p>
-                        <p>Email: {agent.email}</p>
-                        <p>Tipo: {agent.type}</p>
-                      </div>
-                    ))}
-                </div>
-              ))
-            ) : (
-              <p>No se encontraron agentes.</p>
-            )}
-          </div>
+        <div className="flex flex-col w-full gap-4">
+  {uniqueCountryNames.length > 0 ? (
+    uniqueCountryNames.map(countryName => (
+      <div key={countryName}>
+        <h1 className="text-xl pb-6 text-blue-900">{countryName}</h1>
+        <div className="flex flex-wrap gap-4">
+          {agentsInContinent
+            .filter(agent => agent.country === countryName)
+            .map(agent => (
+              <div key={agent.oid} className="bg-white shadow-md rounded-md p-4 mb-4 w-72 h-56 overflow-auto">
+                <p className="font-semibold text-lime-500">{agent.name}</p>
+                <p>
+                  Pagina:
+                  <a href={agent.web_page} className="text-blue-600">{agent.web_page}</a>
+                </p>
+                <p>Ciudad: {agent.town}</p>
+                <p>Email: {agent.email}</p>
+                <p>Tipo: {agent.type}</p>
+              </div>
+            ))}
+        </div>
+      </div>
+    ))
+  ) : (
+    <p>No se encontraron agentes.</p>
+  )}
+</div>
+
+
         </div>
       </div>
       <hr className="h-px my-8 bg-gray-200 border-0" />
