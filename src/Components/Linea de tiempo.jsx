@@ -14,7 +14,7 @@ export default function Linea_de_tiempo (props) {
                                 <p className="text-2xl">{props.ano}</p>
                             </div>
                             <div className="pt-2 lg:pt-10 xl:pt-10 text-xl lg:w-1/2 w-full "> 
-                                <p className="text-xs ">{props.texto}</p>
+                                <p className="text-xs md:text-xl lg:text-xl">{props.texto}</p>
                             </div>
                         </div>
                     </div>

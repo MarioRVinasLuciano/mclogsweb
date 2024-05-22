@@ -35,7 +35,7 @@ export default function Nosotros() {
         <div className="h-auto w-full font-Encode-Sans ">
 
 
-            <div className="w-full pb-10 " style={{ height: "600px" }}>
+            <div className="w-full pb-10 pt-16" style={{ height: "600px" }}>
                 <div className="h-full w-auto flex lg:flex-row flex-col lg:relative">
                     <div className="lg:absolute relative lg:w-1/2 w-auto top-14 z-0 px-10 sm:px-10 md:px-20 lg:px-40" data-aos="zoom-out-down" data-aos-delay="200">
                         <div className="pb-10 text-center lg:text-start w-full">
