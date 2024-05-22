@@ -12,6 +12,8 @@ import figibox_img from "../Images/Homepageimgs/Somos/compañias/figibox-logo.sv
 import consilia_img from "../Images/Homepageimgs/Somos/compañias/mainConcilia_logo.png";
 import Somos_logistica_img2 from "../Images/Homepageimgs/Somos/Descripcion/Logistica.jpg";
 import high_performance from "../Images/Logos/high-performace.png";
+import Slider_1 from "../Images/Homepageimgs/Slider_1.jpg";
+import Slider_2 from "../Images/Homepageimgs/Slider_2.jpg";
 
 //Animacion
 import Aos from "aos";
@@ -19,7 +21,10 @@ import 'aos/dist/aos.css';
 
 //Swiper 
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, EffectCreative } from "swiper/modules";
 import 'swiper/css';
+import 'swiper/css/effect-creative';
+
 //Importacion de video
 import Video from "../Videos/Video.mp4";
 
@@ -37,8 +42,8 @@ export default function Homepage() {
         Aos.init({ duration: 1000 });
     }, []);
 
-    const ServiceCard = ({ className, imgSrc, title, description, link }) => (
-        <div className="flex flex-col bg-white h-auto lg:h-4/5 md:h-5/6 w-full p-6 shadow-lg rounded-sm text-center items-center">
+    const ServiceCard = ({ dataAos, delay, className, imgSrc, title, description, link }) => (
+        <div data-aos={dataAos} data-aos-delay={delay} className="flex flex-col bg-white h-auto lg:h-4/5 md:h-5/6 w-full p-6 shadow-lg rounded-sm text-center items-center">
             <img className={className} src={imgSrc} alt={title} />
             <hr className="w-full" />
             <h1 className="text-md lg:text-xl font-semibold pt-4">{title}</h1>
@@ -73,18 +78,18 @@ export default function Homepage() {
                 <div className="flex flex-col lg:flex-row items-center h-full pt-12 gap-8 pb-12">
 
                     <div className="h-auto lg:w-[50%] w-auto">
-                        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl">Somos</h1>
-                        <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-6xl font-semibold pt-4">MC Logistics</h1>
-                        <p className="py-4 font-thin text-md sm:text-xl md:text-xl lg:text-2xl">Tu socio estratégico en logística a nivel global. Desde el origen hasta el destino final, maximizando la rentabilidad de nuestros clientes y socios con una gestión eficiente de mercancías, energía e información.</p>
+                        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl" data-aos="fade-down">Somos</h1>
+                        <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-6xl font-semibold pt-4" data-aos="fade-up" data-aos-delay="100">MC Logistics</h1>
+                        <p className="py-4 font-thin text-md sm:text-xl md:text-xl lg:text-2xl" data-aos="fade-up" data-aos-delay="200">Tu socio estratégico en logística a nivel global. Desde el origen hasta el destino final, maximizando la rentabilidad de nuestros clientes y socios con una gestión eficiente de mercancías, energía e información.</p>
                         <hr className="h-0.5 bg-slate-50" />
-                        <p className="py-4 text-sm">Nacemos en el 2005 de la inquietud de crear valor en el proceso de gestión de la cadena de suministro, viendo oportunidades en el sector logístico de mejor flujo de información.</p>
-                        <button className="h-12 w-32 rounded-sm bg-slate-100 hover:bg-slate-50">
-                            <a className="text-black" href="/#/nosotros">Leer más</a>
+                        <p className="py-4 text-sm" data-aos="fade-up" data-aos-delay="300">Nacemos en el 2005 de la inquietud de crear valor en el proceso de gestión de la cadena de suministro, viendo oportunidades en el sector logístico de mejor flujo de información.</p>
+                        <button className="h-12 w-32 rounded-sm bg-slate-100 hover:bg-slate-50" data-aos="fade-up" data-aos-delay="400">
+                            <a className="text-black" href="/#/nosotros" >Leer más</a>
                         </button>
                     </div>
 
                     <div className="h-auto lg:w-[50%] w-full lg:pt-16 p-0 flex lg:justify-end justify-center">
-                        <img className="h-1/2 w-[80%] object-contain" src={Somos_logistica_img2} alt="Logistics" />
+                        <img className="h-1/2 w-[80%] object-contain " src={Somos_logistica_img2} alt="Logistics" />
                     </div>
                 </div>
             </div>
@@ -96,6 +101,8 @@ export default function Homepage() {
                     <div className="flex flex-col w-full h-full items-center justify-center px-10 sm:px-10 md:px-20 lg:px-40">
                         <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-20 gap-x-10 gap-y-8  w-full h-full py-10  items-center">
                             <ServiceCard
+                                dataAos={"fade-down"}
+                                delay={""}
                                 className={" h-24 w-32"}
                                 imgSrc={figibox_img}
                                 title="FigiBox"
@@ -103,6 +110,8 @@ export default function Homepage() {
                                 link="https://figibox.do/"
                             />
                             <ServiceCard
+                                dataAos={"fade-down"}
+                                delay={"200"}
                                 className={"pb-4 h-24 w-32 "}
                                 imgSrc={consilia_img}
                                 title="Consilia"
@@ -110,6 +119,8 @@ export default function Homepage() {
                                 link="https://www.consilialogistics.com/"
                             />
                             <ServiceCard
+                                dataAos={"fade-down"}
+                                delay={"400"}
                                 className={"p-4 h-24 w-32 "}
                                 imgSrc={high_performance}
                                 title="High Performance Cl"
@@ -188,16 +199,33 @@ export default function Homepage() {
                                     slidesPerView={1}
                                     onSlideChange={() => console.log('Slide change')}
                                     onSwiper={(swiper) => console.log(swiper)}
+                                    effect={'creative'}
+                                    creativeEffect={{
+                                    prev: {
+                                        shadow: true,
+                                        translate: [0, 0, -400],
+                                    },
+                                    next: {
+                                        translate: ['100%', 0, 0],
+                                    },
+                                    }}
                                     style={{ width: '80%', maxWidth: '1200px', height: '100%' }}
+                                    autoplay={{
+                                        delay: 3500,
+                                        disableOnInteraction: false,
+                                      }}
+                                      modules={[Autoplay, EffectCreative]}
+                                        className="mySwiper"
+                                        
                                 >
                                     <SwiperSlide style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
-                                        <img src={bgimage_2} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                        <img src={Slider_1} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                                     </SwiperSlide>
                                     <SwiperSlide style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
-                                        <img src={bgimage_2} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                        <img src={Slider_2} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                                     </SwiperSlide>
                                     <SwiperSlide style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
-                                        <img src={bgimage_2} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                        <img src={Slider_2} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                                     </SwiperSlide>
                                 </Swiper>
                             </div>
