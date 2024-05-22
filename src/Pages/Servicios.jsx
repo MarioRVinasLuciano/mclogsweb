@@ -3,7 +3,7 @@ import React from "react";
 //importo componente
 import Nuestros_servicios from "../Components/Nuestros_servicios_card";
 //importo datos
-import serviciosdatos from "../Datos/Servicios_datos/serviciosdatos";
+import serviciosdatos from "../Datos/serviciosdatos";
 
 
 export default function Servicios(){

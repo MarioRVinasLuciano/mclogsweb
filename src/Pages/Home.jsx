@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 
 //Datos
-import serviciosdatos from "../Datos/Servicios_datos/serviciosdatos";
+import serviciosdatos from "../Datos/serviciosdatos";
 
 //Componentes
 import Nuestros_servicios from "../Components/Nuestros_servicios_card";

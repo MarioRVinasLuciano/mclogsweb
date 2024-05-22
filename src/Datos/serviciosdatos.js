@@ -1,10 +1,10 @@
 //importo imagenes locales asignadas a cada div
-import Transporte_Maritimo from "/Users/macuser/mclogs/src/Images/Nuestros_servicios_logisticosimgs/Transporte_maritimo.jpg";
-import Transporte_Aereo from "/Users/macuser/mclogs/src/Images/Nuestros_servicios_logisticosimgs/Transporte_aereo.jpg";
-import Transporte_terrestre from "/Users/macuser/mclogs/src/Images/Nuestros_servicios_logisticosimgs/Transporte_terrestre.jpg";
-import Almacenaje from "/Users/macuser/mclogs/src/Images/Nuestros_servicios_logisticosimgs/Almacenaje.jpg"
-import Gestion_aduanal from "/Users/macuser/mclogs/src/Images/Nuestros_servicios_logisticosimgs/Gestion_aduanal.webp";
-import Paqueteria from "/Users/macuser/mclogs/src/Images/Nuestros_servicios_logisticosimgs/Paqueteria.jpg";
+import Transporte_Maritimo from "../Images/Nuestros_servicios_logisticosimgs/Transporte_maritimo.jpg";
+import Transporte_Aereo from "../Images/Nuestros_servicios_logisticosimgs/Transporte_aereo.jpg";
+import Transporte_terrestre from "../Images/Nuestros_servicios_logisticosimgs/Transporte_terrestre.jpg";
+import Almacenaje from "../Images/Nuestros_servicios_logisticosimgs/Almacenaje.jpg";
+import Gestion_aduanal from "../Images/Nuestros_servicios_logisticosimgs/Gestion_aduanal.webp";
+import Paqueteria from "../Images/Nuestros_servicios_logisticosimgs/Paqueteria.jpg";
 
 
 
