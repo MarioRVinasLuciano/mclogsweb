@@ -9,7 +9,7 @@ export default function Nuestros_servicios(props){
                             </div>
                             <div className="flex flex-col w-full text-center p-4 flex-wrap">
                                 <p className="text-xl pt-4 font-semibold">{props.titulo}</p>
-                                <p className="pt-4">{props.texto}</p>
+                                <p className="pt-4 text-xs lg:text-regular md:text-regular sm:text-sm">{props.texto}</p>
                             </div>
                         </div>
     )

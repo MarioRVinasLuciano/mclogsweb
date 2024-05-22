@@ -34,7 +34,7 @@ export default function NavBar() {
     const navbarClass = isHomepage
         ? scrollPosition >= 100
             ? "top-0 w-[100%] fixed z-10 h-20 bg-white backdrop-blur-md px-10 sm:px-10 md:px-20 lg:px-40 text-black"
-            : "top-0 w-[100%] fixed z-10 h-20 bg-slate/70 px-10 sm:px-10 md:px-20 lg:px-40  lg:text-white text-black" 
+            : "top-0 w-[100%] fixed z-10 h-20 bg-slate/70 px-10 sm:px-10 md:px-20 lg:px-40  lg:text-white text-white" 
         : "top-0 w-[100%] fixed z-10 h-20 bg-white px-10 sm:px-10 md:px-20 lg:px-40 text-black";
 
     const hr = isHomepage  ? scrollPosition >= 100
@@ -63,14 +63,14 @@ export default function NavBar() {
                 </div>
                 <div className="flex text-2xl cursor-pointer lg:hidden" onClick={toggleMenu}>
                     <span>
-                        <img className="h-5 w-5" src={open ? close : menu} alt="Menu Icon" />
+                        <img className="h-5 w-5 text-white" src={open ? close : menu} alt="Menu Icon" />
                     </span>
                 </div>
                 <ul
-                    className={`lg:z-auto z-[-1] md:top-24 sm:top-24 md:h-auto md:items-center left-0 w-full lg:w-auto lg:flex lg:items-center lg:pb-0 lg:pl-0 pl-9 lg:static absolute ${open ? "bg-white lg:bg-transparent" : "hidden"}`}
+                    className={`lg:z-auto z-[-1] top-20 sm:top-20 md:top-20 md:h-auto md:items-center left-0 w-full px-10 lg:w-auto lg:flex lg:items-center lg:pb-0 lg:pl-0 pl-9 lg:static absolute ${open ? "bg-white lg:bg-transparent text-black" : "hidden"}`}
                 >
                     {Links.map((link) => (
-                        <li key={link.name} className="flex-none px-4 py-2 items-center rounded-sm">
+                        <li key={link.name} className="flex-none px-4 py-4 items-center rounded-sm">
                             <Link
                                 className="hover:text-gray-300 font-Encoded-Sans-Expanded md:text-md lg:text-lg"
                                 to={link.link} onClick={toggleMenu}

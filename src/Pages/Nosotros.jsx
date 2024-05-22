@@ -32,17 +32,17 @@ export default function Nosotros() {
 
 
     return (
-        <div className="h-auto w-full font-Encode-Sans pt-20">
+        <div className="h-auto w-full font-Encode-Sans ">
 
 
-            <div className="w-auto pb-10" style={{ height: "600px" }}>
-                <div className="h-full w-auto flex lg:flex-row flex-col relative">
-                    <div className="absolute lg:w-1/2 top-14 z-0 px-10 sm:px-10 md:px-20 lg:px-40" data-aos="zoom-out-down" data-aos-delay="200">
+            <div className="w-full pb-10 " style={{ height: "600px" }}>
+                <div className="h-full w-auto flex lg:flex-row flex-col lg:relative">
+                    <div className="lg:absolute relative lg:w-1/2 w-auto top-14 z-0 px-10 sm:px-10 md:px-20 lg:px-40" data-aos="zoom-out-down" data-aos-delay="200">
                         <div className="pb-10 text-center lg:text-start w-full">
                             <h1 className="lg:text-5xl text-4xl font-semibold">Nuestra Historia</h1>
                         </div>
-                        <div className="h-[20rem] w-[30rem] bg-white shadow-md text-center p-10 z-10 ">
-                            <p className="text-2xl">Nacemos en el 2005 de la inquietud de crear valor en el proceso de gestión de la cadena de suministro, viendo oportunidades en el sector logístico de mejor flujo de información.</p>
+                        <div className="h-[20rem] lg:w-[30rem] w-auto bg-white shadow-md text-center p-10 z-10 ">
+                            <p className="text-xl lg:text-2xl">Nacemos en el 2005 de la inquietud de crear valor en el proceso de gestión de la cadena de suministro, viendo oportunidades en el sector logístico de mejor flujo de información.</p>
                         </div>
                     </div>
                     <div className="absolute lg:w-1/2 w-full h-auto  z-[-10] right-0 top-0" data-aos="fade-left" >
@@ -84,10 +84,10 @@ export default function Nosotros() {
                 </div>
 
                 <div className="lg:h-64 h-auto w-full flex lg:flex-row flex-col sm:items-center items-center lg:justify-end md:justify-end sm:justify-center justify-center">
-                    <div className="pt-6" data-aos="fade-left">
+                    <div className="pt-6">
                         <img className="h-[14rem] " src={mision} alt="" />
                     </div>
-                    <div className="h-full w-[26rem] flex flex-col bg-white shadow-md rounded-sm p-4" data-aos="fade-left">
+                    <div className="h-full w-full lg:w-[26rem] xl:lg:w-[26rem] flex flex-col bg-white shadow-md rounded-sm p-4">
                         <h2 className="text-2xl">
                             Misión
                         </h2>
@@ -98,7 +98,7 @@ export default function Nosotros() {
                 </div>
 
                 <div className="mt-12 lg:h-64 h-auto w-full flex lg:flex-row flex-col sm:items-center items-center lg:justify-start md:justify-start sm:justify-center justify-center">
-                    <div className="h-full w-[26rem] flex flex-col bg-white shadow-md rounded-sm p-4" data-aos="fade-right">
+                    <div className="h-full w-full lg:w-[26rem] xl:lg:w-[26rem] flex flex-col bg-white shadow-md rounded-sm p-4" >
                         <h2 className="text-2xl">
                             Visión
                         </h2>
@@ -106,16 +106,16 @@ export default function Nosotros() {
                         <b>Ser líder</b> en la integración de los servicios logísticos, mediante la innovación, agilidad, honestidad y compromiso con nuestros clientes y colaboradores, generando rentabilidad a nuestros clientes, socios y colaboradores a través de la eficiencia.
                         </p>
                     </div>
-                    <div className="lg:pt-6" data-aos="fade-right">
+                    <div className="lg:pt-6">
                         <img className="h-[14rem] " src={vision} alt="" />
                     </div>
                 </div>
 
                 <div className="mt-12 lg:h-64 h-auto w-full flex lg:flex-row flex-col sm:items-center items-center lg:justify-end md:justify-end sm:justify-center justify-center">
-                    <div className="pt-6" data-aos="fade-left">
+                    <div className="pt-6">
                         <img className="h-[14rem] " src={valores} alt="" />
                     </div>
-                    <div className="h-full w-[26rem] flex flex-col bg-white shadow-md rounded-sm p-4" data-aos="fade-left">
+                    <div className="h-full w-full lg:w-[26rem] xl:lg:w-[26rem] flex flex-col bg-white shadow-md rounded-sm p-4">
                         <h2 className="text-2xl">
                             Valores
                         </h2>

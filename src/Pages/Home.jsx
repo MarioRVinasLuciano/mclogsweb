@@ -207,7 +207,7 @@ export default function Homepage() {
 
 
                     <div className="flex xl:flex-row lg:flex-row md:flex-col sm:flex-col flex-col h-auto w-full lg:h-full items-center">
-                        <div className="flex flex-col pt-8 lg:w-1/2">
+                        <div className="flex flex-col pt-8 lg:w-1/2 w-full">
                             <div className="flex w-full h-auto">
                                 <div className="h-auto w-auto py-8">
                                     <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-6xl xl:text-7xl font-medium">Por qué elegirnos</h1>
@@ -239,7 +239,7 @@ export default function Homepage() {
                             </div>
 
                         </div>
-                        <div className="flex flex-col lg:w-1/2 items-center pt-10">
+                        <div className="flex flex-col lg:w-1/2 w-full items-center pt-10">
                             <div style={{ width: '100%', display: 'flex', justifyContent: 'end' }}>
                                 <Swiper
                                     spaceBetween={50}
