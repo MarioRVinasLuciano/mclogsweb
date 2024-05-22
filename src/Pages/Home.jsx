@@ -34,10 +34,6 @@ import 'swiper/css/effect-creative';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
 
-//Importacion de video
-import Video from "../Videos/Video.mp4";
-
-
 //Iconos
 import confiable from "../Icons/Confiable.png";
 import innovacion from "../Icons/Innovacion.png";
@@ -202,11 +198,6 @@ export default function Homepage() {
                     </div>
                 </div>
             </div>
-            {/* 
-            <div className="h-56 w-full py-10">
-                <div className="flex h-full bg-center relative bg-fixed" style={{ backgroundImage: `url(${bgimage_3})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-                </div>
-            </div> */}
 
             <div className="h-screen w-full pt-8">
                 <div className="flex flex-col h-full justify-center px-4 sm:px-10 md:px-20 lg:px-40">
