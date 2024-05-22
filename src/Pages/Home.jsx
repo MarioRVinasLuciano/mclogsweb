@@ -126,10 +126,10 @@ export default function Homepage() {
                 <div className="flex h-full w-full items-center justify-center py-8">
                     <div className="flex flex-col lg:flex-row items-center justify-center h-2/3 py-12 p-8 rounded-md shadow-xl" data-aos="fade-up">
 
-                        <div className="h-auto lg:w-[50%] w-auto">
-                            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl" data-aos="fade-down">Somos</h1>
-                            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-6xl font-semibold pt-4" data-aos="fade-up" data-aos-delay="100">MC Logistics</h1>
-                            <p className="py-4 font-thin text-md sm:text-xl md:text-xl lg:text-2xl" data-aos="fade-up" data-aos-delay="200">Tu socio estratégico en logística a nivel global. Desde el origen hasta el destino final, maximizando la rentabilidad de nuestros clientes y socios con una gestión eficiente de mercancías, energía e información.</p>
+                        <div className="h-auto lg:w-[70%] w-auto">
+                            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl" data-aos="fade-down">Somos</h1>
+                            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-5xl font-semibold pt-4" data-aos="fade-up" data-aos-delay="100">MC Logistics</h1>
+                            <p className="py-4 font-thin text-md sm:text-xl md:text-xl lg:text-xl" data-aos="fade-up" data-aos-delay="200">Tu socio estratégico en logística a nivel global. Desde el origen hasta el destino final, maximizando la rentabilidad de nuestros clientes y socios con una gestión eficiente de mercancías, energía e información.</p>
                             <hr className="h-0.5 bg-slate-50" data-aos="fade-up" data-aos-delay="200"/>
                             <p className="py-4 text-sm" data-aos="fade-up" data-aos-delay="300">Nacemos en el 2005 de la inquietud de crear valor en el proceso de gestión de la cadena de suministro, viendo oportunidades en el sector logístico de mejor flujo de información.</p>
                             <button className="h-12 w-32 rounded-sm bg-slate-100 hover:bg-slate-50" data-aos="fade-up" data-aos-delay="400">
