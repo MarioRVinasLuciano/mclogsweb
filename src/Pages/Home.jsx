@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 
-import "src/slider.css"
+import "../Slidercss/slider.css"
 
 //Datos
 import serviciosdatos from "../Datos/serviciosdatos";
