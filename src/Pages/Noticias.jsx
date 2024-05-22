@@ -23,11 +23,11 @@ const [noticias, setNoticias] = useState([]);
 
       
         return (
-            <div className="h-sreen w-full font-quicksand  pb-12">
+            <div className="h-sreen w-full font-quicksand  pb-12 pt-16 px-10 sm:px-10 md:px-20 lg:px-40">
             <div className="flex h-44 w-full justify-center items-center" >
                 <h1 className="text-5xl">Noticias</h1>
             </div> 
-          <div className="grid lg:grid-cols-4 grid-cols-1 lg:grid-rows-2 grid-rows-5 lg:px-10 sm:px-4 gap-6 lg:gap-10">
+          <div className="grid lg:grid-cols-4 grid-cols-1  gap-6 lg:gap-10">
             {noticias.map((contenido, index) => (
               <div key={contenido.oid} className={ index === 0 ? "rounded-md bg-white shadow-xl transform hover:scale-105 hover:-translate-y-2 transition-transform duration-200 lg:col-span-2 lg:row-span-1":"rounded-md bg-white shadow-xl transform hover:scale-105 hover:-translate-y-2 transition-transform duration-200 lg:h-auto lg:col-span-1 lg:row-span-1 sm:col-span-2 sm:row-span-1"}>
                 <Link to={`/articulo/${contenido.oid}`}>
@@ -61,9 +61,6 @@ const [noticias, setNoticias] = useState([]);
               </div>
             ))}
           </div>
-          <div className="bg-white">
-                    <hr className=" h-px my-8 bg-gray-200 border-0" />
-                </div>
           </div>
         );
       }

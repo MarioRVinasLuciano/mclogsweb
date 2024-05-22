@@ -19,7 +19,7 @@ export default function Tracker({ onSearch }) {
 
   console.log(valor);
   return (
-    <div className="lg:col-span-3 lg:col-start-5 backdrop-blur h-72 bg-white/40 rounded-lg items-center" >
+    <div className="w-full backdrop-blur h-72 bg-white/40 rounded-lg items-center" >
       <div className="p-4">
         <h2 className="text-2xl contrast-100">Rastrear embarque</h2>
       </div>

@@ -59,38 +59,38 @@ export default function Rastreo() {
     }, [searchPerformed]);
 
     return (
-        <div className="h-full w-full font-Encode-Sans">
-            <div className="w-auto h-screen" style={{ height: "700px" }}>
-                <div className="flex flex-col relative h-full bg-center" style={{ backgroundImage: `url(${contenedor})`, backgroundSize: 'cover', backgroundPosition: 'bo' }}>
+        <div className="h-full w-full font-Encode-Sans pt-16">
+            <div className="w-auto h-screen ">
+                <div className="flex flex-col relative h-full bg-center px-10 sm:px-10 md:px-20 lg:px-40" style={{ backgroundImage: `url(${contenedor})`, backgroundSize: 'cover', backgroundPosition: 'bo' }}>
                     <div className="w-full">
-                        <h1 className="text-4xl pt-20 pl-24 font-semibold">Rastrea tu embarque</h1>
+                        <h1 className="text-4xl pt-20 font-semibold">Rastrea tu embarque</h1>
                     </div>
-                    <div className="px-24 pt-24">
+                    <div className="pt-24">
                         <Tracker onSearch={manejoBusqueda} />
                     </div>
                 </div>
             </div>
             {searchPerformed ? 
                 (
-             !error && embarque?.Summary?.length >= 3 ? (
+             !error && embarque?.Summary?.length >= 3  && embarque.TransportMode === "Maritimo" ? (
                     <div className="h-auto w-full" ref={scrollRef}>
-                        <div className="flex flex-col px-24 py-24">
+                        <div className="flex flex-col py-24">
                             {/* Content to display when search is successful */}
                             {/* Estatus espacio */}
-                            <div className="flex flex-row justify-center gap-x-24">
+                            <div className="flex flex-row justify-center items-end gap-x-24">
                                 <div className="flex flex-col">
                                     <div>
-                                        <img className="h-16 w-16" src={procesando} alt="" />
+                                        <img className={embarque.Summary[0]?.Happened === true && embarque.Summary[1]?.Happened === false && embarque.Summary[2]?.Happened === false ? "h-20 w-20": "h-16 w-16"}  src={procesando} alt="" />
                                     </div>
                                 </div>
                                 <div className="flex flex-col">
                                     <div>
-                                        <img className="h-16 w-16" src={en_transito} alt="" />
+                                        <img className={embarque.Summary[0]?.Happened === true && embarque.Summary[1]?.Happened === true && embarque.Summary[2]?.Happened === false ? "h-28 w-28": "h-16 w-16"} src={en_transito} alt="" />
                                     </div>
                                 </div>
                                 <div className="flex flex-col">
                                     <div>
-                                        <img className="h-16 w-16" src={en_puerto} alt="" />
+                                        <img className={embarque.Summary[0]?.Happened === true && embarque.Summary[1]?.Happened === true && embarque.Summary[2]?.Happened === true ? "h-28 w-28": "h-16 w-16"} src={en_puerto} alt="" />
                                     </div>
                                 </div>
                             </div>

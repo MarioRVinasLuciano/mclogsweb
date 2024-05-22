@@ -23,9 +23,9 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="w-full pt-6 bg-slate-100">
+    <footer className="w-full pt-6 bg-gray-100">
       <div className="flex justify-center items-center h-auto w-full px-4 sm:px-10 md:px-20 lg:px-40">
-        <div className="grid grid-rows-4 sm:grid-rows-4 md:grid-rows-4 lg:grid-rows-1 grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-4 gap-x-6 px-16">
+        <div className="grid grid-rows-4 sm:grid-rows-4 md:grid-rows-4 lg:grid-rows-1 grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-4 gap-x-6 ">
           <div className="h-auto col-span-1 lg:col-span-1 row-start-1 sm:row-start-1 md:row-start-1 lg:row-start-1">
             <div>
               <img className="h-24 w-50" src={mclogo} alt="MC Logo" />
@@ -64,7 +64,7 @@ export default function Footer() {
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
-                    viewBox="0 0 24 24"
+                    viewBox="0 0 28 28"
                     strokeWidth={1.5}
                     stroke="currentColor"
                     className="h-10 w-10 p-2 text-gray-500"
@@ -97,11 +97,11 @@ export default function Footer() {
             <div>
               <h1 className="text-2xl text-gray-600">Acceso rápido</h1>
             </div>
-            <div className="h-72 w-auto pb-10 text-start">
+            <div className="h-72 w-auto pt-2 pb-10 text-start">
               <div className="w-32">
                 {Acceso_rapido.map((link, id) => (
                   <div className="py-2" key={id}>
-                    <p className="text-sm">
+                    <p className="text-sm hover:text-black">
                       <Link to={link.link}>{link.name}</Link>
                     </p>
                   </div>
@@ -110,15 +110,15 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="h-auto col-span-1 lg:col-span-1 row-start-3 sm:row-start-3 md:row-start-3 lg:row-start-1 text-gray-500 md:pl-12">
+          <div className="h-auto col-span-1 lg:col-span-1 row-start-3 sm:row-start-3 md:row-start-3 lg:row-start-1 text-gray-500  md:pl-12">
             <div>
               <h1 className="text-2xl text-gray-600">Enlaces</h1>
             </div>
-            <div className="h-72 w-auto pb-10 text-start">
+            <div className="h-72 w-auto pt-2 pb-10 text-start">
               <div className="w-full">
                 {Enlaces.map((link, id) => (
                   <div className="py-2" key={id}>
-                    <p className="text-sm">
+                    <p className="text-sm hover:text-black">
                       <Link to={link.link}>{link.name}</Link>
                     </p>
                   </div>
@@ -132,9 +132,9 @@ export default function Footer() {
               <h1 className="text-2xl text-gray-600">Horario</h1>
             </div>
             <div className="h-72 w-auto text-center">
-              <div className="text-start pt-4">
+              <div className="text-start pt-2">
                 <div>
-                  <h2 className="text-md">Oficinas</h2>
+                  <h2 className="text-md text-black">Oficinas</h2>
                 </div>
                 <div className="py-2">
                   <p className="text-sm">Lunes a Viernes 8:00 am - 5:00 pm</p>
@@ -143,7 +143,7 @@ export default function Footer() {
                   <p className="text-sm">Sábados 8:00 am - 1:00 pm</p>
                 </div>
                 <div>
-                  <h2 className="text-md">Plataformas</h2>
+                  <h2 className="text-md text-black">Plataformas</h2>
                 </div>
                 <div className="py-2 gap-x-2 flex flex-row">
                   <img className="h-6 w-6" src={apple} alt="Apple Store" />

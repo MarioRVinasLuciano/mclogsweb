@@ -11,8 +11,6 @@ import bgimage_2 from "../Images/Homepageimgs/Background/bgimg_2.jpg";
 import figibox_img from "../Images/Homepageimgs/Somos/compañias/figibox-logo.svg";
 import consilia_img from "../Images/Homepageimgs/Somos/compañias/mainConcilia_logo.png";
 import Somos_logistica_img2 from "../Images/Homepageimgs/Somos/Descripcion/Logistica.jpg";
-import bgimage_3 from "../Images/Homepageimgs/Background/bgimg_3.jpg";
-import PuertoCaucedo from "../Images/Homepageimgs/Swiper/Puerto_caucedo.jpg";
 import high_performance from "../Images/Logos/high-performace.png";
 
 //Animacion
@@ -44,7 +42,7 @@ export default function Homepage() {
             <img className={className} src={imgSrc} alt={title} />
             <hr className="w-full" />
             <h1 className="text-md lg:text-xl font-semibold pt-4">{title}</h1>
-            <p className="pt-4 overflow-y-auto">{description}</p>
+            <p className="pt-4 overflow-y-auto text-sm sm:text-lg md:text-xl lg:text-2xl xl:text-2xl">{description}</p>
             <div className="mt-auto">
                 <button className="h-10 w-auto bg-cyan-500 hover:bg-cyan-600 my-4 rounded-md">
                     <a className="p-4 text-white" href={link}>Saber Más</a>
@@ -53,21 +51,6 @@ export default function Homepage() {
         </div>
     );
 
-
-
-    const ContactInfo = ({ label, value, link, linkText }) => (
-        <div className="py-4" data-aos="fade-left">
-            <div className="h-auto w-64 bg-white shadow-md rounded-md">
-                <div className="p-4 flex flex-col">
-                    <h1 className="text-xl">{label}:</h1>
-                    <p>{value}</p>
-                    <button className="bg-cyan-600 text-white rounded-sm">
-                        <a className="px-4" href={link}>{linkText}</a>
-                    </button>
-                </div>
-            </div>
-        </div>
-    );
 
     return (
         <div className=" w-full h-auto font-Encode-Sans">
