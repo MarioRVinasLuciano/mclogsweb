@@ -1,0 +1,10 @@
+.text-container {
+    opacity: 0;
+    transition: opacity 1s ease, transform 1s ease; 
+    transform: translatex(120px); 
+}
+
+.swiper-slide-active .text-container {
+    opacity: 1;
+    transform: translateY(0);
+}

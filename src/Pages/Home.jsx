@@ -1,4 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
+
+import "/Users/admin/Documents/GitHub/mclogsweb/src/slider.css"
 
 //Datos
 import serviciosdatos from "../Datos/serviciosdatos";
@@ -14,16 +16,23 @@ import Somos_logistica_img2 from "../Images/Homepageimgs/Somos/Descripcion/Logis
 import high_performance from "../Images/Logos/high-performace.png";
 import Slider_1 from "../Images/Homepageimgs/Slider_1.jpg";
 import Slider_2 from "../Images/Homepageimgs/Slider_2.jpg";
+import Slider_4 from "../Images/Homepageimgs/Slider_4.jpg";
+import Slider_5 from "../Images/Homepageimgs/Slider_5.jpg";
+import Slider_6 from "../Images/Homepageimgs/Slider_6.jpg";
 
 //Animacion
+import 'animate.css';
+import 'animate.css/animate.min.css';
 import Aos from "aos";
 import 'aos/dist/aos.css';
 
 //Swiper 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, EffectCreative } from "swiper/modules";
+import { Autoplay, EffectCreative, Pagination, EffectFade } from "swiper/modules";
 import 'swiper/css';
 import 'swiper/css/effect-creative';
+import 'swiper/css/pagination';
+import 'swiper/css/effect-fade';
 
 //Importacion de video
 import Video from "../Videos/Video.mp4";
@@ -37,17 +46,19 @@ import tecnologia from "../Icons/Tecnologia.png";
 
 
 
+
 export default function Homepage() {
     useEffect(() => {
         Aos.init({ duration: 1000 });
     }, []);
+
 
     const ServiceCard = ({ dataAos, delay, className, imgSrc, title, description, link }) => (
         <div data-aos={dataAos} data-aos-delay={delay} className="flex flex-col bg-white h-auto lg:h-4/5 md:h-5/6 w-full p-6 shadow-lg rounded-sm text-center items-center">
             <img className={className} src={imgSrc} alt={title} />
             <hr className="w-full" />
             <h1 className="text-md lg:text-xl font-semibold pt-4">{title}</h1>
-            <p className="pt-4 overflow-y-auto text-sm sm:text-lg md:text-xl lg:text-2xl xl:text-2xl">{description}</p>
+            <p className="pt-4 overflow-y-auto text-sm sm:text-lg md:text-xl lg:text-lg xl:text-xl">{description}</p>
             <div className="mt-auto">
                 <button className="h-10 w-auto bg-cyan-500 hover:bg-cyan-600 my-4 rounded-md">
                     <a className="p-4 text-white" href={link}>Saber Más</a>
@@ -57,20 +68,61 @@ export default function Homepage() {
     );
 
 
+
     return (
         <div className=" w-full h-auto font-Encode-Sans">
 
             {/* Primera seccion  */}
             <div className="relative w-full h-screen">
-                {/* Navbar */}
-                <video className="absolute inset-0 w-full h-full object-cover items-center filter brightness-75 z-0" src={Video} loop autoPlay muted></video>
-                <div className="flex flex-col text-white px-10 sm:px-10 md:px-20 lg:px-40 py-24 h-full w-auto justify-center z-10">
-                    <div className="">
-                        <h1 className="w-auto lg:text-4xl sm:text-2xl text-2xl py-4" data-aos="fade-down" data-aos-duration="500">MC LOGISTICS</h1>
-                        <p className="w-auto lg:text-8xl sm:text-6xl text-3xl font-semibold" data-aos="fade-up" data-aos-duration="400" data-aos-delay="600">CENTRADOS EN EL CLIENTE</p>
-                        <p className="text-lg font-semibold py-4" data-aos="fade-up" data-aos-duration="500" data-aos-delay="1300">Impulsados por la DATA</p>
-                    </div>
+            <>
+            <Swiper
+            style={{ width: '100%', height: '100%' }}
+            pagination={{
+                dynamicBullets: true,
+            }}
+            autoplay={{
+                delay: 5000,
+                disableOnInteraction: false,
+              }}
+            modules={[Pagination, EffectFade, Autoplay]}
+            effect="fade"
+            className="mySwiper"
+          
+        >
+        <SwiperSlide>
+        <div className="flex h-full bg-center relative bg-fixed" style={{ backgroundImage: `url(${Slider_1})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+            <div className="px-10 sm:px-10 md:px-20 lg:px-40 flex items-center ">
+                <div className="text-white text-container">
+                    <h1 className="w-auto lg:text-4xl sm:text-2xl text-2xl py-4 ">MC LOGISTICS</h1>
+                    <p className="w-auto lg:text-8xl sm:text-6xl text-3xl font-semibold" >CENTRADOS EN EL CLIENTE</p>
+                    <p className="text-lg font-semibold py-4" >Impulsados por la DATA</p>
                 </div>
+            </div>
+        </div>
+        </SwiperSlide>
+        <SwiperSlide>
+        <div className="flex h-full bg-center relative bg-fixed" style={{ backgroundImage: `url(${Slider_5})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+            <div className="px-10 sm:px-10 md:px-20 lg:px-40 flex items-center ">
+                <div className="text-white text-container">
+                    <p className="w-auto lg:text-8xl sm:text-6xl text-3xl font-semibold" >ENFOCADOS EN IDENTIFICAR OPORTUNIDADES</p>
+                    <p className="text-lg font-semibold py-4" >Para aumentar la rentabilidad de nuestros clientes a través de la EFICIENCIA</p>
+                </div>
+            </div>
+        </div>
+
+        </SwiperSlide>
+        <SwiperSlide>
+        <div className="flex h-full bg-center relative bg-fixed" style={{ backgroundImage: `url(${Slider_4})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+            <div className="px-10 sm:px-10 md:px-20 lg:px-40 flex items-center ">
+                <div className="text-white text-container">
+                    <p className="w-auto lg:text-8xl sm:text-6xl text-3xl font-semibold" >ENFOCADOS EN IDENTIFICAR OPORTUNIDADES</p>
+                    <p className="text-lg font-semibold py-4" >Para aumentar la rentabilidad de nuestros clientes a través de la EFICIENCIA</p>
+                </div>
+            </div>
+        </div>
+        </SwiperSlide>
+      </Swiper>
+    </>
             </div>
 
             {/* Seccion de Somos */}
