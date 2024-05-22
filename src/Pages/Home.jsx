@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 
-import "/Users/admin/Documents/GitHub/mclogsweb/src/slider.css"
+import "src/slider.css"
 
 //Datos
 import serviciosdatos from "../Datos/serviciosdatos";
