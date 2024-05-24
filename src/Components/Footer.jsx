@@ -23,8 +23,8 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="w-full pt-6 bg-gray-100">
-      <div className="flex justify-center items-center h-auto w-full px-4 sm:px-10 md:px-20 lg:px-40">
+    <footer className="w-full pt-6  bg-gray-100">
+      <div className="flex justify-center items-center h-auto w-full px-4 sm:px-10 md:px-20 lg:px-40 pt-10">
         <div className="grid grid-rows-4 sm:grid-rows-4 md:grid-rows-4 lg:grid-rows-1 grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-4 gap-x-6 ">
           <div className="h-auto col-span-1 lg:col-span-1 row-start-1 sm:row-start-1 md:row-start-1 lg:row-start-1">
             <div>
@@ -61,33 +61,18 @@ export default function Footer() {
               </div>
               <div className="px-4">
                 <div className="rounded-full h-10 w-10 content-center border-slate-300 border">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 28 28"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="h-10 w-10 p-2 text-gray-500"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"
-                    />
-                  </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-10 w-10 p-2 text-gray-500">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+                </svg>
+
                 </div>
               </div>
               <div className="px-4">
                 <div className="rounded-full h-10 w-10 content-center border-slate-300 border">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="h-10 w-10 p-2 text-gray-500"
-                  >
-                    <path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z" />
-                    <path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z" />
-                  </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-10 w-10 p-2 text-gray-500">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+                </svg>
+
                 </div>
               </div>
             </div>
@@ -132,7 +117,7 @@ export default function Footer() {
               <h1 className="text-2xl text-gray-600">Horario</h1>
             </div>
             <div className="h-72 w-auto text-center">
-              <div className="text-start pt-2">
+              <div className="text-start pt-4">
                 <div>
                   <h2 className="text-md text-black">Oficinas</h2>
                 </div>
@@ -142,12 +127,12 @@ export default function Footer() {
                 <div className="py-2">
                   <p className="text-sm">Sábados 8:00 am - 1:00 pm</p>
                 </div>
-                <div>
+                <div className="pt-4">
                   <h2 className="text-md text-black">Plataformas</h2>
                 </div>
-                <div className="py-2 gap-x-2 flex flex-row">
+                <div className="pt-4 py-2 gap-x-2 flex flex-row text-center">
                   <img className="h-6 w-6" src={apple} alt="Apple Store" />
-                  <p className="text-sm">Disponible en Apple Store</p>
+                  <p className="text-sm pt-1">Disponible en Apple Store</p>
                 </div>
                 <div className="py-2 gap-x-2 flex flex-row">
                   <img className="flex h-6 w-6" src={android} alt="Google Play" />
@@ -158,6 +143,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
+      <hr className="h-0.2 bg-slate-200 w-full"/>
       <div className="flex items-center justify-center py-2">
         <p className="text-sm text-gray-500">Todos los derechos reservados © 2024 MC LOGISTICS SRL</p>
       </div>

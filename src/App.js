@@ -12,6 +12,7 @@ import ArticulosPagina from "./Components/Articulo";
 import Seguridad from "./Pages/Seguridad";
 import Privacidad from "./Pages/Privacidad";
 import { useEffect } from "react";
+import Contacto from "./Pages/Contacto";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -36,6 +37,7 @@ function App() {
         <Route path="/agentes" element={<Agentes />} />
         <Route path="/noticias" element={<Noticias />} />
         <Route path="/rastreo" element={<Rastreo />} />
+        <Route path="/contacto" element={<Contacto />} />
         <Route path="/articulo/:oid" element={<ArticulosPagina />} />
         <Route path="/seguridad" element={<Seguridad/>} />
         <Route path="/privacidad" element={<Privacidad/>} />

@@ -53,7 +53,7 @@ export default function Agentes() {
   return (
     <div className="h-auto w-full font-quicksand pt-16 px-10 sm:px-10 md:px-20 lg:px-40">
       <div className="flex flex-col h-auto w-full items-center gap-y-6 pt-10 ">
-        <h1 className="text-4xl">Nuestros Agentes</h1>
+        <h1 className="lg:text-5xl text-4xl font-semibold">Nuestros Agentes</h1>
         <p>Contamos con agentes en todos los continentes</p>
       </div>
 

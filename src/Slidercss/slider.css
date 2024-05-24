@@ -9,6 +9,10 @@
     transform: translateY(0);
 }
 
+.swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal.swiper-pagination-bullets-dynamic {
+    padding-bottom: 30px
+}
+
 .swiper-pagination-bullet {
     --swiper-pagination-bullet-height: 16px; /* Adjust the height */
     --swiper-pagination-bullet-size: 16px; /* Adjust the size */

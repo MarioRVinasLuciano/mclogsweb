@@ -13,10 +13,9 @@ import lineadetiempodatos from "../Datos/Lineadetiempo/lineadetiempodatos";
 //Imagenes importadas localmente
 import bote from "../Images/Nosotros/Bote_grande.jpg";
 import bote_en_puerto from "../Images/Nosotros/Bote_en_puerto.jpg";
-import contenedores from "../Images/Nosotros/Contenedores.jpg";
-import mision from "../Images/Nosotros/Mision.jpg";
-import vision from "../Images/Nosotros/Vision.jpg";
-import valores from "../Images/Nosotros/Valores.jpg";
+import mision from "../Images/Nosotros/Mision.webp";
+import vision from "../Images/Nosotros/Vision.webp";
+import valores from "../Images/Nosotros/Valores.webp";
 
 //iconos
 import confiable from "../Icons/Confiable.png";
@@ -45,8 +44,8 @@ export default function Nosotros() {
                             <p className="text-xl lg:text-2xl">Nacemos en el 2005 de la inquietud de crear valor en el proceso de gestión de la cadena de suministro, viendo oportunidades en el sector logístico de mejor flujo de información.</p>
                         </div>
                     </div>
-                    <div className="absolute lg:w-1/2 w-full h-auto  z-[-10] right-0 top-0" data-aos="fade-left" >
-                        <img className="w-[101rem] h-[35rem]" src={bote} alt="" />
+                    <div className="absolute lg:w-1/2 w-full h-auto  z-[-10] right-0 top-0" data-aos="fade-right" >
+                        <img className="w-[101rem] h-auto" src={bote} alt="" />
                     </div>
                 </div>
             </div>
@@ -72,15 +71,12 @@ export default function Nosotros() {
                 </div>
             </div>
 
-            <div className="h-56 w-full">
-                <div className="flex h-full bg-center relative bg-fixed" style={{ backgroundImage: `url(${contenedores})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-                </div>
-            </div>
-
-            <div className="h-auto w-full px-10 sm:px-10 md:px-20 lg:px-40">
+            <div className="h-auto w-full ">
+                <div className="flex h-full bg-center relative bg-fixed py-8" style={{ backgroundImage: `url(${bote_en_puerto})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+                <div className="h-auto w-full px-10 sm:px-10 md:px-20 lg:px-40">
                 
-                <div className="pt-12 pb-12">
-                    <h1 className="text-4xl">Quienes Somos</h1>
+                <div className="pt-12 pb-12 text-center">
+                    <h1 className="text-6xl text-white font-bold">Quienes Somos</h1>
                 </div>
 
                 <div className="lg:h-64 h-auto w-full flex lg:flex-row flex-col sm:items-center items-center lg:justify-end md:justify-end sm:justify-center justify-center">
@@ -130,15 +126,12 @@ export default function Nosotros() {
                     </div>
                 </div>
             </div>
-
-            <div className="h-56 w-full mt-12">
-                <div className="flex h-full bg-center relative bg-fixed" style={{ backgroundImage: `url(${bote_en_puerto})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
                 </div>
             </div>
 
             <div className="h-full w-auto pt-12 px-10 sm:px-10 md:px-20 lg:px-40">
                     <div className="">
-                        <h1 className="text-4xl">Por qué elegirnos</h1>
+                        <h1 className="text-4xl">¿Por qué elegirnos?</h1>
                     </div>
                     <div className="w-full h-auto flex lg:flex-row md:flex-col flex-col justify-center gap-x-24 py-24 md:gap-y-12 gap-y-12 md:items-center items-center">
                         <div className="h-44 w-44 flex flex-col justify-center items-center bg-white shadow-md rounded-sm" data-aos="fade-down" >

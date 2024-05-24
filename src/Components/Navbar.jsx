@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import menu from "../Icons/menu.png"; // Icono de menu
-import close from "../Icons/close.png"; // Icono de cerrar
 import mclogo from "../Images/Logos/logo.png"; // Logo de MC
 
 export default function NavBar() {
@@ -40,7 +38,7 @@ export default function NavBar() {
     const hr = isHomepage  ? scrollPosition >= 100
     ? "hidden"
     : "bg-white h-0.2 w-[100%]" 
-: "";
+: "bg-slate-200 h-0.4 w-[100%]";
 
     // Hyperlinks that lead to other pages
     const Links = [
@@ -63,11 +61,19 @@ export default function NavBar() {
                 </div>
                 <div className="flex text-2xl cursor-pointer lg:hidden" onClick={toggleMenu}>
                     <span>
-                        <img className="h-5 w-5 text-white" src={open ? close : menu} alt="Menu Icon" />
+                        {
+                            open ? <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
+                          </svg> : <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                          </svg>
+                           
+                          
+                        }
                     </span>
                 </div>
                 <ul
-                    className={`lg:z-auto z-[-1] top-20 sm:top-20 md:top-20 md:h-auto md:items-center left-0 w-full px-10 lg:w-auto lg:flex lg:items-center lg:pb-0 lg:pl-0 pl-9 lg:static absolute ${open ? "bg-white lg:bg-transparent text-black" : "hidden"}`}
+                    className={`lg:z-auto z-[-1] top-20 sm:top-20 md:top-20 md:h-auto md:items-center left-0 w-full lg:w-auto lg:flex lg:items-center lg:pb-0 lg:pl-0 pl-9 lg:static absolute ${open ? "bg-white lg:bg-transparent text-black" : "hidden"}`}
                 >
                     {Links.map((link) => (
                         <li key={link.name} className="flex-none px-4 py-4 items-center rounded-sm">
