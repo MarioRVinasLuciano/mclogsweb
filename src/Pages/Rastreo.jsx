@@ -4,6 +4,10 @@ import contenedor1 from "../Images/Rastrear/contenedor_bg_2.jpg";
 import contenedor2 from "../Images/Rastrear/contenedor_bg_3.jpg";
 import Tracker from "../Components/Trak";
 
+//Estado Bl imagenes
+import TELEX_RELEASE from "../Icons/Telex_release.svg";
+import COPIA_BL from "../Icons/Copia_Bl.svg";
+
 // Import images
 import procesando from "../Icons/procesando.png";
 import en_transito from "../Icons/en_transito.png";
@@ -80,44 +84,38 @@ export default function Rastreo() {
                             <div className="flex flex-row justify-center items-end gap-x-24">
                                 <div className="flex flex-col">
                                     <div>
-                                        <img className={embarque.Summary[0]?.Happened === true && embarque.Summary[1]?.Happened === false && embarque.Summary[2]?.Happened === false ? "h-20 w-20": "h-16 w-16"}  src={procesando} alt="" />
+                                        <img className={embarque.State === "EnCoordinacion" ? "h-20 w-20": "h-16 w-16"}  src={procesando} alt="" />
                                     </div>
                                 </div>
                                 <div className="flex flex-col">
                                     <div>
-                                        <img className={embarque.Summary[0]?.Happened === true && embarque.Summary[1]?.Happened === true && embarque.Summary[2]?.Happened === false ? "h-28 w-28": "h-16 w-16"} src={en_transito} alt="" />
+                                        <img className={embarque.State === "EnTransito" ? "h-28 w-28": "h-16 w-16"} src={en_transito} alt="" />
                                     </div>
                                 </div>
                                 <div className="flex flex-col">
                                     <div>
-                                        <img className={embarque.Summary[0]?.Happened === true && embarque.Summary[1]?.Happened === true && embarque.Summary[2]?.Happened === true ? "h-28 w-28": "h-16 w-16"} src={en_puerto} alt="" />
+                                        <img className={embarque.State === "EnPuerto" ? "h-28 w-28": "h-16 w-16"} src={en_puerto} alt="" />
                                     </div>
                                 </div>
                             </div>
 
                             <div className="flex flex-row justify-center pt-4">
                                 <div className="flex flex-row justify-end">
-                                    <div className={embarque.Summary[0]?.Happened === true ? "bg-green-400 rounded-full h-6 w-6 " : "bg-slate-100 rounded-full h-6 w-6"}></div>
-                                    <div className={embarque.Summary[1]?.Happened === true ? "bg-green-400 h-1 w-36 mt-3" : "bg-slate-100 h-1 w-36 mt-3"}></div>
+                                    <div className={embarque.State === "EnCoordinacion" || embarque.State === "EnTransito" || embarque.State === "EnPuerto"  ? "bg-green-400 rounded-full h-6 w-6 " : "bg-slate-100 rounded-full h-6 w-6"}></div>
+                                    <div className={embarque.State === "EnTransito" || embarque.State === "EnPuerto" ? "bg-green-400 h-1 w-36 mt-3" : "bg-slate-100 h-1 w-36 mt-3"}></div>
                                 </div>
                                 <div className="flex flex-row justify-end">
-                                    <div className={embarque.Summary[1]?.Happened === true ? "bg-green-400 rounded-full h-6 w-6" : "bg-slate-100 rounded-full h-6 w-6"}></div>
-                                    <div className={embarque.Summary[2]?.Happened === true ? "bg-green-400 h-1 w-36 mt-3" : "bg-slate-100 h-1 w-36 mt-3"}></div>
+                                    <div className={embarque.State === "EnTransito" || embarque.State === "EnPuerto" ? "bg-green-400 rounded-full h-6 w-6" : "bg-slate-100 rounded-full h-6 w-6"}></div>
+                                    <div className={embarque.State === "EnPuerto" ? "bg-green-400 h-1 w-36 mt-3" : "bg-slate-100 h-1 w-36 mt-3"}></div>
                                 </div>
                                 <div className="flex flex-row justify-end">
-                                    <div className={embarque.Summary[2]?.Happened === true ? "bg-green-400 rounded-full h-6 w-6" : "bg-slate-100 rounded-full h-6 w-6"}></div>
+                                    <div className={embarque.State === "EnPuerto" ? "bg-green-400 rounded-full h-6 w-6" : "bg-slate-100 rounded-full h-6 w-6"}></div>
                                 </div>
                             </div>
 
                             <div className="flex flex-row justify-center pt-4 gap-x-16">
-                                <div className="flex flex-row w-32 justify-center">
-                                    {embarque.Summary[0]?.Happened === true && embarque.Summary[1]?.Happened === false && embarque.Summary[2]?.Happened === false ? <p className="animate-bounce">En coordinación</p> : ""}
-                                </div>
-                                <div className="flex flex-row w-24 justify-center">
-                                    {embarque.Summary[0]?.Happened === true && embarque.Summary[1]?.Happened === true && embarque.Summary[2]?.Happened === false ? <p className="animate-bounce">En transito</p> : ""}
-                                </div>
-                                <div className="flex flex-row w-24 justify-center">
-                                    {embarque.Summary[2]?.Happened === true ? <p className="animate-bounce">En puerto</p> : ""}
+                                <div>
+                                    <h1>{embarque.State}</h1>
                                 </div>
                             </div>
 
@@ -127,22 +125,32 @@ export default function Rastreo() {
                                 <div>
                                     <h1 className="font-semibold">Fecha estimada de llegada: {formattedDate}</h1>
                                 </div>
-                                <div className="pt-8">
-                                    <h1 className="font-semibold">Estado de HBL: {embarque.TelexRelease === true ? "Telex Release": "Copia"}</h1>
+                                <div className="pt-8 flex flex-row items-center text-center">
+                                    <div>
+                                     <p className="font-semibold">Estado de HBL: </p>
+                                    </div>
+                                    <div>
+                                    {embarque.TelexRelease === true ? 
+                                    <img className="h-56 w-56" src={TELEX_RELEASE} alt="" />
+                                    : 
+                                    <img className="h-8 w-8" src={COPIA_BL} alt="" />
+                                    
+                                    }
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="flex items-center justify-center h-auto pt-16">
-                                <div class="overflow-x-auto relative shadow-md sm:rounded-lg">
-                                    <div class="overflow-x-auto relative shadow-md sm:rounded-lg">
-                                        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                                            <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+                            <div className="flex items-center justify-center h-auto pt-16">
+                                <div className="overflow-x-auto relative shadow-md sm:rounded-lg">
+                                    <div className="overflow-x-auto relative shadow-md sm:rounded-lg">
+                                        <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                                            <thead className="text-xs text-gray-700 uppercase bg-gray-50">
                                                 <tr>
-                                                    <th scope="col" class="py-3 px-6">Estado</th>
-                                                    <th scope="col" class="py-3 px-6">Lugar</th>
-                                                    <th scope="col" class="py-3 px-6">Fecha</th>
-                                                    <th scope="col" class="py-3 px-6">Barco</th>
-                                                    <th scope="col" class="py-3 px-6">No.Viaje</th>
+                                                    <th scope="col" className="py-3 px-6">Estado</th>
+                                                    <th scope="col" className="py-3 px-6">Lugar</th>
+                                                    <th scope="col" className="py-3 px-6">Fecha</th>
+                                                    <th scope="col" className="py-3 px-6">Barco</th>
+                                                    <th scope="col" className="py-3 px-6">No.Viaje</th>
                                                 </tr>
                                             </thead>
                                             <tbody>

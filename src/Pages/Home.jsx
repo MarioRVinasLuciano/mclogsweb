@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 
 import "../Slidercss/slider.css"
 
@@ -9,6 +9,7 @@ import serviciosdatos from "../Datos/serviciosdatos";
 import Nuestros_servicios from "../Components/Nuestros_servicios_card";
 
 //Imagenes
+import contenedores_cielo from "../Images/Homepageimgs/Somos/Contenedores_cielo.jpg";
 import bgimage_2 from "../Images/Homepageimgs/Background/bgimg_2.webp";
 import figibox_img from "../Images/Homepageimgs/Somos/compañias/figibox-logo.svg";
 import consilia_img from "../Images/Homepageimgs/Somos/compañias/mainConcilia_logo.png";
@@ -32,9 +33,12 @@ import 'animate.css/animate.min.css';
 import Aos from "aos";
 import 'aos/dist/aos.css';
 
+//Video
+import Video from "../Videos/Video1.mp4";
+
 //Swiper 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, EffectCreative, Pagination, EffectFade } from "swiper/modules";
+import { Autoplay, EffectCreative } from "swiper/modules";
 import 'swiper/css';
 import 'swiper/css/effect-creative';
 import 'swiper/css/pagination';
@@ -75,76 +79,35 @@ export default function Homepage() {
         <div className=" w-full h-auto font-Encode-Sans">
 
             {/* Primera seccion  */}
-            <div className="w-full h-screen">
-                <>
-                    <Swiper
-                        style={{ width: '100%', height: '100%' }}
-                        pagination={{
-                            dynamicBullets: true,
-                        }}
-                        autoplay={{
-                            delay: 5000,
-                            disableOnInteraction: false,
-                        }}
-                        modules={[Pagination, EffectFade, Autoplay]}
-                        effect="fade"
-                        className="mySwiper"
-
-                    >
-                        <SwiperSlide>
-                            <div className="flex h-full bg-center relative bg-fixed" style={{ backgroundImage: `url(${Slider_1})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-                                <div className="px-10 sm:px-10 md:px-20 lg:px-40 flex items-center ">
-                                    <div className="text-white text-container">
-                                        <h1 className="w-auto lg:text-4xl sm:text-2xl text-2xl py-4 ">MC LOGISTICS</h1>
-                                        <p className="w-auto lg:text-8xl sm:text-6xl text-3xl font-semibold" >CENTRADOS EN EL CLIENTE</p>
-                                        <p className="text-lg font-semibold py-4" >Impulsados por la DATA</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className="flex h-full bg-center relative bg-fixed" style={{ backgroundImage: `url(${Slider_5})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-                                <div className="px-10 sm:px-10 md:px-20 lg:px-40 flex items-center ">
-                                    <div className="text-white text-container">
-                                        <p className="w-auto lg:text-8xl sm:text-6xl text-3xl font-semibold" >ENFOCADOS EN IDENTIFICAR OPORTUNIDADES</p>
-                                        <p className="text-lg font-semibold py-4" >Para aumentar la rentabilidad de nuestros clientes a través de la EFICIENCIA</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className="flex h-full bg-center relative bg-fixed" style={{ backgroundImage: `url(${Slider_4})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-                                <div className="px-10 sm:px-10 md:px-20 lg:px-40 flex items-center ">
-                                    <div className="text-white text-container">
-                                        <p className="w-auto lg:text-8xl sm:text-6xl text-3xl font-semibold" >ENFOCADOS EN IDENTIFICAR OPORTUNIDADES</p>
-                                        <p className="text-lg font-semibold py-4" >Para aumentar la rentabilidad de nuestros clientes a través de la EFICIENCIA</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </SwiperSlide>
-                    </Swiper>
-                </>
+            <div className="relative  h-screen w-full">
+                <video className="absolute inset-0 w-full h-full object-cover brightness-50" src={Video} loop autoPlay muted></video>
+                <div className="flex w-full h-full text-white px-10 sm:px-10 md:px-20 lg:px-40 items-center">
+                    <div className="h-72 w-auto text-wrap">
+                        <h1 className="w-auto text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl py-4" data-aos="fade-down" data-aos-duration="500">MC LOGISTICS</h1>
+                        <p className="w-auto text-4xl sm:text-5xl md:text-5xl lg:text-7xl xl:text-8xl" data-aos="fade-up" data-aos-duration="400" data-aos-delay="600">CENTRADOS EN EL CLIENTE</p>
+                        <p className="text-lg font-semibold py-4" data-aos="fade-up" data-aos-duration="500" data-aos-delay="1300">Impulsados por la DATA</p>
+                    </div>
+                </div>
             </div>
 
             {/* Seccion de Somos */}
             <div className="w-full lg:h-screen h-auto bg-white flex px-10 sm:px-10 md:px-20 lg:px-40">
                 <div className="flex h-full w-full items-center justify-center py-8">
-                    <div className="flex flex-col lg:flex-row items-center justify-center h-2/3 py-12 p-8" data-aos="fade-up">
+                    <div className="flex flex-col lg:flex-row items-center justify-center h-2/3 shadow-md rounded-md bg-SoftGrey " data-aos="fade-up">
 
-                        <div className="h-auto lg:w-[70%] w-auto">
+                        <div className="h-auto lg:w-[50%] w-auto p-8">
                             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl" data-aos="fade-down">Somos</h1>
                             <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-5xl font-semibold pt-4" data-aos="fade-up" data-aos-delay="100">MC Logistics</h1>
                             <p className="py-4 font-thin text-md sm:text-xl md:text-xl lg:text-xl" data-aos="fade-up" data-aos-delay="200">Tu socio estratégico en logística a nivel global. Desde el origen hasta el destino final, maximizando la rentabilidad de nuestros clientes y socios con una gestión eficiente de mercancías, energía e información.</p>
                             <hr className="h-0.5 bg-slate-50" data-aos="fade-up" data-aos-delay="200" />
-                            <p className="py-4 text-sm" data-aos="fade-up" data-aos-delay="300">Nacemos en el 2005 de la inquietud de crear valor en el proceso de gestión de la cadena de suministro, viendo oportunidades en el sector logístico de mejor flujo de información.</p>
-                            <button className="h-12 w-32 rounded-sm bg-slate-100 hover:bg-slate-50" data-aos="fade-up" data-aos-delay="400">
-                                <a className="text-black" href="/#/nosotros" >Leer más</a>
+                            <p className="py-4 text-sm sm:text-sm md:text-md lg:text-lg xl:text-xl" data-aos="fade-up" data-aos-delay="300">Nacemos en el 2005 de la inquietud de crear valor en el proceso de gestión de la cadena de suministro, viendo oportunidades en el sector logístico de mejor flujo de información.</p>
+                            <button className="h-12 w-32 rounded-md bg-DarkBlue hover:bg-slate-50" data-aos="fade-up" data-aos-delay="400">
+                                <a className="text-white" href="/#/nosotros" >Leer más</a>
                             </button>
                         </div>
 
-                        <div className="h-auto lg:w-[50%] w-full p-0 flex lg:justify-end justify-center">
-                            <img className="h-1/2 w-[80%] object-contain " src={Somos_logistica_img2} alt="Logistics" />
+                        <div className="h-full lg:w-[50%] w-full flex lg:justify-end justify-center">
+                            <img className="h-full w-[100%] object-cover rounded-r-md " src={contenedores_cielo} alt="Logistics" />
                         </div>
                     </div>
                 </div>
@@ -196,7 +159,7 @@ export default function Homepage() {
                     <h3 className="text-4xl font-bold">Nuestros Servicios Logísticos</h3>
                 </div>
                 <div className="flex justify-center h-auto w-full pt-8 px-4 sm:px-10 md:px-20 lg:px-40">
-                    <div className="grid lg:grid-cols-3 md:grid-cols-2  gap-y-12 gap-x-12 justify-items-center w-full">
+                    <div className="grid lg:grid-cols-3 md:grid-cols-2  gap-y-12 gap-x-24 justify-items-center w-full">
                         {serviciosdatos.map((props) => (
                             <Nuestros_servicios
                                 key={props.id}
