@@ -84,7 +84,7 @@ export default function Homepage() {
                 <div className="flex w-full h-full text-white px-10 sm:px-10 md:px-20 lg:px-40 items-center">
                     <div className="h-72 w-auto text-wrap">
                         <h1 className="w-auto text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl py-4" data-aos="fade-down" data-aos-duration="500">MC LOGISTICS</h1>
-                        <p className="w-auto text-4xl sm:text-5xl md:text-5xl lg:text-7xl xl:text-8xl" data-aos="fade-up" data-aos-duration="400" data-aos-delay="600">CENTRADOS EN EL CLIENTE</p>
+                        <p className="w-2/3 text-4xl sm:text-5xl md:text-5xl lg:text-7xl xl:text-8xl" data-aos="fade-up" data-aos-duration="400" data-aos-delay="600">CENTRADOS EN EL CLIENTE</p>
                         <p className="text-lg font-semibold py-4" data-aos="fade-up" data-aos-duration="500" data-aos-delay="1300">Impulsados por la DATA</p>
                     </div>
                 </div>
@@ -96,12 +96,12 @@ export default function Homepage() {
                     <div className="flex flex-col lg:flex-row items-center justify-center h-2/3 shadow-md rounded-md bg-SoftGrey " data-aos="fade-up">
 
                         <div className="h-auto lg:w-[50%] w-auto p-8">
-                            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl" data-aos="fade-down">Somos</h1>
-                            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-5xl font-semibold pt-4" data-aos="fade-up" data-aos-delay="100">MC Logistics</h1>
-                            <p className="py-4 font-thin text-md sm:text-xl md:text-xl lg:text-xl" data-aos="fade-up" data-aos-delay="200">Tu socio estratégico en logística a nivel global. Desde el origen hasta el destino final, maximizando la rentabilidad de nuestros clientes y socios con una gestión eficiente de mercancías, energía e información.</p>
-                            <hr className="h-0.5 bg-slate-50" data-aos="fade-up" data-aos-delay="200" />
-                            <p className="py-4 text-sm sm:text-sm md:text-md lg:text-lg xl:text-xl" data-aos="fade-up" data-aos-delay="300">Nacemos en el 2005 de la inquietud de crear valor en el proceso de gestión de la cadena de suministro, viendo oportunidades en el sector logístico de mejor flujo de información.</p>
-                            <button className="h-12 w-32 rounded-md bg-DarkBlue hover:bg-slate-50" data-aos="fade-up" data-aos-delay="400">
+                            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl" data-aos="fade-up" data-aos-delay="50">Somos</h1>
+                            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-5xl font-semibold pt-4" data-aos="fade-up" data-aos-delay="60">MC Logistics</h1>
+                            <p className="py-4 font-thin text-md sm:text-xl md:text-xl lg:text-xl" data-aos="fade-up" data-aos-delay="70">Tu socio estratégico en logística a nivel global. Desde el origen hasta el destino final, maximizando la rentabilidad de nuestros clientes y socios con una gestión eficiente de mercancías, energía e información.</p>
+                            <hr className="h-0.5 bg-slate-50" data-aos="fade-up" data-aos-delay="80" />
+                            <p className="py-4 text-sm sm:text-sm md:text-md lg:text-lg xl:text-xl" data-aos="fade-up" data-aos-delay="85">Nacemos en el 2005 de la inquietud de crear valor en el proceso de gestión de la cadena de suministro, viendo oportunidades en el sector logístico de mejor flujo de información.</p>
+                            <button className="h-12 w-32 rounded-md bg-DarkBlue hover:bg-slate-50" data-aos="fade-up" data-aos-delay="85">
                                 <a className="text-white" href="/#/nosotros" >Leer más</a>
                             </button>
                         </div>
@@ -252,7 +252,7 @@ export default function Homepage() {
                 <div className="flex flex-row h-full items-center justify-between">
                     <div className="flex flex-col">
                         <div className="w-full text-start">
-                            <h1 className="text-sm sm:text-lg md:text-xl lg:text-xl xl:text-xl font-thin">Nuestras Certificaciones</h1>
+                            <h1 className="text-sm sm:text-lg md:text-xl lg:text-xl xl:text-xl font-semibold">Nuestras Certificaciones</h1>
                         </div>
                         <div className="flex flex-row items-center gap-x-8">
                             <div>
@@ -265,7 +265,7 @@ export default function Homepage() {
                     </div>
                     <div className="flex flex-col">
                         <div className="w-full text-end">
-                            <h1 className="text-sm sm:text-lg md:text-xl lg:text-xl xl:text-xl font-thin">Miembros</h1>
+                            <h1 className="text-sm sm:text-lg md:text-xl lg:text-xl xl:text-xl font-semibold">Miembros</h1>
                         </div>
                         <div className="flex flex-row gap-x-8 items-center">
                             <div>

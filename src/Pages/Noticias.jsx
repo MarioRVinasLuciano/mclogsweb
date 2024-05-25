@@ -23,9 +23,10 @@ const [noticias, setNoticias] = useState([]);
 
       
         return (
-            <div className="h-sreen w-full font-quicksand  pb-12 pt-16 px-10 sm:px-10 md:px-20 lg:px-40">
-            <div className="flex h-36 w-full justify-center items-center" >
+            <div className="h-sreen w-full font-Encode-Sans pb-12 pt-16 px-10 sm:px-10 md:px-20 lg:px-40">
+            <div className="flex h-36 w-full justify-between items-center pt-6" >
                 <h1 className="lg:text-5xl text-4xl font-semibold">Noticias</h1>
+                <input className="h-12 w-56 rounded-md border-gray-20 border-2 p-2" placeholder="Buscar"></input>
             </div> 
           <div className="grid lg:grid-cols-4 grid-cols-1  gap-6 lg:gap-10">
             {noticias.map((contenido, index) => (
