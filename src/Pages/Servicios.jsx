@@ -66,7 +66,7 @@ export default function Servicios(){
                             <div className="flex flex-col w-full py-10 lg:w-2/5 xl:w-2/5 items-center text-center justify-center">
                                 <h1 className="text-4xl w-1/2 ">Almacenaje</h1>
                                 <p className="text-xl pt-4 font-semibold w-1/2 ">Consilia</p>
-                                <p className="text-3xl pt-4 font-thin w-full px-4">Bajo el régimen de deposito logístico, nos encargamos del manejo de mercancías dentro de zona primaria para el país y la región. Con sede en el puerto de Caucedo, garantizamos conexiones a mas 20 islas en el caribe; así como centro, norte y sur américa.</p>
+                                <p className="text-3xl pt-4 font-thin w-full px-4npm">Bajo el régimen de deposito logístico, nos encargamos del manejo de mercancías dentro de zona primaria para el país y la región. Con sede en el puerto de Caucedo, garantizamos conexiones a mas 20 islas en el caribe; así como centro, norte y sur américa.</p>
                             </div>
                         </div>
 

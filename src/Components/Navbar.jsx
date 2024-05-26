@@ -33,7 +33,7 @@ export default function NavBar() {
         ? scrollPosition >= 100
             ? "top-0 w-[100%] fixed z-10 h-20 bg-white backdrop-blur-md px-10 sm:px-10 md:px-20 lg:px-40 text-black"
             : "top-0 w-[100%] fixed z-10 h-20 bg-slate/70 px-10 sm:px-10 md:px-20 lg:px-40  lg:text-white text-white" 
-        : "top-0 w-[100%] fixed z-10 h-20 bg-gray-100 px-10 sm:px-10 md:px-20 lg:px-40 text-black";
+        : "top-0 w-[100%] fixed z-10 h-20 bg-gray-50 px-10 sm:px-10 md:px-20 lg:px-40 text-black";
 
     const hr = isHomepage  ? scrollPosition >= 100
     ? "hidden"
