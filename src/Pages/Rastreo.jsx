@@ -25,11 +25,12 @@ export default function Rastreo() {
     const [error, setError] = useState(false);
     const [formattedDate, setFormattedDate] = useState("");
     const [searchPerformed, setSearchPerformed] = useState(false);
+    const [searchCount, setSearchCount] = useState(0);
     const scrollRef = useRef(null);
 
     const manejoBusqueda = async (valor_entrada) => {
-        console.log("Search value:", valor_entrada);
         await fetchData(valor_entrada);
+        setSearchCount(prevCount => prevCount + 1); // Increment search count
     };
 
     const fetchData = async (valor_entrada) => {
@@ -38,9 +39,7 @@ export default function Rastreo() {
                 `https://api.mclogs.com/odata/public/GetOrderByText(Value='${valor_entrada}')?$select=Oid,State,ETD,ETA,TelexRelease,TransportMode,MovementType,Freights,Summary&$expand=Freights,Summary`
             );
             const datos = await respuesta.json();
-            setSearchPerformed(true);
             setEmbarque(datos)
-            console.log(datos);
             setError(false);
         } catch (error) {
             console.error("No se encontro un embarque con este numero", error);
@@ -48,6 +47,11 @@ export default function Rastreo() {
         }
     };
 
+    useEffect(() => {
+        if (scrollRef.current) {
+            scrollRef.current.scrollIntoView({ behavior: "smooth" });
+        }
+    }, [searchCount]);
 
     useEffect(() => {
         if (embarque && embarque.ETA) {
@@ -62,11 +66,37 @@ export default function Rastreo() {
         }
     }, [embarque]);
 
-    useEffect(() => {
-        if (searchPerformed && scrollRef.current) {
-            scrollRef.current.scrollIntoView({ behavior: "smooth" });
+    const getProgressWidth = (state) => {
+        switch (state) {
+            case "EnCoordinacion":
+                return "5%";
+            case "EnTransito":
+                return "50%";
+            case "EnPuerto":
+            case "DespachoSolicitado":
+            case "Despachado":
+                return "100%";
+            case "EnAeropuerto":
+                return "50%";
+            default:
+                return "0%";
+
         }
-    }, [searchPerformed]);
+    };
+
+    const currentDate = new Date();
+
+const formatDateClass = (dateString) => {
+    const date = new Date(dateString);
+    if (date > currentDate) {
+        return 'text-slate-50';
+    } else if (date.toDateString() === currentDate.toDateString()) {
+        return 'text-black';
+    } else {
+        return 'text-green-500';
+    }
+};
+
 
     return (
         <div className="h-full w-full font-Encode-Sans pt-16">
@@ -80,84 +110,70 @@ export default function Rastreo() {
                     </div>
                 </div>
             </div>
-            {searchPerformed ?
+            {searchCount > 0 ?
                 (
                     !error && embarque?.Summary?.length >= 3 ? (
-                        <div className="h-auto w-full" ref={scrollRef}>
-                            <div className="flex flex-col py-24">
+                        <div id="historial" className="h-auto w-full " ref={scrollRef}>
+                            <div className="flex flex-col py-24 w-auto">
                                 {/* Estatus espacio */}
-                                <div className="hidden md:flex lg:flex xl:flex flex-row justify-center items-end gap-x-24">
-                                    <div className="flex flex-col">
-                                        <div>
-                                            <img className={embarque.State === "EnCoordinacion" ? "h-20 w-20" : "h-16 w-16"} src={embarque.TransportMode === "Maritimo" ? procesando : procesando} alt="" />
-                                        </div>
-                                    </div>
-                                    <div className="flex flex-col">
-                                        <div>
-                                            <img className={embarque.State === "EnTransito" ? "h-28 w-28" : "h-16 w-16"} src={embarque.TransportMode === "Maritimo" ? en_transito : en_transito_aereo} alt="" />
-                                        </div>
-                                    </div>
-                                    <div className="flex flex-col">
-                                        <div>
-                                            <img className={embarque.State === "EnPuerto" || embarque.State === "EnAeropuerto" ? "h-28 w-28" : "h-16 w-16"} src={embarque.TransportMode === "Maritimo" ? en_puerto : en_aeropuerto} alt="" />
-                                        </div>
-                                    </div>
-                                    {
-                                        embarque.State === "DespachoSolicitado" || embarque.State === "Despachado" ?
+                                <div className="px-10 sm:px-10 md:px-20 lg:px-40 w-auto">
+                                    <div className="flex flex-row justify-between items-end">
+                                        <div className="flex flex-col">
                                             <div>
-                                                <img className={embarque.State === "DespachoSolicitado" ? "h-28 w-28" : "h-16 w-16"} src={Solicitado} alt="" />
+                                                <img
+                                                    className={embarque.State === "EnCoordinacion" ? "h-20 w-20" : "h-16 w-16"}
+                                                    src={embarque.TransportMode === "Maritimo" ? procesando : procesando}
+                                                    alt=""
+                                                />
                                             </div>
-                                            : ""
-
-                                    }
-                                    {
-                                        embarque.State === "Despachado" ?
+                                        </div>
+                                        <div className="flex flex-col">
                                             <div>
-                                                <img className={embarque.State === "Despachado" ? "h-28 w-28" : "h-16 w-16"} src={Despachado} alt="" />
+                                                <img
+                                                    className={embarque.State === "EnTransito" ? "h-28 w-28" : "h-16 w-16"}
+                                                    src={embarque.TransportMode === "Maritimo" ? en_transito : en_transito_aereo}
+                                                    alt=""
+                                                />
                                             </div>
-                                            : ""
-                                    }
+                                        </div>
+                                        <div className="flex flex-col">
+                                            <div>
+                                                <img
+                                                    className={embarque.State === "EnPuerto" || embarque.State === "EnAeropuerto" ? "h-28 w-28" : "h-16 w-16"}
+                                                    src={embarque.TransportMode === "Maritimo" ? en_puerto : en_aeropuerto}
+                                                    alt=""
+                                                />
+                                            </div>
+                                        </div>
+                                        {(embarque.State === "DespachoSolicitado" || embarque.State === "Despachado") && (
+                                            <div>
+                                                <img
+                                                    className={embarque.State === "DespachoSolicitado" ? "h-28 w-28" : "h-16 w-16"}
+                                                    src={Solicitado}
+                                                    alt=""
+                                                />
+                                            </div>
+                                        )}
+                                        {embarque.State === "Despachado" && (
+                                            <div>
+                                                <img className="h-28 w-28" src={Despachado} alt="" />
+                                            </div>
+                                        )}
+                                    </div>
+                                    <div className="flex flex-row justify-center pt-4">
+                                        <div className="h-1 w-full bg-neutral-200 dark:bg-neutral-600">
+                                            <div
+                                                className="h-1 bg-lime-500"
+                                                style={{ width: getProgressWidth(embarque.State) }}
+                                            ></div>
+                                        </div>
+                                    </div>
 
                                 </div>
 
-                                <div className="hidden md:flex lg:flex xl:flex flex-row justify-center pt-4">
-                                    <div className="flex flex-row justify-end">
-                                        <div className={embarque.State === "EnCoordinacion" || embarque.State === "EnTransito" || embarque.State === "EnPuerto" || embarque.State === "Despachado" || embarque.State === "DespachoSolicitado" || embarque.State === "EnAeropuerto" ? "bg-green-400 rounded-full h-6 w-6 " : "bg-slate-100 rounded-full h-6 w-6"}></div>
-                                        <div className={embarque.State === "EnTransito" || embarque.State === "EnPuerto" || embarque.State === "Despachado" || embarque.State === "DespachoSolicitado" || embarque.State === "EnAeropuerto" ? "bg-green-400 h-1 w-36 mt-3" : "bg-slate-100 h-1 w-36 mt-3"}></div>
-                                    </div>
-                                    <div className="flex flex-row justify-end">
-                                        <div className={embarque.State === "EnTransito" || embarque.State === "EnPuerto" || embarque.State === "Despachado" || embarque.State === "DespachoSolicitado" || embarque.State === "EnAeropuerto" ? "bg-green-400 rounded-full h-6 w-6" : "bg-slate-100 rounded-full h-6 w-6"}></div>
-                                        <div className={embarque.State === "EnPuerto" || embarque.State === "Despachado" || embarque.State === "DespachoSolicitado" || embarque.State === "EnAeropuerto" ? "bg-green-400 h-1 w-36 mt-3" : "bg-slate-100 h-1 w-36 mt-3"}></div>
-                                    </div>
-                                    <div className="flex flex-row justify-end">
-                                        <div className={embarque.State === "EnPuerto" || embarque.State === "Despachado" || embarque.State === "DespachoSolicitado" || embarque.State === "EnAeropuerto" ? "bg-green-400 rounded-full h-6 w-6" : "bg-slate-100 rounded-full h-6 w-6"}></div>
-                                        {
-                                            embarque.State === "DespachoSolicitado" || embarque.State === "Despachado"?
-                                                <div className="flex flex-row justify-end">
-                                                    <div className={embarque.State === "DespachoSolicitado" || embarque.State === "Despachado" ? "bg-green-400 h-1 w-36 mt-3" : "bg-slate-100 h-1 w-36 mt-3"}></div>
-                                                </div> : ""
-                                    }
-                                    </div>
-                                    {
-                                        embarque.State === "DespachoSolicitado" || embarque.State === "Despachado" ?
-                                            <div className="flex flex-row justify-end">
-                                                <div className={embarque.State === "DespachoSolicitado" || embarque.State === "Despachado"  ? "bg-green-400 rounded-full h-6 w-6" : "bg-slate-100 rounded-full h-6 w-6"}></div>
-                                                <div className={embarque.State === "DespachoSolicitado" || embarque.State === "Despachado"  ? "bg-green-400 h-1 w-36 mt-3" : "bg-slate-100 h-1 w-36 mt-3"}></div>
-                                            </div>
-                                            : ""
-                                    }
-                                    {
-                                        embarque.State === "Despachado" ?
-                                            <div className="flex flex-row justify-end">
-                                                <div className={embarque.State === "Despachado" ? "bg-green-400 rounded-full h-6 w-6" : "bg-slate-100 rounded-full h-6 w-6"}></div>
-                                            </div>
-                                            : ""
-                                    }
-                                </div>
-
-                                <div className="flex flex-row justify-center pt-4 gap-x-16">
+                                <div className="flex flex-row justify-center py-8 gap-x-16">
                                     <div>
-                                        <h1>
+                                        <h1 className="text-3xl font-semibold">
                                             {
                                                 embarque.State === "EnCoordinacion" ?
                                                     "En Coordinacion" :
@@ -213,17 +229,18 @@ export default function Rastreo() {
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    {
-                                                        embarque.Summary.map((contenido) => (
-                                                            <tr className="bg-white border-b">
-                                                                <td className="py-4 px-6">{contenido.Status}</td>
+                                                    {embarque.Summary.map((contenido) => {
+                                                        const dateClass = formatDateClass(contenido.Date);
+                                                        return (
+                                                            <tr className="bg-white border-b" key={contenido.TravelNumber}>
+                                                                <td className={`py-4 px-6 ${dateClass}`}>{contenido.Status}</td>
                                                                 <td className="py-4 px-6">{contenido.ActivityPlace}</td>
-                                                                <td className="py-4 px-6">{contenido.Date}</td>
+                                                                <td className="py-4 px-6">{new Date(contenido.Date).toLocaleDateString()}</td>
                                                                 <td className="py-4 px-6">{contenido.Ship}</td>
                                                                 <td className="py-4 px-6">{contenido.TravelNumber}</td>
                                                             </tr>
-                                                        ))
-                                                    }
+                                                        );
+                                                    })}
                                                 </tbody>
                                             </table>
                                         </div>

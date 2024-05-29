@@ -64,7 +64,7 @@ export default function Agentes() {
           <div className="bg-white rounded-sm shadow-md p-4 w-full">
             <div className="grid lg:grid-cols-8 md:grid-cols-8 sm:grid-cols-4 sm:grid-rows-2 md:grid-rows-1 gap-y-6 grid-rows-auto gap-x-30 w-full justify-items-center">
               <button
-                className={`hover:bg-lime-500 w-24 rounded-md ${selectedContinent === "" ? 'bg-lime-400' : ''}`}
+                className={`hover:bg-oldgold w-24 rounded-md ${selectedContinent === "" ? 'bg-aureolin' : ''}`}
                 onClick={() => handleContinentClick("")}
               >
                 Todos
@@ -72,7 +72,7 @@ export default function Agentes() {
               {continents.map((continent, index) => (
                 <button
                   key={index}
-                  className={`hover:bg-lime-500 w-24 rounded-md ${selectedContinent === continent ? 'bg-lime-400' : ''}`}
+                  className={`hover:bg-oldgold w-24 rounded-md ${selectedContinent === continent ? 'bg-aureolin' : ''}`}
                   onClick={() => handleContinentClick(continent)}
                 >
                   {continent}
@@ -95,7 +95,7 @@ export default function Agentes() {
                       .filter(agent => agent.country === countryName)
                       .map(agent => (
                         <div key={agent.oid} className="bg-white shadow-md rounded-md p-4 mb-4 w-72 h-56 overflow-auto">
-                          <p className="font-semibold text-lime-500">{agent.name}</p>
+                          <p className="font-semibold text-aureolin">{agent.name}</p>
                           <p>
                             {agent.web_page.length !== 0 ? (
                               <span>Pagina: <a href={agent.web_page} className="text-blue-600">{agent.web_page}</a></span>
