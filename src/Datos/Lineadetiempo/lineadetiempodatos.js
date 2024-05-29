@@ -4,7 +4,7 @@ const lineadetiempodatos = [
         titulo: "Incorporación",
         ano: "2005",
         texto: "Miguel Melo Chabebe, luego de once años en el sector transportista, decide emprender con 2 colaboradores. Aquí es donde inicia lo que hoy es MC Logistics.",
-        color_circulo: `bg-blue-900`,
+        color_circulo: `bg-blue`,
         transicion: "fade-up"
     },
     {
@@ -12,7 +12,7 @@ const lineadetiempodatos = [
         titulo: "Fusión",
         ano: "2007",
         texto: "Hugo Polanco decide unirse a MC Logistics fusionando su empresa llamada CODOTRANS.",
-        color_circulo: `bg-blue-400`,
+        color_circulo: `bg-bluemunsell`,
         transicion: "fade-up"
     },
     {
@@ -28,7 +28,7 @@ const lineadetiempodatos = [
         titulo: "Consilia Logistics, Hcpl, Gestion de Aduanas",
         ano: "2018",
         texto: "CONSILIA Logistics, operador logistico dentro de Caucedo Logistics Center, inicia operaciones, HIGH PERFORMANCE CARGO LOGISTICS, inicia en miami, Lanzamiento del servicio de Gestion Aduanal",
-        color_circulo: `bg-blue-400`,
+        color_circulo: `bg-bluemunsell`,
         transicion: "fade-up"
     }, 
     {
@@ -36,7 +36,7 @@ const lineadetiempodatos = [
         titulo: "ADT",
         ano: "2019",
         texto: "Transporte Terrestre y de paqueteo domestico en la República Dominicana",
-        color_circulo:`bg-blue-900`,
+        color_circulo:`bg-blue`,
         transicion: "fade-up"
     },
     {

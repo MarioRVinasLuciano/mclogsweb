@@ -37,17 +37,21 @@ export default function Nosotros() {
         <div className="h-auto w-full font-Encode-Sans ">
 
 
-            <div className="w-full pb-10 pt-20" style={{ height: "600px" }}>
-                <div className="h-full w-auto flex lg:flex-row flex-col lg:relative">
-                    <div className="lg:absolute relative lg:w-1/2 w-auto top-14 z-0 px-10 sm:px-10 md:px-20 lg:px-40" data-aos="zoom-out-down" data-aos-delay="200">
-                        <div className="pb-10 text-center lg:text-start w-full">
-                            <h1 className="lg:text-5xl text-4xl font-semibold">Nuestra Historia</h1>
+            <div className="w-full  h-auto lg:h-screen xl:h-screen pb-10 pt-20">
+                <div className="h-full w-auto flex lg:flex-row flex-col items-center">
+                    <div className="flex flex-col items-center w-full py-10 lg:w-1/2 xl:w-1/2 px-10 sm:px-10 md:px-20 lg:px-40" data-aos="zoom-out-down" data-aos-delay="200">
+                        <div className="pb-10 text-center w-full">
+                            <h1 className="w-full lg:text-6xl text-4xl font-semibold ">Nuestra Historia</h1>
                         </div>
-                        <div className="h-[20rem] lg:w-[30rem] w-auto bg-white shadow-md text-center p-10 z-10 ">
-                            <p className="text-xl lg:text-2xl">Nacemos en el 2005 de la inquietud de crear valor en el proceso de gestión de la cadena de suministro, viendo oportunidades en el sector logístico de mejor flujo de información.</p>
+                        <div className="h-auto lg:w-[30rem] w-auto text-center">
+                            <p className="text-xl lg:text-2xl font-thin">Nacemos en el 2005 de la inquietud de crear valor en el proceso de gestión de la cadena de suministro, viendo oportunidades en el sector logístico de mejor flujo de información.
+
+                            <br/>
+                                Hoy, bajo el nombre de M.C. cubrimos mercados de manera efectiva y eficiente estando, SIEMPRE, el cliente como piedra angular en el desarrollo de nuestra empresa.
+                            </p>
                         </div>
                     </div>
-                    <div className="absolute lg:w-1/2 w-full h-auto  z-[-10] right-0 top-0" data-aos="fade-right" >
+                    <div className="lg:w-1/2 w-full h-auto  z-[-10] right-0 top-0" data-aos="fade-right" >
                         <img className="w-[101rem] h-auto" src={bote} alt="" />
                     </div>
                 </div>
@@ -55,11 +59,11 @@ export default function Nosotros() {
 
             <div className="w-auto h-full pb-10 px-10 sm:px-10 md:px-20 lg:px-40">
 
-                <div className="h-12 w-auto">
-                    <h1 className="text-2xl font-semibold">Linea de tiempo</h1>
+                <div className="h-12 w-auto py-20">
+                    <h1 className="text-5xl font-semibold text-black">Linea de tiempo</h1>
                 </div>
 
-                <div className="h-auto w-auto flex flex-col gap-y-6">
+                <div className="h-auto w-auto flex flex-col gap-y-6 pt-10">
                     {
                         lineadetiempodatos.map(props => (
                             <Linea_de_tiempo
@@ -75,7 +79,7 @@ export default function Nosotros() {
             </div>
 
             <div className="h-auto w-full ">
-                <div className="flex h-full bg-center relative bg-fixed py-8" style={{ backgroundImage: `url(${white_bg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+                <div className="flex h-full bg-center relative bg-fixed py-8 ">
                     <div className="h-auto w-full px-10 sm:px-10 md:px-20 lg:px-40">
 
                         <div className="pt-12 pb-12 text-center">
@@ -86,7 +90,7 @@ export default function Nosotros() {
                             <div className="pt-6">
                                 <img className="h-[14rem] " src={mision} alt="" />
                             </div>
-                            <div className="h-full w-full lg:w-[26rem] xl:lg:w-[26rem] flex flex-col bg-white shadow-md rounded-sm p-4">
+                            <div className="h-full w-full lg:w-[26rem] xl:lg:w-[26rem] flex flex-col bg-slate-100 shadow-md rounded-sm p-4">
                                 <h2 className="text-2xl">
                                     Misión
                                 </h2>
@@ -97,7 +101,7 @@ export default function Nosotros() {
                         </div>
 
                         <div className="mt-12 lg:h-64 h-auto w-full flex lg:flex-row flex-col sm:items-center items-center lg:justify-start md:justify-start sm:justify-center justify-center">
-                            <div className="h-full w-full lg:w-[26rem] xl:lg:w-[26rem] flex flex-col bg-white shadow-md rounded-sm p-4" >
+                            <div className="h-full w-full lg:w-[26rem] xl:lg:w-[26rem] flex flex-col bg-slate-100 shadow-md rounded-sm p-4" >
                                 <h2 className="text-2xl">
                                     Visión
                                 </h2>
@@ -114,7 +118,7 @@ export default function Nosotros() {
                             <div className="pt-6">
                                 <img className="h-[14rem] " src={valores} alt="" />
                             </div>
-                            <div className="h-full w-full lg:w-[26rem] xl:lg:w-[26rem] flex flex-col bg-white shadow-md rounded-sm p-4">
+                            <div className="h-full w-full lg:w-[26rem] xl:lg:w-[26rem] flex flex-col bg-slate-100 shadow-md rounded-sm p-4">
                                 <h2 className="text-2xl">
                                     Valores
                                 </h2>
@@ -134,23 +138,23 @@ export default function Nosotros() {
 
             <div className="h-full w-auto pt-12 px-10 sm:px-10 md:px-20 lg:px-40">
                 <div className="">
-                    <h1 className="text-4xl">¿Por qué elegirnos?</h1>
+                    <h1 className="font-bold text-6xl">¿Por qué elegirnos?</h1>
                 </div>
                 <div className="w-full h-auto flex lg:flex-row md:flex-col flex-col justify-center gap-x-24 py-24 md:gap-y-12 gap-y-12 md:items-center items-center">
-                    <div className="h-44 w-44 flex flex-col justify-center items-center bg-white shadow-md rounded-sm" data-aos="fade-down" >
-                        <img className="h-24 w-24" src={confiable} alt="" />
+                    <div className="text-white h-44 w-44 flex flex-col justify-center items-center bg-blue shadow-md rounded-sm" data-aos="fade-down" >
+                        <img className="h-24 w-24 invert" src={confiable} alt="" />
                         <p>Confiabilidad</p>
                     </div>
-                    <div className="h-44 w-44 flex flex-col justify-center items-center bg-white shadow-md rounded-sm" data-aos="fade-down" data-aos-delay="200">
-                        <img className="h-24 w-24" src={innovacion} alt="" />
+                    <div className="text-white h-44 w-44 flex flex-col justify-center items-center bg-aureolin shadow-md rounded-sm" data-aos="fade-down" data-aos-delay="200">
+                        <img className="h-24 w-24 invert" src={innovacion} alt="" />
                         <p>Innovación</p>
                     </div>
-                    <div className="h-44 w-44 flex flex-col justify-center items-center bg-white shadow-md rounded-sm" data-aos="fade-down" data-aos-delay="300">
-                        <img className="h-24 w-24" src={flexible} alt="" />
+                    <div className="text-white h-44 w-44 flex flex-col justify-center items-center bg-bluemunsell shadow-md rounded-sm" data-aos="fade-down" data-aos-delay="300">
+                        <img className="h-24 w-24 invert" src={flexible} alt="" />
                         <p>Flexibilidad</p>
                     </div>
-                    <div className="h-44 w-44 flex flex-col justify-center items-center bg-white shadow-md rounded-sm" data-aos="fade-down" data-aos-delay="400">
-                        <img className="h-24 w-24" src={tecnologia} alt="" />
+                    <div className="text-white h-44 w-44 flex flex-col justify-center items-center bg-aureolin shadow-md rounded-sm" data-aos="fade-down" data-aos-delay="400">
+                        <img className="h-24 w-24 invert" src={tecnologia} alt="" />
                         <p>Tecnología</p>
                     </div>
                 </div>

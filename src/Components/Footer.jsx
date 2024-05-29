@@ -35,7 +35,8 @@ export default function Footer() {
                 Nacemos en el 2005 de la inquietud de crear valor en el proceso de gestión de la cadena de suministro, viendo oportunidades en el sector logístico de mejor flujo de información.
               </p>
             </div>
-            <div className="flex flex-row py-6">
+
+            <div className="flex flex-row  py-6">
               <div className="pr-4">
                 <div className="rounded-full h-10 w-10 content-center border-slate-300 border" >
                   <a href="https://www.google.com/maps/place/M.C.+Logistics+SRL/@18.501022,-69.9557977,17z/data=!3m1!4b1!4m5!3m4!1s0x8eaf8987ea6ea207:0x7bcfa7fa8182db54!8m2!3d18.501022!4d-69.953609">
@@ -141,10 +142,10 @@ export default function Footer() {
                   </div>
                 </a>
                 <a href='https://apps.apple.com/do/app/mclogs/id1504701375'>
-                <div className="py-2 gap-x-2 flex flex-row">
-                  <img className="flex h-6 w-6" src={android} alt="Google Play" />
-                  <p className="flex text-sm">Disponible en Google Play</p>
-                </div>
+                  <div className="py-2 gap-x-2 flex flex-row">
+                    <img className="flex h-6 w-6" src={android} alt="Google Play" />
+                    <p className="flex text-sm">Disponible en Google Play</p>
+                  </div>
                 </a>
               </div>
             </div>

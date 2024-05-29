@@ -1,63 +1,71 @@
-//importo imagenes locales asignadas a cada div
-import Transporte_Maritimo from "../Images/Nuestros_servicios_logisticosimgs/Transporte_maritimo.webp";
-import Transporte_Aereo from "../Images/Nuestros_servicios_logisticosimgs/Transporte_aereo.webp";
-import Transporte_terrestre from "../Images/Nuestros_servicios_logisticosimgs/Transporte_terrestre.webp";
-import Almacenaje from "../Images/Nuestros_servicios_logisticosimgs/Almacenaje.webp";
-import Gestion_aduanal from "../Images/Nuestros_servicios_logisticosimgs/Gestion_aduanal.webp";
-import Paqueteria from "../Images/Nuestros_servicios_logisticosimgs/Paqueteria.webp";
-
-
+//Iconos de servicios
+import en_transito from "../Icons/en_transito.png";
+import en_transito_aereo from "../Icons/en_transito_aereo.png";
+import transporte_terrestre from "../Icons/transporte_terrestre.png";
+import almacenaje from "../Icons/Almacenaje.png";
+import gestion_aduanal from "../Icons/Gestion_aduanal.png";
+import paqueteria from "../Icons/Paqueteria_2.png";
 
 
 
 const serviciosdatos = [
     {
         id: 1,
-        espacio: `bg-white lg:h-auto h-96  w-full lg:col-span-1 lg:col-start-1 md:col-span-1 md:col-start-1 rounded-md shadow-md transform hover:scale-105 hover:-translate-y-2 transition-transform duration-100`,
-        imagen: Transporte_Maritimo,
+        espacio: `flex flex-col justify-center items-center text-white bg-bluemunsell h-72  w-full lg:col-span-1 lg:col-start-1 md:col-span-1 md:col-start-1 rounded-md shadow-md transform hover:scale-105 hover:-translate-y-2 transition-transform duration-100`,
+        imagen: en_transito,
+        claseImagen: `h-24 w-24 invert` ,
         titulo: "Transporte Marítimo",
-        texto: "Combinar dos modalidades de transporte, reduciendo los tiempos de tránsito y costos al comparar uno sobre otro de manera individual, garantiza al cliente una eficiente solución al transporte de sus cargas críticas.",
-        link: ""
+        claselink: "rounded-md text-white text-opacity-85 hover:text-opacity-100",
+        link: "#/servicios#transporte_maritimo"
     },
     {
         id: 2,
-        espacio:`bg-white lg:h-auto h-96 w-full lg:col-span-1 lg:col-start-2 md:col-span-1 md:col-start-2 rounded-md shadow-md transform hover:scale-105 hover:-translate-y-2 transition-transform duration-100`,
-        imagen: Transporte_Aereo,
+        espacio:`flex flex-col justify-center items-center bg-slate-50 h-72 w-full lg:col-span-1 lg:col-start-2 md:col-span-1 md:col-start-2 rounded-md shadow-md transform hover:scale-105 hover:-translate-y-2 transition-transform duration-100`,
+        imagen: en_transito_aereo,
+        claseImagen: `h-24 w-24` ,
         titulo: "Transporte Aéreo",
-        texto: "China, India, España, nunca habían estado tan cerca para envíos urgentes, carga o expreso, a la puerta de su empresa.",
-        link: ""
+        claselink: "rounded-md text-black text-opacity-85 hover:text-opacity-100",
+        link: "#/servicios#transporte_aereo"
     },
     {
         id: 3,
-        espacio:`bg-white lg:h-auto h-96 w-full lg:col-span-1 lg:col-start-3 md:col-span-1 md:col-start-1 rounded-md shadow-md transform hover:scale-105 hover:-translate-y-2 transition-transform duration-100`,
-        imagen: Transporte_terrestre,
+        espacio:`flex flex-col justify-center items-center text-white bg-blue h-72 w-full lg:col-span-1 lg:col-start-3 md:col-span-1 md:col-start-3 rounded-md shadow-md transform hover:scale-105 hover:-translate-y-2 transition-transform duration-100`,
+        imagen: transporte_terrestre,
+        claseImagen: `h-24 w-24 invert` ,
         titulo: "Transporte Terrestre",
         texto: "Nuestras alianzas en territorio dominicano con servicios de geolocalización, ofrecen seguridad y garantía para el transporte de mercancías.",
-        link: ""
+        claselink: "rounded-md text-white text-opacity-85 hover:text-opacity-100",
+        link: "#/servicios#transporte_terrestre"
     },
     {
         id: 4,
-        espacio:`bg-white lg:h-auto h-96 w-full lg:col-span-1 lg:col-start-1 rounded-md shadow-md transform hover:scale-105 hover:-translate-y-2 transition-transform duration-100`,
-        imagen: Almacenaje,
+        espacio:`flex flex-col justify-center items-center bg-slate-50 h-72  w-full lg:col-span-1 lg:col-start-1 md:col-span-1 md:col-start-1 rounded-md shadow-md transform hover:scale-105 hover:-translate-y-2 transition-transform duration-100`,
+        imagen: almacenaje,
+        claseImagen: `h-24 w-24` ,
         titulo:"Almacenaje",
         texto:"Ofrecemos soluciones de almacenaje seguro y eficiente para sus mercancías, garantizando su integridad y disponibilidad en todo momento.",
-        link: "https://www.consilialogistics.com/"
+        claselink: "rounded-md text-black text-opacity-85 hover:text-opacity-100",
+        link: "#/servicios#almacenaje"
     },
     {
         id: 5,
-        espacio:`bg-white lg:h-auto h-96 w-full lg:col-span-1 lg:col-start-2 rounded-md shadow-md transform hover:scale-105 hover:-translate-y-2 transition-transform duration-100`,
-        imagen: Gestion_aduanal,
+        espacio:`flex flex-col justify-center items-center text-white bg-oldgold h-72 w-full lg:col-span-1 lg:col-start-2 md:col-span-1 md:col-start-2 rounded-md shadow-md transform hover:scale-105 hover:-translate-y-2 transition-transform duration-100`,
+        imagen: gestion_aduanal,
+        claseImagen: `h-24 w-24 invert` ,
         titulo:"Gestión Aduanal",
         texto:"Nuestro equipo de expertos en aduanas ofrece servicios de gestión aduanal integral, facilitando los trámites y asegurando el cumplimiento de todas las regulaciones.",
-        link: ""
+        claselink: "rounded-md text-white text-opacity-85 hover:text-opacity-100",
+        link: "#/servicios#gestion_aduanal"
     },
     {
         id: 6,
-        espacio:`bg-white lg:h-auto h-96 w-full lg:col-span-1 lg:col-start-3 rounded-md shadow-md transform hover:scale-105 hover:-translate-y-2 transition-transform duration-100`,
-        imagen: Paqueteria,
+        espacio:`flex flex-col justify-center items-center bg-slate-50 h-72 w-full lg:col-span-1 lg:col-start-3 md:col-span-1 md:col-start-3 rounded-md shadow-md transform hover:scale-105 hover:-translate-y-2 transition-transform duration-100`,
+        imagen: paqueteria,
+        claseImagen: `h-24 w-24` ,
         titulo:"Paquetería",
         texto:"Servicio de paquetería ágil y seguro para envíos locales e internacionales, garantizando la entrega oportuna y en perfectas condiciones de sus paquetes y documentos.",
-        link: "https://figibox.do/"
+        claselink: "rounded-md text-black text-opacity-85 hover:text-opacity-100",
+        link: "#/servicios#paqueteria"
     }
     
 ];
