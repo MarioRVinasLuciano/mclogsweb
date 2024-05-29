@@ -89,7 +89,7 @@ export default function Agentes() {
             {uniqueCountryNames.length > 0 ? (
               uniqueCountryNames.map(countryName => (
                 <div key={countryName}>
-                  <h1 className="text-2xl font-semibold pb-6 text-blue-900">{countryName}</h1>
+                  <h1 className="text-2xl font-semibold pb-6 text-blue">{countryName}</h1>
                   <div className="flex flex-wrap gap-4">
                     {agentsInContinent
                       .filter(agent => agent.country === countryName)

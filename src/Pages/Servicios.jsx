@@ -46,8 +46,8 @@ export default function Servicios(){
         <div className="w-full h-auto font-Encode-Sans pt-16">
                 
                 <div className="flex flex-col justify-center h-auto w-full py-24">
-                    <div className="flex w-full h-20 items-center justify-center pb-8 pt-16">
-                        <h3 className="pl-10 text-5xl font-semibold"> Nuestros Servicios Logisticos</h3>
+                    <div className="flex w-full h-20 items-center justify-center pb-8 pt-16 px-10 sm:px-10 md:px-20 lg:px-40">
+                        <h3 className="text-5xl font-semibold"> Nuestros Servicios Logisticos</h3>
                     </div>
 
                     
@@ -117,8 +117,8 @@ export default function Servicios(){
                             </div>
                             <div className="flex flex-col w-full py-10 lg:w-2/5 xl:w-2/5 items-center text-center justify-center">
                                 <h1 className="text-4xl w-1/2 ">Paqueteria</h1>
-                                <p className="text-xl pt-4 font-semibold w-1/2 text-blue-800">FigiBox</p>
-                                <p className="text-2xl pt-4 font-thin w-full px-4npm">ofrecemos a todos nuestros clientes cuentas personales así como corporativas con tarifas económicas, un buzón en Miami, USA, uno en Guangzhou, China y otro en Madrid, España,</p>
+                                <p className="text-xl pt-4 font-semibold w-1/2 text-blue">FigiBox</p>
+                                <p className="text-2xl pt-4 font-thin w-full px-4npm">Ofrecemos a todos nuestros clientes cuentas personales así como corporativas con tarifas económicas, un buzón en Miami, USA, uno en Guangzhou, China y otro en Madrid, España,</p>
                             </div>
                         </div>
 

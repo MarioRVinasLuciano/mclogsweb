@@ -9,7 +9,7 @@ import TELEX_RELEASE from "../Icons/Telex_release.svg";
 import COPIA_BL from "../Icons/Copia_Bl.svg";
 
 // Import images
-import procesando from "../Icons/procesando.png";
+import procesando from "../Icons/procesando.png"
 import en_transito from "../Icons/en_transito.png";
 import en_transito_aereo from "../Icons/en_transito_aereo.png";
 import en_puerto from "../Icons/en_puerto.png";
@@ -86,7 +86,7 @@ export default function Rastreo() {
                         <div className="h-auto w-full" ref={scrollRef}>
                             <div className="flex flex-col py-24">
                                 {/* Estatus espacio */}
-                                <div className="flex flex-row justify-center items-end gap-x-24">
+                                <div className="hidden md:flex lg:flex xl:flex flex-row justify-center items-end gap-x-24">
                                     <div className="flex flex-col">
                                         <div>
                                             <img className={embarque.State === "EnCoordinacion" ? "h-20 w-20" : "h-16 w-16"} src={embarque.TransportMode === "Maritimo" ? procesando : procesando} alt="" />
@@ -120,7 +120,7 @@ export default function Rastreo() {
 
                                 </div>
 
-                                <div className="flex flex-row justify-center pt-4">
+                                <div className="hidden md:flex lg:flex xl:flex flex-row justify-center pt-4">
                                     <div className="flex flex-row justify-end">
                                         <div className={embarque.State === "EnCoordinacion" || embarque.State === "EnTransito" || embarque.State === "EnPuerto" || embarque.State === "Despachado" || embarque.State === "DespachoSolicitado" || embarque.State === "EnAeropuerto" ? "bg-green-400 rounded-full h-6 w-6 " : "bg-slate-100 rounded-full h-6 w-6"}></div>
                                         <div className={embarque.State === "EnTransito" || embarque.State === "EnPuerto" || embarque.State === "Despachado" || embarque.State === "DespachoSolicitado" || embarque.State === "EnAeropuerto" ? "bg-green-400 h-1 w-36 mt-3" : "bg-slate-100 h-1 w-36 mt-3"}></div>
@@ -180,19 +180,19 @@ export default function Rastreo() {
 
                                 {/* fin Estatus espacio */}
 
-                                <div className="flex flex-row items-center justify-center gap-10 h-auto w-full px-64">
-                                    <div className="flex items-center h-56 w-56 ">
+                                <div className="flex flex-col lg:flex-row xl:flex-row items-center justify-center gap-10 h-auto w-full">
+                                    <div className="flex items-center h-56 ">
                                         <h1 className="font-semibold">Fecha estimada de llegada: {formattedDate}</h1>
                                     </div>
                                     <div className=" flex flex-row items-center text-center">
                                         <div>
                                             <p className="font-semibold">Estado de HBL: </p>
                                         </div>
-                                        <div>
+                                        <div className="flex-non">
                                             {embarque.TelexRelease === true ?
-                                                <img className="h-56 w-56" src={TELEX_RELEASE} alt="" />
+                                                <img className="h-56 w-auto" src={TELEX_RELEASE} alt="" />
                                                 :
-                                                <img className="h-56 w-56" src={COPIA_BL} alt="" />
+                                                <img className="h-56 w-56 flex-none" src={COPIA_BL} alt="" />
 
                                             }
                                         </div>
