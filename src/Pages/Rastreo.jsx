@@ -86,16 +86,16 @@ export default function Rastreo() {
 
     const currentDate = new Date();
 
-const formatDateClass = (dateString) => {
-    const date = new Date(dateString);
-    if (date > currentDate) {
-        return 'text-slate-50';
-    } else if (date.toDateString() === currentDate.toDateString()) {
-        return 'text-black';
-    } else {
-        return 'text-green-500';
-    }
-};
+    const formatDateClass = (dateString) => {
+        const date = new Date(dateString);
+        if (date > currentDate) {
+            return 'text-slate-50';
+        } else if (date.toDateString() === currentDate.toDateString()) {
+            return 'text-black';
+        } else {
+            return 'text-green-500';
+        }
+    };
 
 
     return (
@@ -161,11 +161,11 @@ const formatDateClass = (dateString) => {
                                         )}
                                     </div>
                                     <div className="flex flex-row justify-center pt-4">
-                                        <div className="h-1 w-full bg-neutral-200 dark:bg-neutral-600">
-                                            <div
-                                                className="h-1 bg-lime-500"
-                                                style={{ width: getProgressWidth(embarque.State) }}
-                                            ></div>
+                                        <div class="flex items-center gap-x-1 w-full">
+                                            <div class="w-full h-2.5 flex flex-col justify-center overflow-hidden bg-aureolin text-xs text-white text-center whitespace-nowrap transition duration-500 dark:bg-blue-500" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                            <div class="w-full h-2.5 flex flex-col justify-center overflow-hidden bg-aureolin text-xs text-white text-center whitespace-nowrap transition duration-500 dark:bg-blue-500" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                            <div class="w-full h-2.5 flex flex-col justify-center overflow-hidden bg-aureolin  text-xs text-white text-center whitespace-nowrap transition duration-500 dark:bg-neutral-600" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                            <div class="w-full h-2.5 flex flex-col justify-center overflow-hidden bg-gray-300 text-xs text-white text-center whitespace-nowrap transition duration-500 dark:bg-neutral-600" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                     </div>
 
