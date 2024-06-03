@@ -39,10 +39,10 @@ export default function Noticias() {
   return (
     <div className="h-sreen w-full font-Encode-Sans pb-12 pt-16 ">
       <div className="flex justify-center items-center bg-bottom bg-fixed w-full h-72 px-10 sm:px-10 md:px-20 lg:px-40" style={{ backgroundImage: `url(${imagen_background})`, backgroundSize: 'cover' }}>
-        <div className="flex flex-row items-center  justify-between w-full">
-          <h1 className="text-white text-2xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-semibold">Noticias</h1>
+        <div className="flex flex-col md:flex-row lg:flex-row xl:flex-row items-center  justify-between w-full gap-y-4">
+          <h1 className="text-white text-4xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-semibold">Noticias</h1>
           <input
-          className="h-12 w-56 rounded-md border-gray-20 border-2 p-2"
+          className="h-12 w-full md:w-56 lg:w-56 xl:w-56 rounded-md border-gray-20 border-2 p-2"
           placeholder="Buscar"
           onChange={handleBuscar}
         />
