@@ -172,22 +172,22 @@ export default function Tracking() {
         <video className="absolute z-[-10] inset-0 w-full h-full object-cover brightness-50" src={Video2} loop autoPlay muted controls={false} onContextMenu={(e) => e.preventDefault()} playsInline ></video>
 
         <div className="w-full px-10 sm:px-10 md:px-20 lg:px-40 text-center">
-          <h1 className="text-7xl py-32 font-bold text-white">Rastrea tu embarque</h1>
+          <h1 className="text-4xl sm:text-4xl md:text-4xl lg:text-7xl py-32 font-bold text-white">Rastrea tu embarque</h1>
         </div>
         <div className="w-full backdrop-blur h-60 bg-white/40 rounded-lg items-center p-8">
-          <div className="flex flex-row text-white">
+          <div className="flex flex-col lg:flex-row xl:flex-row text-white gap-2 ">
             <input
               type="text"
               id="track_search"
               value={trackSearch}
               onChange={handleSearchChange}
               onKeyDown={handleEnter}
-              className="h-12 w-full rounded-lg px-2 m-2 ml-4 text-black bg-gray-100"
+              className="h-12 w-full rounded-lg px-2 text-black bg-gray-100"
               placeholder="Contenedor / Conocimiento de embarque / Referencia / Orden"
             />
             <button
               id="track_button"
-              className="bg-blue hover:bg-midblue p-2 m-2 w-24 rounded-md flex justify-center"
+              className="bg-blue hover:bg-midblue p-2 w-full  lg:w-24 xl:w-24 rounded-md flex justify-center"
               onClick={handleButtonClick}
               disabled={trackSearch === ''}
             >
@@ -202,12 +202,13 @@ export default function Tracking() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
               </svg>
             </div>
-            <div>
-              <p className="text-black">
+            <div className='hidden md:block lg:block'>
+              <p className="text-xs sm:text-sm md:text-normal text-black">
                 Rastree su carga ingresando su número de contenedor, conocimiento de embarque,
                 orden o referencia para obtener información de seguimiento de carga instantánea
               </p>
             </div>
+
           </div>
         </div>
       </div>
