@@ -46,11 +46,11 @@ export default function Servicios(){
    
 
     return(
-        <div className="w-full h-auto font-Encode-Sans pt-20">
+        <div className="w-full h-auto font-Encode-Sans py-20">
             <div className="flex justify-center items-center bg-bottom bg-fixed w-full h-96" style={{ backgroundImage: `url(${imagen_background})`, backgroundSize: 'cover' }}>
-                <div className="flex flex-col items-center">
-                    <h1 className="text-white text-6xl lg:text-8xl xl:text-8xl font-semibold">Nuestros Servicios Logisticos</h1>
-                    <p className="text-white font-bold pt-4">Lo común entre nuestros servicios es la excelencia</p>
+                <div className="flex flex-col items-center w-full">
+                    <h1 className="text-white text-2xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-semibold">Nuestros Servicios Logisticos</h1>
+                    <p className="text-white text-sm sm:text-xl md:text-xl lg:text-xl xl:text-xl font-bold pt-4">Lo común entre nuestros servicios es la excelencia</p>
                 </div>
             </div>
                 

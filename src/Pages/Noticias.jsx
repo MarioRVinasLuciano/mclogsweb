@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
 
+import imagen_background from "../Images/Homepageimgs/Slider_5.webp";
+
 export default function Noticias() {
   const [noticias, setNoticias] = useState([]);
   const [filteredNoticias, setFilteredNoticias] = useState([]);
@@ -28,28 +30,31 @@ export default function Noticias() {
   const handleBuscar = (e) => {
     const busquedaNormal = e.target.value.toLowerCase();
     setBusqueda(busquedaNormal);
-    const noticiasFiltradas = noticias.filter(noticia => 
+    const noticiasFiltradas = noticias.filter(noticia =>
       noticia.title.toLowerCase().includes(busquedaNormal)
     );
     setFilteredNoticias(noticiasFiltradas);
   }
 
   return (
-    <div className="h-sreen w-full font-Encode-Sans pb-12 pt-16 px-10 sm:px-10 md:px-20 lg:px-40">
-      <div className="flex h-36 w-full justify-between items-center pt-6">
-        <h1 className="lg:text-5xl text-4xl font-semibold">Noticias</h1>
-        <input
+    <div className="h-sreen w-full font-Encode-Sans pb-12 pt-16 ">
+      <div className="flex justify-center items-center bg-bottom bg-fixed w-full h-72 px-10 sm:px-10 md:px-20 lg:px-40" style={{ backgroundImage: `url(${imagen_background})`, backgroundSize: 'cover' }}>
+        <div className="flex flex-row items-center  justify-between w-full">
+          <h1 className="text-white text-2xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-semibold">Noticias</h1>
+          <input
           className="h-12 w-56 rounded-md border-gray-20 border-2 p-2"
           placeholder="Buscar"
           onChange={handleBuscar}
         />
+        </div>
       </div>
+
       {cargando ? (
         <p className="text-6xl text-center py-56 w-full">Cargando...</p>
       ) : filteredNoticias.length === 0 ? (
         <p className="text-6xl py-56">No se encontraron noticias.</p>
       ) : (
-        <div className="grid lg:grid-cols-4 grid-cols-1 gap-6 lg:gap-10">
+        <div className="grid lg:grid-cols-4 grid-cols-1 gap-6 lg:gap-10 px-10 sm:px-10 md:px-20 lg:px-40 pt-10">
           {filteredNoticias.map((contenido, index) => (
             <div
               key={contenido.oid}
@@ -83,8 +88,8 @@ export default function Noticias() {
                         <p className="text-md text-slate-500">{contenido.type}</p>
                       </div>
                       {index === 0 ? (
-                        <div className="rounded-md p-2 w-auto h-auto bg-red-300 animate-pulse">
-                          <p className="text-sm">Ultimas noticias</p>
+                        <div className="rounded-md p-2 w-auto h-auto bg-bluemunsell animate-pulse">
+                          <p className="text-sm text-white">Ultimas noticias</p>
                         </div>
                       ) : (
                         ""
