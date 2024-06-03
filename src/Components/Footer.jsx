@@ -23,8 +23,8 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="w-full pt-6  bg-gray-100">
-      <div className="flex justify-center items-center h-auto w-full px-4 sm:px-10 md:px-20 lg:px-40 pt-10">
+    <footer className="w-full pt-6 bg-gray-100">
+      <div className="flex justify-center items-center h-auto w-full px-4 sm:px-10 md:px-20 lg:px-40 pt-10 pb-6">
         <div className="grid grid-rows-4 sm:grid-rows-4 md:grid-rows-4 lg:grid-rows-1 grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-4 gap-x-6 ">
           <div className="h-auto col-span-1 lg:col-span-1 row-start-1 sm:row-start-1 md:row-start-1 lg:row-start-1">
             <div>
@@ -153,7 +153,7 @@ export default function Footer() {
         </div>
       </div>
       <hr className="h-0.2 bg-slate-200 w-full" />
-      <div className="flex items-center justify-center py-2">
+      <div className="flex items-center justify-center py-6">
         <p className="text-sm text-gray-500">Todos los derechos reservados © 2024 MC LOGISTICS SRL</p>
       </div>
     </footer>

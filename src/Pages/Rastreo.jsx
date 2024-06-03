@@ -1,264 +1,287 @@
-import React, { useState, useEffect, useRef } from "react";
-import contenedor from "../Images/Rastrear/barco_rastrear.jpg";
-import contenedor1 from "../Images/Rastrear/contenedor_bg_2.jpg";
-import contenedor2 from "../Images/Rastrear/contenedor_bg_3.jpg";
-import Tracker from "../Components/Trak";
+import React, { useState, useEffect, useRef } from 'react';
 
 //Estado Bl imagenes
 import TELEX_RELEASE from "../Icons/Telex_release.svg";
 import COPIA_BL from "../Icons/Copia_Bl.svg";
 
-// Import images
-import procesando from "../Icons/procesando.png"
-import en_transito from "../Icons/en_transito.png";
-import en_transito_aereo from "../Icons/en_transito_aereo.png";
-import en_puerto from "../Icons/en_puerto.png";
-import en_aeropuerto from "../Icons/en_aereopuerto.png";
-import Solicitado from "../Icons/Solicitado.png";
-import Despachado from "../Icons/Despacho_aprobado.png"
+import Video2 from "../Videos/Video2.mp4"
 
-
-
-export default function Rastreo() {
-    const [valor, setValor] = useState("");
-    const [embarque, setEmbarque] = useState("");
-    const [error, setError] = useState(false);
-    const [formattedDate, setFormattedDate] = useState("");
-    const [searchPerformed, setSearchPerformed] = useState(false);
-    const [searchCount, setSearchCount] = useState(0);
+export default function Tracking() {
+  const [trackSearch, setTrackSearch] = useState('');
+  const [trackResult, setTrackResult] = useState('');
+  const [error, setError] = useState(null);
+  const [isContainer, setIsContainer] = useState(false);
+  const [movementType, setMovementType] = useState('');
+  const [searchCount, setSearchCount] = useState(0);
     const scrollRef = useRef(null);
 
-    const manejoBusqueda = async (valor_entrada) => {
-        await fetchData(valor_entrada);
-        setSearchCount(prevCount => prevCount + 1); // Increment search count
-    };
+    const handleEnter = (e) => {
+    if (e.key === "Enter") {
+      setTrackSearch(e.target.value);
+    }}
 
-    const fetchData = async (valor_entrada) => {
-        try {
-            const respuesta = await fetch(
-                `https://api.mclogs.com/odata/public/GetOrderByText(Value='${valor_entrada}')?$select=Oid,State,ETD,ETA,TelexRelease,TransportMode,MovementType,Freights,Summary&$expand=Freights,Summary`
-            );
-            const datos = await respuesta.json();
-            setEmbarque(datos)
-            setError(false);
-        } catch (error) {
-            console.error("No se encontro un embarque con este numero", error);
-            setError(true);
-        }
-    };
+  useEffect(() => {
+    if (trackSearch === '') {
+      setTrackResult('');
+      setError(null);
+    }
+  }, [trackSearch]);
 
-    useEffect(() => {
+  const manejoBusqueda = () => {
+    setSearchCount(prevCount => prevCount + 1); 
+};
+
+  useEffect(() => {
         if (scrollRef.current) {
             scrollRef.current.scrollIntoView({ behavior: "smooth" });
         }
     }, [searchCount]);
 
-    useEffect(() => {
-        if (embarque && embarque.ETA) {
-            const date = new Date(embarque.ETA);
-            const dia = date.getDate();
-            const mes = date.getMonth() + 1;
-            const ano = date.getFullYear();
-            const diaenformato = dia < 10 ? '0' + dia : dia;
-            const mesenformato = mes < 10 ? '0' + mes : mes;
-            const fecha = `${diaenformato}/${mesenformato}/${ano}`;
-            setFormattedDate(fecha);
-        }
-    }, [embarque]);
+  const handleSearchChange = (e) => {
+    setTrackSearch(e.target.value);
+  };
 
-    const getProgressWidth = (state) => {
-        switch (state) {
-            case "EnCoordinacion":
-                return "5%";
-            case "EnTransito":
-                return "50%";
-            case "EnPuerto":
-            case "DespachoSolicitado":
-            case "Despachado":
-                return "100%";
-            case "EnAeropuerto":
-                return "50%";
-            default:
-                return "0%";
+  const handleButtonClick = async () => {
+    try {
+      const response = await fetch(`https://api.mclogs.com/odata/public/GetOrderByText(Value='${trackSearch}')?$select=Oid,State,ETD,ETA,TelexRelease,TransportMode,MovementType,Freights,Summary&$expand=Freights,Summary`);
+      const data = await response.json();
 
-        }
-    };
+      setTrackResult(data);
+      setMovementType(data.MovementType);
+      setIsContainer(/^([A-Z]{3})([UJZ])([0-9]{6})([0-9])$/.test(trackSearch));
 
+      if (data.Summary && isContainer && (data.MovementType === 'Consolidation' || data.MovementType === 'LCL/LCL')) {
+        data.Summary = data.Summary.filter(x => !['EnCoordinacion', 'En Coordinación', 'En Transito', 'EnTransito'].includes(x.Status));
+      }
+
+      setTrackResult(data);
+    } catch (error) {
+      setError('No se encontraron resultados');
+      setTrackResult(null);
+    }
+  };
+
+  const renderSummary = () => {
+    if (!trackResult || !trackResult.Summary) return null;
+
+    return trackResult.Summary.map((x, index) => {
+      const dateClass = formatDateClass(x.Date);
+      return (
+        <tr key={index} className={`bg-slate-50 border-b ${x.Status === 'Descargado' ? 'success' : ''}`}>
+          <td className={`py-4 px-6 ${dateClass}`}>{x.Status}</td>
+          <td className="py-4 px-6">{x.ActivityPlace || '-'}</td>
+          <td className="py-4 px-6">{`${new Date(x.Date).toDateString()}, ${new Date(trackResult.ETA).toLocaleTimeString()}`}</td>
+          <td className="py-4 px-6">{x.Ship || '-'}</td>
+          <td className="py-4 px-6">{x.TravelNumber || '-'}</td>
+        </tr>
+      );
+    });
+  };
+
+  const formatDateClass = (dateString) => {
+    const date = new Date(dateString);
     const currentDate = new Date();
+    if (date > currentDate) {
+      return 'text-slate-400'; // Future date
+    } else if (date.toDateString() === currentDate.toDateString()) {
+      return 'text-black'; // Current date
+    } else {
+      return 'text-green-500'; // Past date
+    }
+  };
 
-    const formatDateClass = (dateString) => {
-        const date = new Date(dateString);
-        if (date > currentDate) {
-            return 'text-slate-50';
-        } else if (date.toDateString() === currentDate.toDateString()) {
-            return 'text-black';
-        } else {
-            return 'text-green-500';
-        }
-    };
 
+  const renderFreights = () => {
+    if (!trackResult || !trackResult.Freights) return null;
+
+    return trackResult.Freights.map((e, index) => {
+      if (e.ContainerNumber === trackSearch) {
+        return (
+          <div key={index}>
+            <div className="containerNumber">{e.ContainerNumber}</div>
+            <div className="isContenedor">Contenedor encontrado</div>
+          </div>
+        );
+      }
+      return null;
+    });
+  };
+
+  const renderImages = () => {
+    if (!trackResult) return null;
+
+    let imageUrl = '';
+
+    if (trackResult.State == 'Despachado') {
+      if (trackResult.TransportMode == 'Maritimo') imageUrl = 'lifeline-barco-03.svg';
+      else imageUrl = 'lifeline-avion-03.svg';
+    }
+    else if (trackResult.State == 'En Puerto' || trackResult.State == 'EnPuerto') {
+      if (trackResult.TransportMode == 'Maritimo') imageUrl = 'lifeline-barco-03.svg';
+      else imageUrl = 'lifeline-avion-03.svg';
+    } else if (trackResult.State == 'En Despacho Solicitado Maritimo') {
+      if (trackResult.TransportMode == 'Maritimo') imageUrl = 'lifeline-barco-03.svg';
+      else imageUrl = 'lifeline-avion-03.svg';
+    }
+    else if (trackResult.State == 'En Despacho Solicitado') {
+      if (trackResult.TransportMode == 'Maritimo') imageUrl = 'lifeline-barco-03.svg';
+      else imageUrl = 'lifeline-avion-03.svg';
+    }
+    else if (trackResult.State == 'DespachoSolicitado') {
+      if (trackResult.TransportMode == 'Maritimo') imageUrl = 'lifeline-barco-03.svg';
+      else imageUrl = 'lifeline-avion-03.svg';
+    }
+    else if (trackResult.State == 'En Transito' || trackResult.State == 'EnTransito') {
+      trackResult.State = 'En Transito';
+      if (trackResult.TransportMode == 'Maritimo') imageUrl = 'lifeline-barco-02.svg';
+      else imageUrl = 'lifeline-avion-02.svg';
+    }
+    else if (trackResult.State == 'EnCoordinacion' || trackResult.State == 'En Coordinación') {
+      if (trackResult.TransportMode == 'Maritimo') imageUrl = 'lifeline-barco-01.svg';
+      else imageUrl = 'lifeline-avion-01.svg';
+    }
+
+    if (trackResult.State == 'EnCoordinacion' || trackResult.State == 'En Coordinación') trackResult.State = 'En Coordinación';
+    if (trackResult.State == 'En Transito' || trackResult.State == 'EnTransito') trackResult.State = 'En Transito';
+    if (trackResult.State == 'EnPuerto' || trackResult.State == 'En Puerto') trackResult.State = 'En Puerto';
+    if (trackResult.State == 'EnAeropuerto') trackResult.State = 'En Aeropuerto';
+    if (trackResult.State == 'DespachoSolicitado') trackResult.State = 'Despacho Solicitado';
+    if (trackResult.State == 'Retenido') trackResult.State = 'Retenido';
+    if (trackResult.State == 'Despachado') trackResult.State = 'Despachado';
+    if (trackResult.State == 'PendienteDeConsolidacion') trackResult.State = 'Pendiente de Consolidación';
+
+
+    if (trackResult.Summary.length) {
+      var gg = trackResult.Summary[trackResult.Summary.length - 1];
+      if (gg.Status == 'Descargado' && gg.Date) {
+        imageUrl = 'descargado1.png';
+        trackResult.State = 'En Almacén';
+      }
+      if (gg.Status == 'Descargado' && !gg.Date) {
+        imageUrl = 'descargado2.png';
+      }
+      if (gg.Status != 'Descargado' && (movementType == 'Consolidation' || movementType == 'LCL/LCL')) {
+        imageUrl = 'descargado2.png';
+        trackResult.State = trackResult.State + ' (En Tránsito Almacén)';
+      }
+    }
 
     return (
-        <div className="h-full w-full font-Encode-Sans pt-16">
-            <div className="w-auto h-screen ">
-                <div className="flex flex-col relative h-full bg-center px-10 sm:px-10 md:px-20 lg:px-40" style={{ backgroundImage: `url(${contenedor})`, backgroundSize: 'cover', backgroundPosition: 'bo' }}>
-                    <div className="w-full">
-                        <h1 className="text-4xl pt-20 font-semibold text-white">Rastrea tu embarque</h1>
-                    </div>
-                    <div className="pt-24">
-                        <Tracker onSearch={manejoBusqueda} />
-                    </div>
-                </div>
-            </div>
-            {searchCount > 0 ?
-                (
-                    !error && embarque?.Summary?.length >= 3 ? (
-                        <div id="historial" className="h-auto w-full " ref={scrollRef}>
-                            <div className="flex flex-col py-24 w-auto">
-                                {/* Estatus espacio */}
-                                <div className="px-10 sm:px-10 md:px-20 lg:px-40 w-auto">
-                                    <div className="flex flex-row justify-between items-end">
-                                        <div className="flex flex-col">
-                                            <div>
-                                                <img
-                                                    className={embarque.State === "EnCoordinacion" ? "h-20 w-20" : "h-16 w-16"}
-                                                    src={embarque.TransportMode === "Maritimo" ? procesando : procesando}
-                                                    alt=""
-                                                />
-                                            </div>
-                                        </div>
-                                        <div className="flex flex-col">
-                                            <div>
-                                                <img
-                                                    className={embarque.State === "EnTransito" ? "h-28 w-28" : "h-16 w-16"}
-                                                    src={embarque.TransportMode === "Maritimo" ? en_transito : en_transito_aereo}
-                                                    alt=""
-                                                />
-                                            </div>
-                                        </div>
-                                        <div className="flex flex-col">
-                                            <div>
-                                                <img
-                                                    className={embarque.State === "EnPuerto" || embarque.State === "EnAeropuerto" ? "h-28 w-28" : "h-16 w-16"}
-                                                    src={embarque.TransportMode === "Maritimo" ? en_puerto : en_aeropuerto}
-                                                    alt=""
-                                                />
-                                            </div>
-                                        </div>
-                                        {(embarque.State === "DespachoSolicitado" || embarque.State === "Despachado") && (
-                                            <div>
-                                                <img
-                                                    className={embarque.State === "DespachoSolicitado" ? "h-28 w-28" : "h-16 w-16"}
-                                                    src={Solicitado}
-                                                    alt=""
-                                                />
-                                            </div>
-                                        )}
-                                        {embarque.State === "Despachado" && (
-                                            <div>
-                                                <img className="h-28 w-28" src={Despachado} alt="" />
-                                            </div>
-                                        )}
-                                    </div>
-                                    <div className="flex flex-row justify-center pt-4">
-                                        <div class="flex items-center gap-x-1 w-full">
-                                            <div class="w-full h-2.5 flex flex-col justify-center overflow-hidden bg-aureolin text-xs text-white text-center whitespace-nowrap transition duration-500 dark:bg-blue-500" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                            <div class="w-full h-2.5 flex flex-col justify-center overflow-hidden bg-aureolin text-xs text-white text-center whitespace-nowrap transition duration-500 dark:bg-blue-500" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                            <div class="w-full h-2.5 flex flex-col justify-center overflow-hidden bg-aureolin  text-xs text-white text-center whitespace-nowrap transition duration-500 dark:bg-neutral-600" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                            <div class="w-full h-2.5 flex flex-col justify-center overflow-hidden bg-gray-300 text-xs text-white text-center whitespace-nowrap transition duration-500 dark:bg-neutral-600" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                                <div className="flex flex-row justify-center py-8 gap-x-16">
-                                    <div>
-                                        <h1 className="text-3xl font-semibold">
-                                            {
-                                                embarque.State === "EnCoordinacion" ?
-                                                    "En Coordinacion" :
-                                                    embarque.State === "EnTransito" ?
-                                                        "En Transito" :
-                                                        embarque.State === "EnPuerto" ?
-                                                            "En Puerto" :
-                                                            embarque.State === "EnAeropuerto" ?
-                                                                "En Aeropuerto" :
-                                                                embarque.State === "DespachoSolicitado" ?
-                                                                    "Despacho Solicitado" :
-                                                                    embarque.State === "Despachado" ?
-                                                                        "Despachado" :
-                                                                        embarque.State === "Retenido" ?
-                                                                            "Retenido" : ""
-                                            }
-                                        </h1>
-                                    </div>
-                                </div>
-
-                                {/* fin Estatus espacio */}
-
-                                <div className="flex flex-col lg:flex-row xl:flex-row items-center justify-center gap-10 h-auto w-full">
-                                    <div className="flex items-center h-56 ">
-                                        <h1 className="font-semibold">Fecha estimada de llegada: {formattedDate}</h1>
-                                    </div>
-                                    <div className=" flex flex-row items-center text-center">
-                                        <div>
-                                            <p className="font-semibold">Estado de HBL: </p>
-                                        </div>
-                                        <div className="flex-non">
-                                            {embarque.TelexRelease === true ?
-                                                <img className="h-56 w-auto" src={TELEX_RELEASE} alt="" />
-                                                :
-                                                <img className="h-56 w-56 flex-none" src={COPIA_BL} alt="" />
-
-                                            }
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className="flex items-center justify-center h-auto pt-16">
-                                    <div className="overflow-x-auto relative shadow-md sm:rounded-lg">
-                                        <div className="overflow-x-auto relative shadow-md sm:rounded-lg">
-                                            <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                                                <thead className="text-xs text-gray-700 uppercase bg-gray-50">
-                                                    <tr>
-                                                        <th scope="col" className="py-3 px-6">Estado</th>
-                                                        <th scope="col" className="py-3 px-6">Lugar</th>
-                                                        <th scope="col" className="py-3 px-6">Fecha</th>
-                                                        <th scope="col" className="py-3 px-6">Barco</th>
-                                                        <th scope="col" className="py-3 px-6">No.Viaje</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    {embarque.Summary.map((contenido) => {
-                                                        const dateClass = formatDateClass(contenido.Date);
-                                                        return (
-                                                            <tr className="bg-white border-b" key={contenido.TravelNumber}>
-                                                                <td className={`py-4 px-6 ${dateClass}`}>{contenido.Status}</td>
-                                                                <td className="py-4 px-6">{contenido.ActivityPlace}</td>
-                                                                <td className="py-4 px-6">{new Date(contenido.Date).toLocaleDateString()}</td>
-                                                                <td className="py-4 px-6">{contenido.Ship}</td>
-                                                                <td className="py-4 px-6">{contenido.TravelNumber}</td>
-                                                            </tr>
-                                                        );
-                                                    })}
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    ) : (
-                        // Content to display when search is unsuccessful
-                        <div className="w-full py-44 flex justify-center items-center" ref={scrollRef}>
-                            <h1 className="text-4xl">No se encontró un contenedor con este número</h1>
-
-                        </div>
-                    )
-                ) : null}
-        </div>
+      <img src={`https://www.mclogs.com/assets/images/status_orders/${imageUrl}`} alt="Status" className="imageNow h-full" />
     );
+  };
+
+
+
+
+  return (
+    <div className='h-full w-full font-Encode-Sans pt-20'>
+     
+
+      <div className='relative flex flex-col px-10 sm:px-10 md:px-20 lg:px-40 h-screen'>
+      <video className="absolute z-[-10] inset-0 w-full h-full object-cover brightness-50" src={Video2} loop autoPlay muted controls={false} onContextMenu={(e) => e.preventDefault()}
+  playsInline ></video>
+   
+      <div className="w-full px-10 sm:px-10 md:px-20 lg:px-40 text-center">
+        <h1 className="text-7xl py-32 font-bold text-white">Rastrea tu embarque</h1>
+      </div>
+      <div className="w-full backdrop-blur h-60 bg-white/40 rounded-lg items-center p-8 " >
+        <div className="flex flex-row text-white ">
+          <input
+            type="text"
+            id="track_search"
+            value={trackSearch}
+            onChange={handleSearchChange}
+            onKeyDown={handleEnter}
+            className="h-12 w-full rounded-lg px-2 m-2 ml-4 text-black bg-gray-100"
+            placeholder="Contenedor / Conocimiento de embarque / Referencia / Orden"
+          />
+          <button
+            id="track_button"
+            className="bg-blue hover:bg-midblue p-2 m-2 w-24 rounded-md flex justify-center"
+            onClick={() => {
+              handleButtonClick();
+              manejoBusqueda();
+            }}
+            disabled={trackSearch === ''}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8 text-white">
+              <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+            </svg>
+          </button>
+          
+        </div>
+        <div className="flex m-4">
+        <div className="pr-2">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+            <path strokeLinecap="round" strokeLinejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+          </svg>
+        </div>
+        <div>
+          <p className="text-black">
+            Rastree su carga ingresando su número de contenedor, conocimiento de embarque,
+            orden o referencia para obtener información de seguimiento de carga instantánea
+          </p>
+        </div>
+        </div>
+      </div>
+      </div>
+
+     
+
+      {error && <div className="track_no_result_section">{error}</div>}
+
+      {trackResult && (
+        
+        <div className="relative track_result_section px-10 sm:px-10 md:px-20 lg:px-40 h-screen" ref={scrollRef}>
+           <div className="imagesContainer text-center pt-24" >
+        <div className='w-full h-44 flex justify-center'>
+          {renderImages()}
+        </div>
+        <h1 className="text-3xl font-semibold pt-10">{trackResult.State}</h1>
+      </div>
+
+          <div className="flex flex-col lg:flex-row xl:flex-row items-center justify-center gap-10 h-auto w-full">
+            <div className="flex items-center h-56 ">
+              <h1 className="font-semibold">Fecha estimada de llegada: {`${new Date(trackResult.ETA).toDateString()},${new Date(trackResult.ETA).toLocaleTimeString()}`}</h1>
+            </div>
+            <div className=" flex flex-row items-center text-center">
+              <div>
+                <p className="font-semibold">Estado de HBL: </p>
+              </div>
+              <div className="flex-non">
+                {trackResult.TelexRelease === true ?
+                  <img className="h-56 w-auto" src={TELEX_RELEASE} alt="" />
+                  :
+                  <img className="h-56 w-56 flex-none" src={COPIA_BL} alt="" />
+
+                }
+              </div>
+            </div>
+          </div>
+          <div>
+            <div className="shadow-md sm:rounded-lg overflow-hidden ">
+              <table className='w-full text-sm text-left text-gray-500 dark:text-gray-400 '>
+                <thead className="text-xs text-gray-700 uppercase">
+                  <tr className="border-b bg-slate-100">
+                    <th scope="col" className="py-3 px-6">Estado</th>
+                    <th scope="col" className="py-3 px-6">Lugar</th>
+                    <th scope="col" className="py-3 px-6">Fecha</th>
+                    <th scope="col" className="py-3 px-6">Barco</th>
+                    <th scope="col" className="py-3 px-6">No.Viaje</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {renderSummary()}
+                </tbody>
+              </table>
+            </div>
+          </div>
+          {renderFreights()}
+        </div>
+      )}
+    </div>
+  );
 }
 
 

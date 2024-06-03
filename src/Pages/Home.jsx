@@ -115,7 +115,7 @@ export default function Homepage() {
                         </div>
 
                         <div className="h-full lg:w-[50%] w-full flex lg:justify-end justify-center">
-                            <img className="h-full w-[100%] object-cover rounded-r-md " src={contenedores_cielo} alt="Logistics" />
+                            <img className="h-full w-[100%] object-cover rounded-md " src={contenedores_cielo} alt="Logistics" />
                         </div>
                     </div>
                 </div>
@@ -126,7 +126,7 @@ export default function Homepage() {
             {/* Nuestros Servicios */}
             <div className="w-full h-auto pb-16">
                 <div className="flex w-full h-24 items-center justify-center px-4 sm:px-10 md:px-20 lg:px-40">
-                    <h3 className="text-4xl font-bold">Nuestros Servicios Logísticos</h3>
+                    <h3 className="text-5xl font-bold">Nuestros Servicios Logísticos</h3>
                 </div>
                 <div className="flex justify-center h-auto w-full pt-8 px-4 sm:px-10 md:px-20 lg:px-40">
                     <div className="grid lg:grid-cols-3 md:grid-cols-2  gap-y-12 gap-x-6 justify-items-center w-full">

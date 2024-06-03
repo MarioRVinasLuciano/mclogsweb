@@ -15,7 +15,7 @@ const serviciosdatos = [
         imagen: en_transito,
         claseImagen: `h-24 w-24 invert` ,
         titulo: "Transporte Marítimo",
-        claselink: "rounded-md text-white text-opacity-85 hover:text-opacity-100",
+        claselink: "rounded-md text-white text-opacity-90 hover:text-opacity-100 underline",
         link: "#/servicios#transporte_maritimo"
     },
     {
@@ -24,7 +24,7 @@ const serviciosdatos = [
         imagen: en_transito_aereo,
         claseImagen: `h-24 w-24` ,
         titulo: "Transporte Aéreo",
-        claselink: "rounded-md text-black text-opacity-85 hover:text-opacity-100",
+        claselink: "rounded-md text-black text-opacity-90 hover:text-opacity-100 underline",
         link: "#/servicios#transporte_aereo"
     },
     {
@@ -34,7 +34,7 @@ const serviciosdatos = [
         claseImagen: `h-24 w-24 invert` ,
         titulo: "Transporte Terrestre",
         texto: "Nuestras alianzas en territorio dominicano con servicios de geolocalización, ofrecen seguridad y garantía para el transporte de mercancías.",
-        claselink: "rounded-md text-white text-opacity-85 hover:text-opacity-100",
+        claselink: "rounded-md text-white text-opacity-85 hover:text-opacity-100 underline",
         link: "#/servicios#transporte_terrestre"
     },
     {
@@ -44,7 +44,7 @@ const serviciosdatos = [
         claseImagen: `h-24 w-24` ,
         titulo:"Almacenaje",
         texto:"Ofrecemos soluciones de almacenaje seguro y eficiente para sus mercancías, garantizando su integridad y disponibilidad en todo momento.",
-        claselink: "rounded-md text-black text-opacity-85 hover:text-opacity-100",
+        claselink: "rounded-md text-black text-opacity-85 hover:text-opacity-100 underline",
         link: "#/servicios#almacenaje"
     },
     {
@@ -54,7 +54,7 @@ const serviciosdatos = [
         claseImagen: `h-24 w-24 invert` ,
         titulo:"Gestión Aduanal",
         texto:"Nuestro equipo de expertos en aduanas ofrece servicios de gestión aduanal integral, facilitando los trámites y asegurando el cumplimiento de todas las regulaciones.",
-        claselink: "rounded-md text-white text-opacity-85 hover:text-opacity-100",
+        claselink: "rounded-md text-white text-opacity-85 hover:text-opacity-100 underline",
         link: "#/servicios#gestion_aduanal"
     },
     {
@@ -64,7 +64,7 @@ const serviciosdatos = [
         claseImagen: `h-24 w-24` ,
         titulo:"Paquetería",
         texto:"Servicio de paquetería ágil y seguro para envíos locales e internacionales, garantizando la entrega oportuna y en perfectas condiciones de sus paquetes y documentos.",
-        claselink: "rounded-md text-black text-opacity-85 hover:text-opacity-100",
+        claselink: "rounded-md text-black text-opacity-85 hover:text-opacity-100 underline",
         link: "#/servicios#paqueteria"
     }
     

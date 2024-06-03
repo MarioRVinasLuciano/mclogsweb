@@ -48,6 +48,7 @@ export default function NavBar() {
         { name: "Noticias", link: "/noticias" },
         { name: "Rastreo", link: "/rastreo" },
         { name: "Contacto", link: "/contacto" },
+        { name: "Soporte", link: "/soporte" },
         { name: "Mi Cuenta", link: "https://my.mclogs.com/auth/login" },
     ];
 

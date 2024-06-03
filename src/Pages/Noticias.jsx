@@ -5,6 +5,7 @@ export default function Noticias() {
   const [noticias, setNoticias] = useState([]);
   const [filteredNoticias, setFilteredNoticias] = useState([]);
   const [busqueda, setBusqueda] = useState("");
+  const [cargando, setCargando] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -17,8 +18,10 @@ export default function Noticias() {
         setFilteredNoticias(data);
       } catch (error) {
         console.error("Error fetching data:", error);
+      } finally {
+        setCargando(false);
       }
-    }
+    };
     fetchData();
   }, []);
 
@@ -31,8 +34,6 @@ export default function Noticias() {
     setFilteredNoticias(noticiasFiltradas);
   }
 
-  console.log(noticias.length)
-
   return (
     <div className="h-sreen w-full font-Encode-Sans pb-12 pt-16 px-10 sm:px-10 md:px-20 lg:px-40">
       <div className="flex h-36 w-full justify-between items-center pt-6">
@@ -43,7 +44,9 @@ export default function Noticias() {
           onChange={handleBuscar}
         />
       </div>
-      {filteredNoticias.length === 0 ? (
+      {cargando ? (
+        <p className="text-6xl text-center py-56 w-full">Cargando...</p>
+      ) : filteredNoticias.length === 0 ? (
         <p className="text-6xl py-56">No se encontraron noticias.</p>
       ) : (
         <div className="grid lg:grid-cols-4 grid-cols-1 gap-6 lg:gap-10">
@@ -97,3 +100,4 @@ export default function Noticias() {
     </div>
   );
 }
+

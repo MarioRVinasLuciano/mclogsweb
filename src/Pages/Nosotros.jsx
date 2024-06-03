@@ -35,7 +35,7 @@ export default function Nosotros() {
 
     return (
         <div className="h-auto w-full font-Encode-Sans ">
-
+            
 
             <div className="w-full  h-auto lg:h-screen xl:h-screen pb-10 pt-20">
                 <div className="h-full w-auto flex lg:flex-row flex-col items-center">

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 
+import imagen_background from "../Images/Homepageimgs/Slider_4.webp";
+
 export default function Agentes() {
   const [agents, setAgents] = useState([]);
   const [selectedContinent, setSelectedContinent] = useState("");
@@ -46,39 +48,40 @@ export default function Agentes() {
     setAgentsInContinent(filteredAgents);
   }
 
-  const uniqueCountryNames = [...new Set(agentsInContinent.map(agent => agent.country))];
+  const uniqueCountryNames = [...new Set(agentsInContinent.map(agent => agent.country.trimEnd()))];
+
+  console.log(uniqueCountryNames)
 
 
   return (
-    <div className="h-auto w-full font-quicksand pt-32 px-10 sm:px-10 md:px-20 lg:px-40">
-      <div className="flex flex-col h-auto w-full items-center gap-y-6 pt- ">
-        <h1 className="lg:text-5xl text-4xl font-semibold">Nuestros Agentes</h1>
-        <p>Contamos con agentes en todos los continentes</p>
+    <div className="h-auto w-full font-Encode-Sans ">
+      <div className="flex flex-col h-auto w-full items-center gap-y-6 pt-20">
+      <div className="flex justify-center items-center bg-bottom bg-fixed w-full h-96" style={{ backgroundImage: `url(${imagen_background})`, backgroundSize: 'cover' }}>
+                <div className="flex flex-col items-center">
+                    <h1 className="text-white text-6xl lg:text-8xl xl:text-8xl font-semibold">Nuestros Agentes</h1>
+                    <p className="text-white font-bold pt-4">Contamos con agentes en todos los continentes</p>
+                </div>
+            </div>
       </div>
 
-      <div className="flex flex-col h-auto w-full pt-10 pb-20 sm:pb-56">
-        <div className="flex flex-col w-full  h-auto gap-y-6 pb-10">
-          <div className="rounded-md w-full h-12 border-2 border-slate-400">
-            <input className="h-full w-full rounded-md p-2 " placeholder="Buscar" onChange={buscar} ></input>
-          </div>
-          <div className="bg-white rounded-sm shadow-md p-4 w-full">
-            <div className="grid lg:grid-cols-8 md:grid-cols-8 sm:grid-cols-4 sm:grid-rows-2 md:grid-rows-1 gap-y-6 grid-rows-auto gap-x-30 w-full justify-items-center">
-              <button
-                className={`hover:bg-oldgold w-24 rounded-md ${selectedContinent === "" ? 'bg-aureolin' : ''}`}
-                onClick={() => handleContinentClick("")}
-              >
-                Todos
-              </button>
+      <div className="flex flex-col h-auto w-full pt-16 pb-20 sm:pb-56 px-10 sm:px-10 md:px-20 lg:px-40">
+        <div className="flex flex-col w-full  h-auto gap-y-6 pb-16">
+          <div className="bg-white p-4 w-full">
+            <div className="grid lg:grid-cols-7 md:grid-cols-7 sm:grid-cols-4 sm:grid-rows-2 md:grid-rows-2 lg:grid-rows-1 gap-y-6 grid-rows-auto gap-x-20 w-full justify-items-center">
               {continents.map((continent, index) => (
                 <button
                   key={index}
-                  className={`hover:bg-oldgold w-24 rounded-md ${selectedContinent === continent ? 'bg-aureolin' : ''}`}
+                  className={`hover:border-aureolin border-2 w-36 h-10 rounded-md text-aureolin ${selectedContinent === continent ? 'border-2 border-aureolin' : ''}`}
                   onClick={() => handleContinentClick(continent)}
                 >
                   {continent}
                 </button>
               ))}
             </div>
+            
+          </div>
+          <div className="rounded-md w-full h-10 border border-slate-400">
+            <input className="h-full w-full rounded-md p-2 " placeholder="Buscar" onChange={buscar} ></input>
           </div>
 
         </div>
@@ -92,7 +95,7 @@ export default function Agentes() {
                   <h1 className="text-2xl font-semibold pb-6 text-blue">{countryName}</h1>
                   <div className="flex flex-wrap gap-4">
                     {agentsInContinent
-                      .filter(agent => agent.country === countryName)
+                      .filter(agent => agent.country.trimEnd() === countryName)
                       .map(agent => (
                         <div key={agent.oid} className="bg-white shadow-md rounded-md p-4 mb-4 w-72 h-56 overflow-auto">
                           <p className="font-semibold text-aureolin">{agent.name}</p>

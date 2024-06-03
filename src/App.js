@@ -13,6 +13,8 @@ import Seguridad from "./Pages/Seguridad";
 import Privacidad from "./Pages/Privacidad";
 import { useEffect } from "react";
 import Contacto from "./Pages/Contacto";
+import Soporte from "./Pages/Soporte";
+import ScrollToTopButton from "./Components/ScrolltoTopButton";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -25,11 +27,9 @@ function ScrollToTop() {
 }
 
 function App() {
-
-
   return (
     <>
-     <NavBar />
+      <NavBar />
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/nosotros" element={<Nosotros />} />
@@ -38,10 +38,12 @@ function App() {
         <Route path="/noticias" element={<Noticias />} />
         <Route path="/rastreo" element={<Rastreo />} />
         <Route path="/contacto" element={<Contacto />} />
+        <Route path="/soporte" element={<Soporte />} />
         <Route path="/articulo/:oid" element={<ArticulosPagina />} />
-        <Route path="/seguridad" element={<Seguridad/>} />
-        <Route path="/privacidad" element={<Privacidad/>} />
+        <Route path="/seguridad" element={<Seguridad />} />
+        <Route path="/privacidad" element={<Privacidad />} />
       </Routes>
+      <ScrollToTopButton />
       <ScrollToTop />
       <Footer />
     </>
@@ -49,4 +51,3 @@ function App() {
 }
 
 export default App;
-
