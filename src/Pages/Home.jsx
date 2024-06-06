@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import "../Slidercss/slider.css"
 
@@ -57,6 +57,21 @@ import tecnologia from "../Icons/Tecnologia.png";
 import AppMclogs from "../Components/App_Mclogs_descarga";
 
 
+const ServiceCard = ({ delay, className, imgSrc, title, description, link }) => (
+    <div data-aos="fade-down" data-aos-delay={delay} className="flex flex-col bg-white h-[26rem] sm:h-[36rem] w-auto lg:w-[24rem] xl:w-[24rem] shadow-lg rounded-md text-center overflow-hidden">
+        <div className="w-full h-1/3 bg-clip-border flex justify-center items-center" style={{ backgroundImage: `url(${white})`, backgroundSize: 'cover' }}>
+            <img className={className} src={imgSrc} alt={title} />
+        </div>
+        <p className="p-8 overflow-y-auto text-sm sm:text-lg lg:text-md font-regular text-slate-500 flex-grow">{description}</p>
+        <div className="mt-auto">
+            <button className="h-10 w-auto bg-bluemunsell hover:bg-cyan-600 my-8 rounded-md">
+                <a className="p-4 text-white" href={link}>Saber Más</a>
+            </button>
+        </div>
+    </div>
+
+);
+
 
 
 export default function Homepage() {
@@ -64,20 +79,39 @@ export default function Homepage() {
         Aos.init({ duration: 1000 });
     }, []);
 
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [fade, setFade] = useState(false);
 
-    const ServiceCard = ({ dataAos, delay, className, imgSrc, title, description, link }) => (
-        <div data-aos={dataAos} data-aos-delay={delay} className="block bg-white h-[36rem] w-[24rem] shadow-lg rounded-md text-center overflow-hidden">
-            <div className="w-full h-1/3 bg-clip-border flex justify-center items-center" style={{ backgroundImage: `url(${white})`, backgroundSize: 'cover' }}>
-                <img className={className} src={imgSrc} alt={title} />
-            </div>
-            <p className="p-8 overflow-y-auto text-sm sm:text-lg lg:text-md font-regular text-slate-500">{description}</p>
-            <div className="mt-auto">
-                <button className="h-10 w-auto bg-bluemunsell hover:bg-cyan-600 my-4 rounded-md">
-                    <a className="p-4 text-white" href={link}>Saber Más</a>
-                </button>
-            </div>
-        </div>
-    );
+    const texts = [
+        {
+            title: 'MC LOGISTICS',
+            subtitle: 'CENTRADOS EN EL CLIENTE',
+            description: 'Impulsados por la DATA',
+        },
+        {
+            title: '',
+            subtitle: 'ENFOCADOS EN IDENTIFICAR OPORTUNIDADES',
+            description: 'Para aumentar la rentabilidad de nuestros clientes a través de la EFICIENCIA',
+        },
+    ]
+
+
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setFade(true);
+            setTimeout(() => {
+                setCurrentIndex((prevIndex) => (prevIndex + 1) % texts.length);
+                setFade(false);
+            }, 500); // Duration of the fade-out animation
+        }, 6000);
+
+        return () => clearInterval(interval); // Clear interval on component unmount
+    }, [texts.length]);
+
+    const currentText = texts[currentIndex];
+
+  
 
 
 
@@ -89,10 +123,10 @@ export default function Homepage() {
                 <video className="absolute inset-0 w-full h-full object-cover brightness-50" src={Video} loop autoPlay muted controls={false} onContextMenu={(e) => e.preventDefault()}
                     playsInline ></video>
                 <div className="flex w-full h-full text-white px-10 sm:px-10 md:px-20 lg:px-40 items-center">
-                    <div className="h-72 w-auto text-wrap">
-                        <h1 className="w-auto text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl py-4" data-aos="fade-down" data-aos-duration="500">MC LOGISTICS</h1>
-                        <p className="w-2/3 text-4xl sm:text-5xl md:text-5xl lg:text-7xl xl:text-8xl" data-aos="fade-up" data-aos-duration="400" data-aos-delay="600">CENTRADOS EN EL CLIENTE</p>
-                        <p className="text-lg font-semibold py-4" data-aos="fade-up" data-aos-duration="500" data-aos-delay="1300">Impulsados por la DATA</p>
+                    <div className={`h-72 w-auto text-wrap ${fade ? 'fade-out' : 'fade-in'}`}>
+                        <h1 className="w-auto text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl py-4" data-aos="fade-down" data-aos-duration="500">{currentText.title}</h1>
+                        <p className="w-2/3 text-4xl sm:text-5xl md:text-5xl lg:text-7xl xl:text-8xl" data-aos="fade-up" data-aos-duration="400" data-aos-delay="600">{currentText.subtitle}</p>
+                        <p className="text-lg font-semibold py-4" data-aos="fade-up" data-aos-duration="500" data-aos-delay="1300">{currentText.description}</p>
                     </div>
                 </div>
             </div>
@@ -100,9 +134,9 @@ export default function Homepage() {
             {/* Seccion de Somos */}
             <div className="w-full lg:h-screen h-auto bg-white flex px-10 sm:px-10 md:px-20 lg:px-40">
                 <div className="flex h-full w-full items-center justify-center py-8">
-                    <div className="flex flex-row items-center justify-center shadow-md rounded-md bg-SoftGrey max-w-[100rem] h-2/3" data-aos="fade-up">
+                    <div className="flex flex-col md:flex-row items-center justify-center shadow-md rounded-md bg-SoftGrey max-w-[100rem] h-2/3" data-aos="fade-up">
 
-                        <div className="h-full flex flex-col items-start justify-center w-1/2 py-4 px-8">
+                        <div className="h-full flex flex-col items-start justify-center w-auto md:w-1/2 py-4 px-8">
                             <h1 className="block text-2xl sm:text-4xl md:text-5xl lg:text-3xl xl:text-5xl" data-aos="fade-up" data-aos-delay="50">Somos</h1>
                             <h1 className="block text-3xl sm:text-5xl md:text-4xl lg:text-4xl xl:text-6xl font-semibold pt-4" data-aos="fade-up" data-aos-delay="60">MC Logistics</h1>
                             <p className="block py-4 font-thin text-md sm:text-xl md:text-lg lg:text-md xl:text-lg" data-aos="fade-up" data-aos-delay="70">Tu socio estratégico en logística a nivel global. Desde el origen hasta el destino final, maximizando la rentabilidad de nuestros clientes y socios con una gestión eficiente de mercancías, energía e información.</p>
@@ -113,7 +147,7 @@ export default function Homepage() {
                             </button>
                         </div>
 
-                        <div className="h-full m-0 w-1/2 shrink-0 overflow-hidden bg-clip-border">
+                        <div className="h-96 md:h-full m-0 w-full md:w-1/2 shrink-0 overflow-hidden bg-clip-border">
                             <img className="h-full w-full object-cover rounded-md " src={contenedores_cielo} alt="Logistics" />
                         </div>
                     </div>
@@ -127,7 +161,7 @@ export default function Homepage() {
             {/* Nuestros Servicios */}
             <div className="w-full h-auto xl:h-screen pb-16">
                 <div className="flex w-full h-24 items-center justify-center px-4 sm:px-10 md:px-20 lg:px-40">
-                    <h3 className="text-5xl font-bold" data-aos="fade-down">Descubre nuestros servicios</h3>
+                    <h3 className="text-2xl sm:text-4xl md:text-5xl font-bold" data-aos="fade-down">Descubre nuestros servicios</h3>
                 </div>
                 <div className="flex justify-center h-auto w-full pt-8 px-4 sm:px-10 md:px-20 lg:px-40">
                     <div className="grid lg:grid-cols-3 md:grid-cols-2  gap-y-12 gap-x-6 justify-items-center w-full">
@@ -158,13 +192,12 @@ export default function Homepage() {
                 <div className="flex bg-center bg-fixed w-full h-full py-24" style={{ backgroundImage: `url(${''})`, backgroundSize: 'cover' }}>
                     <div className="flex flex-col w-full h-full items-center justify-center px-10 sm:px-10 md:px-20 lg:px-40">
                         <div className="pb-10">
-                            <h1 className="text-6xl font-semibold text-blue">
+                            <h1 className="text-6xl font-semibold text-black">
                                 Nuestras Divisiones
                             </h1>
                         </div>
                         <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-20 gap-x-10 gap-y-8  w-full h-full py-10 justify-items-center">
                             <ServiceCard
-                                dataAos={"fade-down"}
                                 delay={""}
                                 className={" h-32 w-36 z-10"}
                                 imgSrc={figibox_img}
@@ -173,7 +206,6 @@ export default function Homepage() {
                                 link="https://figibox.do/"
                             />
                             <ServiceCard
-                                dataAos={"fade-down"}
                                 delay={"200"}
                                 className={"pb-6 h-32 w-40 z-10"}
                                 imgSrc={consilia_img}
@@ -182,7 +214,6 @@ export default function Homepage() {
                                 link="https://www.consilialogistics.com/"
                             />
                             <ServiceCard
-                                dataAos={"fade-down"}
                                 delay={"400"}
                                 className={" h-56 w-56 z-10"}
                                 imgSrc={high_performance}
@@ -212,7 +243,7 @@ export default function Homepage() {
                                     <br />Porque lo que somos lo debemos a nuestros clientes, encontrarán siempre en nosotros el apoyo deseado. Siempre prestos a servir.</p>
                             </div>
 
-                            <div className=" w-auto h-full flex flex-row justify-between py-12 gap-y-12 md:items-center items-center">
+                            <div className=" w-auto h-full grid grid-cols-2 md:grid-cols-4 py-12 gap-y-12 justify-items-center">
                                 <div className="h-20 w-20 lg:h-28 lg:w-32 flex flex-col justify-center items-center bg-slate-50 shadow-md rounded-sm" data-aos="fade-down" >
                                     <img className="h-8 w-8 lg:h-12 lg:w-12" src={confiable} alt="" />
                                     <p className="text-xs">Confiabilidad</p>
@@ -232,7 +263,7 @@ export default function Homepage() {
                             </div>
 
                         </div>
-                        <div className="flex flex-col h-full w-1/2 pl-8 items-center justify-center">
+                        <div className="flex flex-col h-full w-full lg:w-1/2 xl:w-1/2 pl-0 md:pl-8 items-center justify-center">
                             <Swiper
                                 effect={'cards'}
                                 style={{ width: '100%', maxWidth: '100%', height: '100%' }}

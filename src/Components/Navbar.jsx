@@ -34,14 +34,15 @@ export default function NavBar() {
     const navbarClass = isHomepage
         ? scrollPosition >= 100
             ? "top-0 w-[100%] fixed z-20 h-20 bg-white backdrop-blur-md px-10 sm:px-10 md:px-20 lg:px-40 text-black"
-            : "top-0 w-[100%] fixed z-20 h-20 bg-slate/70 px-10 sm:px-10 md:px-20 lg:px-40  lg:text-white text-white" 
+            : `top-0 w-[100%] fixed z-20 h-20 bg-slate/70 px-10 sm:px-10 md:px-20 lg:px-40  ${open ? `bg-white text-black` : "lg:text-white text-white"}` 
         : "top-0 w-[100%] fixed z-20 h-20 bg-gray-50 px-10 sm:px-10 md:px-20 lg:px-40 text-black";
 
         const imageClass = isHomepage
-        ? scrollPosition >= 100
-            ? mclogo2
-            : mclogo 
-        :mclogo2 ;
+    ? scrollPosition >= 100
+        ? mclogo2 // Add mclogo2 when menu is open
+        : `${open? mclogo2: mclogo}` 
+    : mclogo2; // Always show mclogo2 when not on homepage
+
 
 
     const hr = isHomepage  ? scrollPosition >= 100
@@ -84,7 +85,7 @@ export default function NavBar() {
                     </span>
                 </div>
                 <ul
-                    className={`xl:z-auto z-[-1] top-20 sm:top-20 lg:top-20 lg:h-auto lg:items-center left-0 w-full xl:w-auto xl:flex xl:items-center xl:pb-0 xl:pl-0 pl-9 xl:static absolute ${open ? "bg-white xl:bg-transparent text-black" : "hidden"}`}
+                    className={`xl:z-auto z-[-1] top-20 sm:top-20 lg:top-20 lg:h-auto lg:items-center left-0 w-full xl:w-auto xl:flex xl:items-center xl:pb-0 xl:pl-0 py-8 xl:py-0 px-10 sm:px-10 md:px-20 lg:px-40 xl:static absolute ${open ? "bg-white xl:bg-transparent text-black" : "hidden"}`}
                 >
                     {Links.map((link) => (
                         <li key={link.name} className="flex-none px-4 py-4 items-center rounded-sm">

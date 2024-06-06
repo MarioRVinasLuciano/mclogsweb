@@ -23,8 +23,8 @@ export default function Soporte() {
                                 <p className="pt-4">Estamos siempre prestos a servir, porfavor, llene el formulario</p>
                             </div>
                         </div>
-                        <div className="flex flex-row w-1/2 justify-between gap-4">
-                            <div className="flex flex-col w-1/2">
+                        <div className="flex flex-col md:flex-row w-full md:w-1/2 justify-between gap-4">
+                            <div className="flex flex-col w-full md:w-1/2 ">
                                 <div className="pb-2">
                                     <h1 className="text-xl font-regular">Nombre</h1>
                                 </div>
@@ -33,7 +33,7 @@ export default function Soporte() {
                                 </div>
                             </div>
 
-                            <div className="flex flex-col w-1/2">
+                            <div className="flex flex-col w-full md:w-1/2 ">
                                 <div className="pb-2">
                                     <h1 className="text-xl font-regular">Correo electrónico</h1>
                                 </div>
@@ -43,17 +43,17 @@ export default function Soporte() {
                             </div>
                         </div>
 
-                        <div className="w-1/2 pb-2 pt-4">
+                        <div className="w-full md:w-1/2  pb-2 pt-4">
                             <h1 className="text-xl font-regular">Título</h1>
                         </div>
-                        <div className="w-1/2 h-12">
+                        <div className="w-full md:w-1/2  h-12">
                             <input className="p-2 h-full w-full rounded-md shadow-md bg-slate-100"></input>
                         </div>
 
-                        <div className="w-1/2 pb-2 pt-4">
+                        <div className="w-full md:w-1/2 pb-2 pt-4">
                             <h1 className="text-xl font-regular">Descripción</h1>
                         </div>
-                        <div className="w-1/2 h-auto">
+                        <div className="w-full md:w-1/2  h-auto">
                             <textarea className="p-2 h-32 w-full resize-y  rounded-md shadow-md bg-slate-100"></textarea>
                         </div>
 
@@ -73,7 +73,7 @@ export default function Soporte() {
                                     <Checkmark size='160px' />
                                 </div>
                                 <div className="w-1/2 h-1/2 p-6 flex justify-center items-center ">
-                                    <h1 className="text-6xl font-bold text-bluemunsell">
+                                    <h1 className="text-3xl md:text-6xl font-bold text-bluemunsell">
                                         ORD00128720
                                     </h1>
                                 </div>

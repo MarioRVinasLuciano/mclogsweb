@@ -16,7 +16,7 @@ export default function AppMclogs() {
                     <p className="pt-4 text-md">Descarga nuestra app en tu dispositivo</p>
                     <div className="flex flex-row items-center justify-center gap-x-10">
                         <div>
-                            <a href='https://apps.apple.com/do/app/mclogs/id1504701375'>
+                            <a href='https://apps.apple.com/do/app/mclogs/id1504701375' target="_blank">
                                 <div className="pt-4 py-2 gap-x-2 flex flex-row">
                                     <img className="h-6 w-6" src={apple} alt="Apple Store" />
                                     <p className="text-xl">Apple Store</p>
@@ -24,7 +24,7 @@ export default function AppMclogs() {
                             </a>
                         </div>
                         <div>
-                            <a href='https://play.google.com/store/apps/details?id=com.mclogs.www'>
+                            <a href='https://play.google.com/store/apps/details?id=com.mclogs.www' target="_blank">
                                 <div className="pt-4 py-2 gap-x-2 flex flex-row">
                                     <img className=" h-6 w-6" src={android} alt="Google Play" />
                                     <p className="flex text-xl">Google Play</p>
@@ -46,7 +46,7 @@ export default function AppMclogs() {
                                 <p className="text-4xl font-semibold" data-aos="fade-down">Funcionalidades</p>
                             </div>
 
-                            <div className="grid grid-cols-2 gap-4 items-center tex-center">
+                            <div className="grid grid-cols-1 sm:grid-cols-2  gap-4 items-center tex-center">
                                 
                                 <div className="flex flex-col gap-4 w-44 h-32 border-bluemunsell hover:bg-slate-200 border-2 rounded-md items-center justify-center"  data-aos="zoom-in-down" data-aos-duration="500">
                                     <div className="h-10 w-10 bg-bluemunsell rounded-full text-center opacity-80 flex items-center justify-center">
@@ -102,7 +102,7 @@ export default function AppMclogs() {
                             </div>
                         </div>
                         <div className="flex flex-col items-center justify-center w-full lg:w-1/2 xl:w-1/2 px-8 gap-8">
-                            <p className="font-medium text-3xl" data-aos="fade-down" data-aos-anchor-placement="bottom-bottom">En MC Logistics estamos centrados en el cliente e impulsados por la data, razon por lo que creamos la app McLogs para ti.</p>
+                            <p className="font-medium text-3xl " data-aos="fade-down" data-aos-anchor-placement="bottom-bottom">En MC Logistics estamos centrados en el cliente e impulsados por la data, razon por lo que creamos la app McLogs para ti.</p>
                             <p className="font-regular text-2xl" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration="800" data-aos-delay="200" >McLogs es la aplicación que ponemos a su disposición para gestionar toda la información que necesita de forma directa y en vivo de sus órdenes de servicio, desde el punto de coordinación, hasta la entrega de su carga, como otras funciones que facilitaran su gestión en la cadena logística.</p>
                         </div>
                     </div>

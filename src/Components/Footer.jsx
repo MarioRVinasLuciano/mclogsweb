@@ -39,7 +39,7 @@ export default function Footer() {
             <div className="flex flex-row  py-6">
               <div className="pr-4">
                 <div className="rounded-full h-10 w-10 content-center border-slate-300 border" >
-                  <a href="https://www.google.com/maps/place/M.C.+Logistics+SRL/@18.501022,-69.9557977,17z/data=!3m1!4b1!4m5!3m4!1s0x8eaf8987ea6ea207:0x7bcfa7fa8182db54!8m2!3d18.501022!4d-69.953609">
+                  <a href="https://www.google.com/maps/place/M.C.+Logistics+SRL/@18.501022,-69.9557977,17z/data=!3m1!4b1!4m5!3m4!1s0x8eaf8987ea6ea207:0x7bcfa7fa8182db54!8m2!3d18.501022!4d-69.953609" target="_blank">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -135,13 +135,13 @@ export default function Footer() {
                 <div className="pt-4">
                   <h2 className="text-md text-black">Plataformas</h2>
                 </div>
-                <a href='https://play.google.com/store/apps/details?id=com.mclogs.www'>
+                <a href='https://play.google.com/store/apps/details?id=com.mclogs.www' target="_blank">
                   <div className="pt-4 py-2 gap-x-2 flex flex-row text-center">
                     <img className="h-6 w-6" src={apple} alt="Apple Store" />
                     <p className="text-sm pt-1">Disponible en Apple Store</p>
                   </div>
                 </a>
-                <a href='https://apps.apple.com/do/app/mclogs/id1504701375'>
+                <a href='https://apps.apple.com/do/app/mclogs/id1504701375' target="_blank">
                   <div className="py-2 gap-x-2 flex flex-row">
                     <img className="flex h-6 w-6" src={android} alt="Google Play" />
                     <p className="flex text-sm">Disponible en Google Play</p>

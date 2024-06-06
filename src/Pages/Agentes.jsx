@@ -57,8 +57,8 @@ export default function Agentes() {
     <div className="h-auto w-full font-Encode-Sans ">
       <div className="flex flex-col h-auto w-full items-center gap-y-6 pt-20">
       <div className="flex justify-center items-center bg-center w-full h-80" style={{ backgroundImage: `url(${imagen_background})`, backgroundSize: 'cover' }}>
-                <div className="flex flex-col items-center">
-                    <h1 className="text-white text-6xl lg:text-6xl xl:text-6xl font-semibold">Nuestros Agentes</h1>
+                <div className="flex flex-col text-center">
+                    <h1 className="text-white text-3xl lg:text-5xl xl:text-6xl font-semibold">Nuestros Agentes</h1>
                     <p className="text-white font-regular pt-4">Contamos con agentes en todos los continentes</p>
                 </div>
             </div>
@@ -67,7 +67,7 @@ export default function Agentes() {
       <div className="flex flex-col h-auto w-full pt-16 pb-20 sm:pb-56 px-10 sm:px-10 md:px-20 lg:px-40">
         <div className="flex flex-col w-full  h-auto gap-y-6 pb-16">
           <div className="bg-white p-4 w-full">
-            <div className="grid lg:grid-cols-7 md:grid-cols-7 sm:grid-cols-4 sm:grid-rows-2 md:grid-rows-2 lg:grid-rows-1 gap-y-6 grid-rows-auto gap-x-20 w-full justify-items-center">
+            <div className="grid xl:grid-cols-7 lg:grid-cols-4 md:grid-cols-4 sm:grid-cols-4 sm:grid-rows-2 md:grid-rows-2 lg:grid-rows-2 gap-y-6 grid-rows-auto gap-x-20 w-full justify-items-center">
               {continents.map((continent, index) => (
                 <button
                   key={index}
