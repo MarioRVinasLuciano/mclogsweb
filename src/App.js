@@ -15,6 +15,7 @@ import { useEffect } from "react";
 import Contacto from "./Pages/Contacto";
 import Soporte from "./Pages/Soporte";
 import ScrollToTopButton from "./Components/ScrolltoTopButton";
+import Terminos from "./Pages/Terminos";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -42,6 +43,7 @@ function App() {
         <Route path="/articulo/:oid" element={<ArticulosPagina />} />
         <Route path="/seguridad" element={<Seguridad />} />
         <Route path="/privacidad" element={<Privacidad />} />
+        <Route path="/terminos" element={<Terminos />} />
       </Routes>
       <ScrollToTopButton />
       <ScrollToTop />

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
-import imagen_background from "../Images/Homepageimgs/Slider_4.webp";
+import imagen_background from "../Images/Agentes/introimg2.jpg";
+
 
 export default function Agentes() {
   const [agents, setAgents] = useState([]);
@@ -50,16 +51,15 @@ export default function Agentes() {
 
   const uniqueCountryNames = [...new Set(agentsInContinent.map(agent => agent.country.trimEnd()))];
 
-  console.log(uniqueCountryNames)
 
 
   return (
     <div className="h-auto w-full font-Encode-Sans ">
       <div className="flex flex-col h-auto w-full items-center gap-y-6 pt-20">
-      <div className="flex justify-center items-center bg-bottom bg-fixed w-full h-96" style={{ backgroundImage: `url(${imagen_background})`, backgroundSize: 'cover' }}>
+      <div className="flex justify-center items-center bg-center w-full h-80" style={{ backgroundImage: `url(${imagen_background})`, backgroundSize: 'cover' }}>
                 <div className="flex flex-col items-center">
-                    <h1 className="text-white text-6xl lg:text-8xl xl:text-8xl font-semibold">Nuestros Agentes</h1>
-                    <p className="text-white font-bold pt-4">Contamos con agentes en todos los continentes</p>
+                    <h1 className="text-white text-6xl lg:text-6xl xl:text-6xl font-semibold">Nuestros Agentes</h1>
+                    <p className="text-white font-regular pt-4">Contamos con agentes en todos los continentes</p>
                 </div>
             </div>
       </div>
@@ -101,7 +101,7 @@ export default function Agentes() {
                           <p className="font-semibold text-aureolin">{agent.name}</p>
                           <p>
                             {agent.web_page.length !== 0 ? (
-                              <span>Pagina: <a href={agent.web_page} className="text-blue-600">{agent.web_page}</a></span>
+                              <span>Pagina: <a href={agent.web_page} className="text-blue">{agent.web_page}</a></span>
                             ) : (
                               ""
                             )}

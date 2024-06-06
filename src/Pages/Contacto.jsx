@@ -18,9 +18,9 @@ export default function Contacto() {
     return (
         <div className="w-full h-auto bg-white pt-20 ">
 
-            <div className="flex justify-center items-center bg-center bg-fixed w-full h-96" style={{ backgroundImage: `url(${imagen_background})`, backgroundSize: 'cover' }}>
+            <div className="flex justify-center items-center bg-center bg-fixed w-full h-80" style={{ backgroundImage: `url(${imagen_background})`, backgroundSize: 'cover' }}>
                 <div className="">
-                    <h1 className="text-white text-6xl lg:text-8xl xl:text-8xl font-semibold">Contactanos</h1>
+                    <h1 className="text-white text-6xl lg:text-6xl xl:text-6xl font-semibold">Contactanos</h1>
                 </div>
             </div>
 

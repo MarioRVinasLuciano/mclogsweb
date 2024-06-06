@@ -174,8 +174,8 @@ export default function Tracking() {
         <div className="w-full px-10 sm:px-10 md:px-20 lg:px-40 text-center">
           <h1 className="text-4xl sm:text-4xl md:text-4xl lg:text-7xl py-32 font-bold text-white">Rastrea tu embarque</h1>
         </div>
-        <div className="w-full backdrop-blur h-60 bg-white/40 rounded-lg items-center p-8">
-          <div className="flex flex-col lg:flex-row xl:flex-row text-white gap-2 ">
+        <div className="w-full backdrop-blur h-44 bg-white/40 rounded-lg items-center p-8">
+          <div className="flex flex-col md:flex-row lg:flex-row xl:flex-row text-white gap-2 ">
             <input
               type="text"
               id="track_search"
@@ -187,7 +187,7 @@ export default function Tracking() {
             />
             <button
               id="track_button"
-              className="bg-blue hover:bg-midblue p-2 w-full  lg:w-24 xl:w-24 rounded-md flex justify-center"
+              className="bg-blue hover:bg-midblue p-2 w-full  md:w-24 lg:w-24 xl:w-24 rounded-md flex justify-center"
               onClick={handleButtonClick}
               disabled={trackSearch === ''}
             >
@@ -197,13 +197,13 @@ export default function Tracking() {
             </button>
           </div>
           <div className="flex m-4">
-            <div className="pr-2">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+            <div className="pr-2 hidden md:block lg:block">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="text-white w-6 h-6">
                 <path strokeLinecap="round" strokeLinejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
               </svg>
             </div>
-            <div className='hidden sm:block md:block lg:block'>
-              <p className="text-xs sm:text-sm md:text-normal text-black">
+            <div className='hidden md:block lg:block'>
+              <p className="text-xs sm:text-sm md:text-normal text-white">
                 Rastree su carga ingresando su número de contenedor, conocimiento de embarque,
                 orden o referencia para obtener información de seguimiento de carga instantánea
               </p>

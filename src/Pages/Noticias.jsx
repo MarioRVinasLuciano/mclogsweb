@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
 
-import imagen_background from "../Images/Homepageimgs/Slider_5.webp";
+import imagen_background from "../Images/Agentes/introimg2.jpg";
 
 export default function Noticias() {
   const [noticias, setNoticias] = useState([]);
@@ -38,11 +38,11 @@ export default function Noticias() {
 
   return (
     <div className="h-sreen w-full font-Encode-Sans pb-12 pt-16 ">
-      <div className="flex justify-center items-center bg-bottom bg-fixed w-full h-72 px-10 sm:px-10 md:px-20 lg:px-40" style={{ backgroundImage: `url(${imagen_background})`, backgroundSize: 'cover' }}>
+      <div className="flex justify-center items-center bg-top w-full h-72 px-10 sm:px-10 md:px-20 lg:px-40" style={{ backgroundImage: `url(${imagen_background})`, backgroundSize: 'cover' }}>
         <div className="flex flex-col md:flex-row lg:flex-row xl:flex-row items-center  justify-between w-full gap-y-4">
-          <h1 className="text-white text-4xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-semibold">Noticias</h1>
+          <h1 className="text-white text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-6xl font-semibold">Noticias</h1>
           <input
-          className="h-12 w-full md:w-56 lg:w-56 xl:w-56 rounded-md border-gray-20 border-2 p-2"
+          className="h-12 w-full md:w-56 lg:w-56 xl:w-80 rounded-md border-gray-20 border-2 p-2"
           placeholder="Buscar"
           onChange={handleBuscar}
         />
@@ -52,7 +52,7 @@ export default function Noticias() {
       {cargando ? (
         <p className="text-6xl text-center py-56 w-full">Cargando...</p>
       ) : filteredNoticias.length === 0 ? (
-        <p className="text-6xl py-56">No se encontraron noticias.</p>
+        <p className="text-6xl py-56 px-10 sm:px-10 md:px-20 lg:px-40 text-center">No se encontraron noticias.</p>
       ) : (
         <div className="grid lg:grid-cols-4 grid-cols-1 gap-6 lg:gap-10 px-10 sm:px-10 md:px-20 lg:px-40 pt-10">
           {filteredNoticias.map((contenido, index) => (

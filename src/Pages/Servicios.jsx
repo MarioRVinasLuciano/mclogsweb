@@ -1,12 +1,7 @@
 import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-//importo componente
-import Nuestros_servicios from "../Components/Nuestros_servicios_card";
-//importo datos
-import serviciosdatos from "../Datos/serviciosdatos";
-
-import imagen_background from "../Images/Homepageimgs/Slider_5.webp";
+import imagen_background from "../Images/Agentes/introimg2.jpg";
 
 
 import Transporte_Maritimo from "../Images/Nuestros_servicios_logisticosimgs/Transporte_maritimo.webp";
@@ -15,9 +10,10 @@ import Transporte_terrestre from "../Images/Nuestros_servicios_logisticosimgs/Tr
 import Almacenaje from "../Images/Nuestros_servicios_logisticosimgs/Almacenaje.webp";
 import Gestion_aduanal from "../Images/Nuestros_servicios_logisticosimgs/Gestion_aduanal.webp";
 import Paqueteria from "../Images/Nuestros_servicios_logisticosimgs/Paqueteria.webp";
-import Inspeccion from "../Images/Nuestros_servicios_logisticosimgs/Inspeccion.webp";
+import Inspeccion from "../Images/Nuestros_servicios_logisticosimgs/Inspeccion.jpg";
 import Seguro from "../Images/Nuestros_servicios_logisticosimgs/Seguro.webp";
-import Cargo_completo from "../Images/Nuestros_servicios_logisticosimgs/Cargo_completo.webp";
+import Cargo_completo from "../Images/Nuestros_servicios_logisticosimgs/Carga_lcl.jpg";
+import Carga_completa from "../Images/Nuestros_servicios_logisticosimgs/Carga_completa.jpg"
 
 
 export default function Servicios(){
@@ -47,37 +43,32 @@ export default function Servicios(){
 
     return(
         <div className="w-full h-auto font-Encode-Sans py-20">
-            <div className="flex justify-center items-center bg-bottom bg-fixed w-full h-96" style={{ backgroundImage: `url(${imagen_background})`, backgroundSize: 'cover' }}>
-                <div className="flex flex-col items-center w-full">
-                    <h1 className="text-white text-2xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-semibold">Nuestros Servicios Logisticos</h1>
-                    <p className="text-white text-sm sm:text-xl md:text-xl lg:text-xl xl:text-xl font-bold pt-4">Lo común entre nuestros servicios es la excelencia</p>
+                <div className="flex justify-center items-center bg-bottom w-full h-80" style={{ backgroundImage: `url(${imagen_background})`, backgroundSize: 'cover' }}>
+                <div className="flex flex-col items-center">
+                    <h1 className="text-white text-6xl lg:text-6xl xl:text-6xl font-semibold">Nuestros Servicios Logisticos</h1>
+                    <p className="text-white font-regular pt-4">Lo común entre nuestros servicios es la excelencia</p>
                 </div>
             </div>
-                
-                <div className="flex flex-col justify-center h-auto w-full pt-8">
-                    {/* <div className="flex w-full h-20 items-center justify-center pb-8 pt-16 px-10 sm:px-10 md:px-20 lg:px-40">
-                        <h3 className="text-5xl font-semibold"> Nuestros Servicios Logisticos</h3>
-                    </div> */}
-
-                    
+  
+                <div className="flex flex-col justify-center h-auto w-full ">  
                     <div  className="flex flex-col h-auto w-full px-10 sm:px-10 md:px-20 lg:px-40">
                        
                        
-                        <div id="transporte_maritimo" className="flex flex-col md:flex-col lg:flex-row xl:flex-row pt-20">
+                        <div id="transporte_maritimo" className="flex flex-col md:flex-col lg:flex-row xl:flex-row">
                             <div className="flex flex-col w-full lg:w-1/2 xl:w-1/2 items-center text-center justify-center">
                                 <h1 className="text-4xl w-2/3 font-bold">Transporte Maritimo</h1>
-                                <p className="text-2xl pt-4 font-normal w-2/3 ">El transporte marítimo es ideal para trasladar grandes volúmenes de carga a bajo costo y en largos trayectos. Esta modalidad asegura entregas seguras y puntuales, ofreciendo una solución eficiente y económica para el transporte de cargas críticas.</p>
+                                <p className="text-2xl pt-4 font-normal w-2/3">El transporte marítimo es ideal para trasladar grandes volúmenes de carga a bajo costo y en largos trayectos. Esta modalidad asegura entregas seguras y puntuales, ofreciendo una solución eficiente y económica para el transporte de cargas críticas.</p>
                             </div>
-                            <div className="w-full py-10 lg:w-1/2 xl:w-1/2 px-8">
-                                <img className="h-full objetc-cover rounded-xl" src={Transporte_Maritimo} alt="" />
+                            <div className="w-full py-10 lg:w-1/2 xl:w-1/2 px-8 flex items-center justify-center">
+                                <img className="relative h-4/5 w-[40rem] objetc-cover rounded-md" src={Transporte_Maritimo} alt="" />
                             </div>
                         </div>
                         
 
 
                         <div id="transporte_aereo" className="flex flex-col lg:flex-row xl:flex-row pt-20">
-                            <div className="w-full py-10 lg:w-1/2 xl:w-1/2 px-8">
-                                <img className="h-full objetc-cover rounded-xl" src={Transporte_Aereo} alt="" />
+                            <div className="w-full py-10 lg:w-1/2 xl:w-1/2 px-8 flex items-center justify-center">
+                                <img className="relative h-4/5 w-[40rem] objetc-cover rounded-md" src={Transporte_Aereo} alt="" />
                             </div>
                             <div className="flex flex-col w-full lg:w-1/2 xl:w-1/2 items-center text-center justify-center">
                                 <h1 className="text-4xl w-2/3 font-bold">Transporte Aéreo</h1>
@@ -91,15 +82,15 @@ export default function Servicios(){
                                 <h1 className="text-4xl w-2/3 font-bold">Transporte Terrestre</h1>
                                 <p className="text-2xl pt-4 font-normal w-2/3">Nuestras alianzas en territorio dominicano con servicios de geolocalización, ofrecen seguridad y garantía para el transporte de mercancías.</p>
                             </div>
-                            <div className="w-full py-10 lg:w-1/2 xl:w-1/2 px-8">
-                                <img className="h-full objetc-cover rounded-xl" src={Transporte_terrestre} alt="" />
+                            <div className="w-full py-10 lg:w-1/2 xl:w-1/2 px-8 flex items-center justify-center">
+                                <img className="relative h-4/5 w-[40rem] objetc-cover rounded-md" src={Transporte_terrestre} alt="" />
                             </div>
                         </div>
 
 
-                        <div  id="almacenaje" className="flex flex-col lg:flex-row xl:flex-row pt-20">
-                            <div className="w-full py-10 lg:w-1/2 xl:w-1/2 px-8">
-                                <img className="h-full objetc-cover rounded-xl" src={Almacenaje} alt="" />
+                        <div  id="almacenaje" className="flex flex-col lg:flex-row xl:flex-row pt-16">
+                            <div className="w-full py-10 lg:w-1/2 xl:w-1/2 px-8 flex items-center justify-center">
+                                <img className="relative h-4/5 w-[40rem] objetc-cover rounded-md" src={Almacenaje} alt="" />
                             </div>
                             <div className="flex flex-col w-full lg:w-w-1/2 xl:w-1/2 items-center text-center justify-center">
                                 <h1 className="text-4xl w-2/3 font-bold">Almacenaje</h1>
@@ -108,20 +99,20 @@ export default function Servicios(){
                         </div>
 
 
-                        <div  id="gestion_aduanal" className="flex flex-col md:flex-col lg:flex-row xl:flex-row pt-20">
+                        <div  id="gestion_aduanal" className="flex flex-col md:flex-col lg:flex-row xl:flex-row pt-16">
                             <div className="flex flex-col w-full lg:w-1/2 xl:w-1/2 items-center text-center justify-center">
                                 <h1 className="text-4xl w-2/3 font-bold">Gestión aduanal</h1>
                                 <p className="text-2xl pt-4 font-normal w-2/3">El comercio global ha ido cambiando de manera constante y la cadena logística requiere del uso de mejor tecnología para procesar y gestionar información y cumplir con las regulaciones aduanales y fiscales, administrar riesgo y llevar a cabo gestiones efectivas. Conociendo esto contamos de una actualizada asesoría, en materia de comercio exterior, aduanas, logística, transporte y distribución.</p>
                             </div>
-                            <div className="w-full py-10 lg:w-1/2 xl:w-1/2 px-8">
-                                <img className="h-full objetc-cover rounded-xl" src={Gestion_aduanal} alt="" />
+                            <div className="w-full py-10 lg:w-1/2 xl:w-1/2 px-8 flex items-center justify-center">
+                                <img className="relative h-4/5 w-[40rem] objetc-cover rounded-md" src={Gestion_aduanal} alt="" />
                             </div>
                         </div>
 
 
-                        <div id="paqueteria" className="flex flex-col lg:flex-row xl:flex-row pt-20">
-                            <div className="w-full py-10 lg:w-1/2 xl:w-1/2 px-8">
-                                <img className="h-full objetc-cover rounded-xl" src={Paqueteria} alt="" />
+                        <div id="paqueteria" className="flex flex-col lg:flex-row xl:flex-row pt-16">
+                            <div className="w-full py-10 lg:w-1/2 xl:w-1/2 px-8 flex items-center justify-center">
+                                <img className="relative h-4/5 w-[40rem] objetc-cover rounded-md" src={Paqueteria} alt="" />
                             </div>
                             <div className="flex flex-col w-full lg:w-1/2 xl:w-1/2 items-center text-center justify-center">
                                 <h1 className="text-4xl w-2/3 font-bold">Paqueteria</h1>
@@ -129,20 +120,20 @@ export default function Servicios(){
                             </div>
                         </div>
 
-                        <div  id="gestion_aduanal" className="flex flex-col md:flex-col lg:flex-row xl:flex-row pt-20">
+                        <div  id="gestion_aduanal" className="flex flex-col md:flex-col lg:flex-row xl:flex-row pt-16">
                             <div className="flex flex-col w-full lg:w-1/2 xl:w-1/2 items-center text-center justify-center">
                                 <h1 className="text-4xl w-2/3 font-bold">Inspeccion de Carga</h1>
                                 <p className="text-2xl pt-4 font-normal w-2/3">La fiabilidad del proveedor es lo que hace o daña su empresa. A través de nuestra inspección de carga y fabricación nos aseguramos de reducir y/o eliminar la exposición de su empresa a los vendedores dudosos y a la calidad de la carga.</p>
                             </div>
-                            <div className="w-full py-10 lg:w-1/2 xl:w-1/2 px-8">
-                                <img className="h-full object-cover rounded-xl" src={Paqueteria} alt="" />
+                            <div className="w-full py-10 lg:w-1/2 xl:w-1/2 px-8 flex items-center justify-center">
+                                <img className="relative h-4/5 w-[40rem] objetc-cover rounded-md" src={Inspeccion} alt="" />
                             </div>
                         </div>
 
 
-                        <div id="paqueteria" className="flex flex-col lg:flex-row xl:flex-row pt-20">
-                            <div className="w-full py-10 lg:w-1/2 xl:w-1/2 px-8">
-                                <img className="h-full objetc-cover rounded-xl" src={Seguro} alt="" />
+                        <div id="paqueteria" className="flex flex-col lg:flex-row xl:flex-row pt-16">
+                            <div className="w-full py-10 lg:w-1/2 xl:w-1/2 px-8 flex items-center justify-center">
+                                <img className="relative h-4/5 w-[40rem] objetc-cover rounded-md" src={Seguro} alt="" />
                             </div>
                             <div className="flex flex-col w-full lg:w-1/2 xl:w-1/2 items-center text-center justify-center">
                                 <h1 className="text-4xl w-2/3 font-bold">Servicio de Administracion de Riesgos</h1>
@@ -150,20 +141,20 @@ export default function Servicios(){
                             </div>
                         </div>
 
-                        <div  id="gestion_aduanal" className="flex flex-col md:flex-col lg:flex-row xl:flex-row pt-20">
+                        <div  id="gestion_aduanal" className="flex flex-col md:flex-col lg:flex-row xl:flex-row pt-16">
                             <div className="flex flex-col w-full lg:w-1/2 xl:w-1/2 items-center text-center justify-center">
                                 <h1 className="text-4xl w-2/3 font-bold">Carga Suelta (LCL)</h1>
                                 <p className="text-2xl pt-4 font-normal w-2/3">Consolidación en el lugar de origen, es la clave para la realización de nuestros transportes de carga menuda de manera eficiente siendo costos efectivos en la gestión. Miami, Panamá, España, Shanghái, Hong Kong, Shenzhen, New York, son solo algunos de los puntos estratégicos utilizados por nuestra empresa para eliminar los puntos de trasbordo, reduciendo asi los tiempos de ciclo a nuestros clientes.</p>
                             </div>
-                            <div className="w-full py-10 lg:w-1/2 xl:w-1/2 px-8">
-                                <img className="h-full objetc-cover rounded-xl" src={Gestion_aduanal} alt="" />
+                            <div className="w-full py-10 lg:w-1/2 xl:w-1/2 px-8 flex items-center justify-center">
+                                <img className="relative h-4/5 w-[40rem] objetc-cover rounded-md" src={Cargo_completo} alt="" />
                             </div>
                         </div>
 
 
-                        <div id="paqueteria" className="flex flex-col lg:flex-row xl:flex-row pt-20">
-                            <div className="w-full py-10 lg:w-1/2 xl:w-1/2 px-8">
-                                <img className="h-full objetc-cover rounded-xl" src={Seguro} alt="" />
+                        <div id="paqueteria" className="flex flex-col lg:flex-row xl:flex-row pt-16">
+                            <div className="w-full py-10 lg:w-1/2 xl:w-1/2 px-8 flex items-center justify-center">
+                                <img className="relative h-4/5w-[40rem] objetc-cover rounded-md" src={Carga_completa} alt="" />
                             </div>
                             <div className="flex flex-col w-full lg:w-1/2 xl:w-1/2 items-center text-center justify-center">
                                 <h1 className="text-4xl w-2/3 font-bold">Contenedores Completos</h1>

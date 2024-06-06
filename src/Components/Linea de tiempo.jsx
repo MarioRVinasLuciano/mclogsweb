@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Linea_de_tiempo (props) {
+export default function LineaDeTiempo (props) {
     return (
 
         <div className="flex flex-row w-full h-64 bg-white shadow-xl " data-aos={props.transicion}>

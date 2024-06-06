@@ -49,14 +49,14 @@ function ArticulosPagina() {
     }
 
     return (
-        <div className='h-full w-full relative font-Encode-Sans pt-32 px-10 sm:px-10 md:px-20 lg:px-40'>
+        <div className='h-full w-full relative font-Encode-Sans pt-32 px-10 sm:px-10 md:px-20 lg:px-40 xl:px-[20%]'>
             <div className='flex flex-col justify-center items-center pb-12'>
                 <div className='w-full text-start'>
                     <p className="text-sm text-slate-500">{contenido.type}</p>
                 </div>
-                <div className="flex flex-col justify-center items-center w-full">
-                    <div className='w-auto text-start'>
-                        <h1 className="text-md sm:text-md md:text-4xl lg:text-5xl font-bold mb-2">{contenido.title}</h1>
+                <div className="flex flex-col items-center w-full">
+                    <div className='w-full text-start'>
+                        <h1 className="text-md sm:text-md md:text-4xl lg:text-4xl font-semibold mb-2">{contenido.title}</h1>
                     </div>
                     <div className='flex flex-col md:flex-row lg:flex-row xl:flex-row justify-between py-4 w-full'>
                         <div className='flex flex-col w-full'>
@@ -82,7 +82,7 @@ function ArticulosPagina() {
                                 </svg>
                             </button>
                             {compartir === true ?
-                                <div className='absolute top-16 h-44 w-40 bg-slate-100 flex flex-col gap-y-2 text-center p-2'>
+                                <div className='absolute top-20 h-44 w-40 bg-slate-100 flex flex-col gap-y-2 text-center p-2 z-10'>
                                     <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.mclogs.com/view/3bb714c0-953a-11ee-92b4-09f9186b79fa">Facebook</a>
                                     <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.mclogs.com&source=LinkedIn">LinkedIn</a>
                                     <a href="https://twitter.com/intent/tweet?text=&amp;url=https://www.mclogs.com/view/3bb714c0-953a-11ee-92b4-09f9186b79fa">Twitter</a>
@@ -94,8 +94,10 @@ function ArticulosPagina() {
                             }
                         </div>
                     </div>
-                    <div className='h-auto w-full flex justify-center items-center'>
-                        <img className=" h-auto w-full mb-2" src={`https://support.consilialogistics.com/public/${contenido.image}`} alt="" />
+                    <div className='h-full w-full flex justify-center items-center'>
+                        <div className=''>
+                            <img className="relative h-[38rem] w-[100rem] mb-2 object-cover " src={`https://support.consilialogistics.com/public/${contenido.image}`} alt="" />
+                        </div>
                     </div>
                     <p className="text-sm text-slate-500 mb-2">{contenido.subtitle}</p>
 

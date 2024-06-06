@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import mclogo from "../Images/Logos/logo.png"; // Logo de MC
+// import mclogo from "../Images/Logos/white.png"; // Logo de MC
+import mclogo from "../Images/Logos/White5.png"; // Logo de MC
+import mclogo2 from "../Images/Logos/original.png"; // Logo de MC
+
 
 export default function NavBar() {
-    const Logo = mclogo;
 
     const [scrollPosition, setScrollPosition] = useState(0);
     const [open, setOpen] = useState(false);
@@ -31,9 +33,16 @@ export default function NavBar() {
 
     const navbarClass = isHomepage
         ? scrollPosition >= 100
-            ? "top-0 w-[100%] fixed z-10 h-20 bg-white backdrop-blur-md px-10 sm:px-10 md:px-20 lg:px-40 text-black"
-            : "top-0 w-[100%] fixed z-10 h-20 bg-slate/70 px-10 sm:px-10 md:px-20 lg:px-40  lg:text-white text-white" 
-        : "top-0 w-[100%] fixed z-10 h-20 bg-gray-50 px-10 sm:px-10 md:px-20 lg:px-40 text-black";
+            ? "top-0 w-[100%] fixed z-20 h-20 bg-white backdrop-blur-md px-10 sm:px-10 md:px-20 lg:px-40 text-black"
+            : "top-0 w-[100%] fixed z-20 h-20 bg-slate/70 px-10 sm:px-10 md:px-20 lg:px-40  lg:text-white text-white" 
+        : "top-0 w-[100%] fixed z-20 h-20 bg-gray-50 px-10 sm:px-10 md:px-20 lg:px-40 text-black";
+
+        const imageClass = isHomepage
+        ? scrollPosition >= 100
+            ? mclogo2
+            : mclogo 
+        :mclogo2 ;
+
 
     const hr = isHomepage  ? scrollPosition >= 100
     ? "hidden"
@@ -55,12 +64,13 @@ export default function NavBar() {
     return (
         <header className={navbarClass}>
             <div className="flex md:flex items-center justify-between h-full">
-                <div className="flex h-full w-auto items-center pt-2">
+                <div className="block flex-none h-full w-auto items-center justify-center pt-2">
                     <a href="/" className="text-3xl ">
-                        <p>MCLogistics</p>
+                        <img className="pt-2 h-auto w-32" src={imageClass} alt="" />
+                        
                     </a>
                 </div>
-                <div className="flex text-2xl cursor-pointer lg:hidden" onClick={toggleMenu}>
+                <div className="flex text-2xl cursor-pointer xl:hidden" onClick={toggleMenu}>
                     <span>
                         {
                             open ? <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
@@ -74,7 +84,7 @@ export default function NavBar() {
                     </span>
                 </div>
                 <ul
-                    className={`lg:z-auto z-[-1] top-20 sm:top-20 md:top-20 md:h-auto md:items-center left-0 w-full lg:w-auto lg:flex lg:items-center lg:pb-0 lg:pl-0 pl-9 lg:static absolute ${open ? "bg-white lg:bg-transparent text-black" : "hidden"}`}
+                    className={`xl:z-auto z-[-1] top-20 sm:top-20 lg:top-20 lg:h-auto lg:items-center left-0 w-full xl:w-auto xl:flex xl:items-center xl:pb-0 xl:pl-0 pl-9 xl:static absolute ${open ? "bg-white xl:bg-transparent text-black" : "hidden"}`}
                 >
                     {Links.map((link) => (
                         <li key={link.name} className="flex-none px-4 py-4 items-center rounded-sm">

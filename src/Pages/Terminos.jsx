@@ -3,10 +3,10 @@ import React from "react";
 
 export default function Terminos() {
     return (
-        <div className="h-full w-full font-Encode-Sans">
-            <div className="h-auto w-full px-24 py-12">
+        <div className="h-screen w-full font-Encode-Sans pt-20 px-10 sm:px-10 md:px-20 lg:px-40 xl:px-40">
+            <div className="h-auto w-full py-12">
                 <div>
-                    <h1 className="text-2xl">Politica de Privacidad</h1>
+                    <h1 className="text-4xl">Politica de Privacidad</h1>
                 </div>
                 <div className="pt-20">
                     <p>Su privacidad es muy importante para nosotros. En consecuencia, hemos desarrollado esta Política para que comprenda cómo recopilamos, usamos, comunicamos, divulgamos y hacemos uso de la información personal. Lo siguiente describe nuestra política de privacidad.</p>
@@ -22,9 +22,6 @@ export default function Terminos() {
 
                     <p>Estamos comprometidos a llevar a cabo nuestro negocio de acuerdo con estos principios para garantizar que la confidencialidad de la información personal esté protegida y mantenida.</p>
                 </div>
-            </div>
-            <div className="bg-white">
-                <hr className="h-px my-8 bg-gray-200 border-0" />
             </div>
         </div>
     )

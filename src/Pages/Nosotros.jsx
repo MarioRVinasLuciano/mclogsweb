@@ -4,18 +4,15 @@ import React, { useEffect } from "react";
 import Aos from "aos";
 import 'aos/dist/aos.css';
 
-//background
-import white_bg from "../Images/Homepageimgs/Background/white_waves.jpg";
+//Linea de tiempo
+import LineaDeTiempo from "../Components/Linea de tiempo";
 
-
-import Linea_de_tiempo from "../Components/Linea de tiempo";
 //importo datos para la linea de tiempos
 import lineadetiempodatos from "../Datos/Lineadetiempo/lineadetiempodatos";
 
 
 //Imagenes importadas localmente
 import bote from "../Images/Nosotros/Bote_grande.jpg";
-import bote_en_puerto from "../Images/Nosotros/Bote_en_puerto.jpg";
 import mision from "../Images/Nosotros/Mision.webp";
 import vision from "../Images/Nosotros/Vision.webp";
 import valores from "../Images/Nosotros/Valores.webp";
@@ -66,7 +63,7 @@ export default function Nosotros() {
                 <div className="h-auto w-auto flex flex-col gap-y-6 pt-10">
                     {
                         lineadetiempodatos.map(props => (
-                            <Linea_de_tiempo
+                            <LineaDeTiempo
                                 key={props.id}
                                 titulo={props.titulo}
                                 ano={props.ano}

@@ -1,8 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 
-export default function Nuestros_servicios(props) {
+export default function NuestrosServicios(props) {
     return (
         <div className={props.espacio}>
             <div className="w-auto">

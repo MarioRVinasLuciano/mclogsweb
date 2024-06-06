@@ -11,6 +11,7 @@ module.exports = {
         SoftGrey: '#F5F5F5',
         PaleYellow: '#FFF9C4',
         DarkBlue: '#003366',
+        SoftBlue: '#4A90E2',
 
         persiangreen: '#389483ff',
         aureolin: '#BCBB0C',
