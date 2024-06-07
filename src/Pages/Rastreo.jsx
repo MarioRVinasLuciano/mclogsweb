@@ -67,7 +67,7 @@ export default function Tracking() {
         <tr key={index} className={`bg-slate-50 border-b ${x.Status === 'Descargado' ? 'success' : ''}`}>
           <td className={`py-4 px-6 ${dateClass}`}>{x.Status}</td>
           <td className="py-4 px-6">{x.ActivityPlace || '-'}</td>
-          <td className="py-4 px-6">{`${new Date(x.Date).toDateString()}, ${new Date(trackResult.ETA).toLocaleTimeString()}`}</td>
+          <td className="py-4 px-6">{`${new Date(x.Date).toDateString()}, ${new Date(x.Date).toLocaleTimeString()}`}</td>
           <td className="py-4 px-6">{x.Ship || '-'}</td>
           <td className="py-4 px-6">{x.TravelNumber || '-'}</td>
         </tr>
@@ -171,8 +171,8 @@ export default function Tracking() {
       <div className='relative flex flex-col px-10 sm:px-10 md:px-20 lg:px-40 h-screen'>
         <video className="absolute z-[-10] inset-0 w-full h-full object-cover brightness-50" src={Video2} loop autoPlay muted controls={false} onContextMenu={(e) => e.preventDefault()} playsInline ></video>
 
-        <div className="w-full px-10 sm:px-10 md:px-20 lg:px-40 text-center">
-          <h1 className="text-4xl sm:text-4xl md:text-4xl lg:text-7xl py-32 font-bold text-white">Rastrea tu embarque</h1>
+        <div className="w-full text-center">
+          <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-7xl py-32 font-bold text-white">Rastrea tu embarque</h1>
         </div>
         <div className="w-full backdrop-blur h-44 bg-white/40 rounded-lg items-center p-8">
           <div className="flex flex-col md:flex-row lg:flex-row xl:flex-row text-white gap-2 ">
@@ -225,8 +225,9 @@ export default function Tracking() {
           </div>
 
           <div className="flex flex-col lg:flex-row xl:flex-row items-center justify-center gap-10 h-auto w-full">
-            <div className="flex items-center h-56 ">
-              <h1 className="font-semibold">Fecha estimada de llegada: {`${new Date(trackResult.ETA).toDateString()},${new Date(trackResult.ETA).toLocaleTimeString()}`}</h1>
+            <div className="flex flex-row items-center h-56 ">
+              <h1 className="font-semibold">Fecha estimada de llegada:</h1>
+              <p className='px-10'>{`${new Date(trackResult.ETA).toDateString()},${new Date(trackResult.ETA).toLocaleTimeString()}`}</p>
             </div>
             <div className=" flex flex-row items-center text-center">
               <div>

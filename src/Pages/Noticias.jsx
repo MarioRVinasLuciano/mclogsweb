@@ -38,7 +38,7 @@ export default function Noticias() {
 
   return (
     <div className="h-sreen w-full font-Encode-Sans pb-12 pt-16 ">
-      <div className="flex justify-center items-center bg-top w-full h-72 px-10 sm:px-10 md:px-20 lg:px-40" style={{ backgroundImage: `url(${imagen_background})`, backgroundSize: 'cover' }}>
+      <div className="flex justify-center items-center bg-top w-full h-44 md:h-72 px-10 sm:px-10 md:px-20 lg:px-40" style={{ backgroundImage: `url(${imagen_background})`, backgroundSize: 'cover' }}>
         <div className="flex flex-col md:flex-row lg:flex-row xl:flex-row items-center  justify-between w-full gap-y-4">
           <h1 className="text-white text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-6xl font-semibold">Noticias</h1>
           <input
@@ -85,10 +85,10 @@ export default function Noticias() {
                     </div>
                     <div className="flex flex-row justify-between p-2">
                       <div>
-                        <p className="text-md text-slate-500">{contenido.type}</p>
+                        <p className="text-md text-slate-500">{contenido.author}</p>
                       </div>
                       {index === 0 ? (
-                        <div className="rounded-md p-2 w-auto h-auto bg-bluemunsell animate-pulse">
+                        <div className="rounded-md p-2 w-auto h-auto bg-bluemunsell animate-pulse text-center">
                           <p className="text-sm text-white">Ultimas noticias</p>
                         </div>
                       ) : (

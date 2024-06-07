@@ -160,8 +160,8 @@ export default function Homepage() {
 
             {/* Nuestros Servicios */}
             <div className="w-full h-auto xl:h-screen pb-16">
-                <div className="flex w-full h-24 items-center justify-center px-4 sm:px-10 md:px-20 lg:px-40">
-                    <h3 className="text-2xl sm:text-4xl md:text-5xl font-bold" data-aos="fade-down">Descubre nuestros servicios</h3>
+                <div className="flex w-full h-24 items-center justify-center px-4 sm:px-10 md:px-20 lg:px-40 text-center">
+                    <h3 className="text-3xl sm:text-3xl md:text-5xl font-bold" data-aos="fade-down">Descubre nuestros servicios</h3>
                 </div>
                 <div className="flex justify-center h-auto w-full pt-8 px-4 sm:px-10 md:px-20 lg:px-40">
                     <div className="grid lg:grid-cols-3 md:grid-cols-2  gap-y-12 gap-x-6 justify-items-center w-full">
@@ -189,9 +189,9 @@ export default function Homepage() {
 
             {/* Seccion de compañias */}
             <div className="w-full h-auto bg-gray-200">
-                <div className="flex bg-center bg-fixed w-full h-full py-24" style={{ backgroundImage: `url(${''})`, backgroundSize: 'cover' }}>
+                <div className="flex bg-center bg-fixed w-full h-full pb-24 pt-8 md:py-20" style={{ backgroundImage: `url(${''})`, backgroundSize: 'cover' }}>
                     <div className="flex flex-col w-full h-full items-center justify-center px-10 sm:px-10 md:px-20 lg:px-40">
-                        <div className="pb-10">
+                        <div className="pb-10 text-center">
                             <h1 className="text-6xl font-semibold text-black">
                                 Nuestras Divisiones
                             </h1>

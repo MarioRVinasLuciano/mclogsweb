@@ -63,20 +63,21 @@ function ArticulosPagina() {
                             <div>
                                 <p className="text-md text-slate-500">{formatDate(contenido.create_in)}</p>
                             </div>
-                           <div className='flex flex-col md:flex-row lg:flex-row xl:flex-row gap-4 py-4'>
-                           {contenido.tags.split(',').map((tag, index) => (
-                                <div key={index} className='rounded-xl bg-slate-100 text-center p-2'>
-                                    <p className='text-sm'>{tag.trim()}</p>
-                                </div>
-                            ))}
-                           </div>
+                            <div className='flex flex-wrap gap-2 py-4'>
+                                {contenido.tags.split(',').map((tag, index) => (
+                                    <div key={index} className='rounded-full bg-slate-100 text-center px-4 py-1'>
+                                        <p className='text-sm'>{tag.trim()}</p>
+                                    </div>
+                                ))}
+                            </div>
 
-                           
+
+
                         </div>
                         <div className='relative flex flex-row items-center pt-4'>
-                        
+
                             <button onClick={Comparte} className='flex'>
-                            <p className='text-slate-500 pr-4 '>Compartir</p>
+                                <p className='text-slate-500 pr-4 '>Compartir</p>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 text-slate-500">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M7.217 10.907a2.25 2.25 0 1 0 0 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186 9.566-5.314m-9.566 7.5 9.566 5.314m0 0a2.25 2.25 0 1 0 3.935 2.186 2.25 2.25 0 0 0-3.935-2.186Zm0-12.814a2.25 2.25 0 1 0 3.933-2.185 2.25 2.25 0 0 0-3.933 2.185Z" />
                                 </svg>

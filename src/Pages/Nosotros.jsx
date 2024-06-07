@@ -56,7 +56,7 @@ export default function Nosotros() {
 
             <div className="w-auto h-full pb-10 px-10 sm:px-10 md:px-20 lg:px-40">
 
-                <div className="h-12 w-auto py-20">
+                <div className="h-auto w-auto py-4 md:py-20 text-center">
                     <h1 className="text-5xl font-semibold text-black">Linea de tiempo</h1>
                 </div>
 

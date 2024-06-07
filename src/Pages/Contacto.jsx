@@ -18,7 +18,7 @@ export default function Contacto() {
     return (
         <div className="w-full h-auto bg-white pt-20 ">
 
-            <div className="flex justify-center items-center bg-center bg-fixed w-full h-80" style={{ backgroundImage: `url(${imagen_background})`, backgroundSize: 'cover' }}>
+            <div className="flex justify-center items-center bg-center bg-fixed w-full h-40 md:h-80" style={{ backgroundImage: `url(${imagen_background})`, backgroundSize: 'cover' }}>
                 <div className="text-center">
                     <h1 className="text-white text-3xl lg:text-5xl xl:text-6xl font-semibold">Contactanos</h1>
                 </div>
@@ -97,7 +97,7 @@ export default function Contacto() {
                     </div>
                 </div>
 
-                <div className="flex flex-col lg:flex-row h-auto w-full items-center justify-between mt-20" data-aos="fade-up">
+                <div className="flex flex-col-reverse lg:flex-row h-auto w-full items-center justify-between mt-20" data-aos="fade-up">
                     <div className="flex flex-col w-full lg:w-1/2 h-full items-center">
                         <div className="flex flex-col w-full h-full py-6 lg:py-0 lg:px-20 text-center items-center justify-center">
                             <h1 className="text-4xl font-bold">Sucursal en Santiago</h1>
@@ -142,7 +142,7 @@ export default function Contacto() {
                     </div>
                 </div>
 
-                <div className="flex flex-col lg:flex-row h-auto w-full items-center justify-between mt-20" data-aos="fade-up">
+                <div className="flex flex-col-reverse lg:flex-row h-auto w-full items-center justify-between mt-20" data-aos="fade-up">
                     <div className="flex flex-col w-full lg:w-1/2 h-full items-center">
                         <div className="flex flex-col w-full h-full py-6 lg:py-0 lg:px-20 text-center items-center justify-center">
                             <h1 className="text-4xl font-bold">High Performance CL</h1>

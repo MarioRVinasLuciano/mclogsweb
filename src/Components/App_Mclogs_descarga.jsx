@@ -10,8 +10,8 @@ import App_descarga from "../Videos/App_Mclogs.mp4";
 export default function AppMclogs() {
     return (
         <div className="h-auto w-full bg-zinc-100 ">
-            <div className="flex flex-col items-center justify-center py-16">
-                <div className="flex flex-col h-44 items-center justify-center">
+            <div className="flex flex-col items-center justify-center py-8 md:py-16">
+                <div className="flex flex-col h-auto items-center justify-center">
                     <h1 className="text-6xl text-bluemunsell font-bold">McLogs</h1>
                     <p className="pt-4 text-md">Descarga nuestra app en tu dispositivo</p>
                     <div className="flex flex-row items-center justify-center gap-x-10">
@@ -101,7 +101,7 @@ export default function AppMclogs() {
 
                             </div>
                         </div>
-                        <div className="flex flex-col items-center justify-center w-full lg:w-1/2 xl:w-1/2 px-8 gap-8">
+                        <div className="flex flex-col items-center justify-center w-full lg:w-1/2 xl:w-1/2 px-8 gap-8 text-center">
                             <p className="font-medium text-3xl " data-aos="fade-down" data-aos-anchor-placement="bottom-bottom">En MC Logistics estamos centrados en el cliente e impulsados por la data, razon por lo que creamos la app McLogs para ti.</p>
                             <p className="font-regular text-2xl" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration="800" data-aos-delay="200" >McLogs es la aplicación que ponemos a su disposición para gestionar toda la información que necesita de forma directa y en vivo de sus órdenes de servicio, desde el punto de coordinación, hasta la entrega de su carga, como otras funciones que facilitaran su gestión en la cadena logística.</p>
                         </div>
