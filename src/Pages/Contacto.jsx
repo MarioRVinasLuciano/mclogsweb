@@ -145,14 +145,14 @@ export default function Contacto() {
                 <div className="flex flex-col-reverse lg:flex-row h-auto w-full items-center justify-between mt-20" data-aos="fade-up">
                     <div className="flex flex-col w-full lg:w-1/2 h-full items-center">
                         <div className="flex flex-col w-full h-full py-6 lg:py-0 lg:px-20 text-center items-center justify-center">
-                            <h1 className="text-4xl font-bold">High Performance CL</h1>
+                            <h1 className="text-4xl font-bold">High Performance Cargo Logistics</h1>
                             <p className="text-xl font-thin">Por determinar</p>
                         </div>
                     </div>
                     <div className="flex flex-col w-full lg:w-1/2 h-full justify-center items-center" data-aos="fade-up">
                         <div className="w-full h-80 rounded-xl overflow-hidden">
                             <iframe
-                                src="https://maps.google.com/maps?q=Krystal%20Logistics%20USA&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3590.419978166022!2d-80.3852301!3d25.8556514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9bc66e2c5086d%3A0x2d8a1985b1a14f52!2s11600%20NW%2091st%20St%20%233%2C%20Miami%2C%20FL%2033178%2C%20USA!5e0!3m2!1sen!2sdo!4v1717787577342!5m2!1sen!2sdo"
                                 width="100%"
                                 height="100%"
                                 allowFullScreen

@@ -41,10 +41,10 @@ export default function Nosotros() {
                             <h1 className="w-full lg:text-6xl text-4xl font-semibold ">Nuestra Historia</h1>
                         </div>
                         <div className="h-auto lg:w-[30rem] w-auto text-center">
-                            <p className="text-xl lg:text-2xl font-thin">Nacemos en el 2005 de la inquietud de crear valor en el proceso de gestión de la cadena de suministro, viendo oportunidades en el sector logístico de mejor flujo de información.
+                            <p className="text-xl lg:text-2xl font-regular">Nacemos en el 2005 de la inquietud de crear valor en el proceso de gestión de la cadena de suministro, viendo oportunidades en el sector logístico de mejor flujo de información.
 
                             <br/>
-                                Hoy, bajo el nombre de M.C. cubrimos mercados de manera efectiva y eficiente estando, SIEMPRE, el cliente como piedra angular en el desarrollo de nuestra empresa.
+                                Hoy, bajo el nombre de MCLogistics cubrimos mercados de manera efectiva y eficiente estando, SIEMPRE, el cliente como piedra angular en el desarrollo de nuestra empresa.
                             </p>
                         </div>
                     </div>
@@ -56,8 +56,8 @@ export default function Nosotros() {
 
             <div className="w-auto h-full pb-10 px-10 sm:px-10 md:px-20 lg:px-40">
 
-                <div className="h-auto w-auto py-4 md:py-20 text-center">
-                    <h1 className="text-5xl font-semibold text-black">Linea de tiempo</h1>
+                <div className="h-auto w-auto py-0 md:py-20 text-center lg:text-start">
+                    <h1 className="text-2xl lg:text-4xl xl:text-5xl font-semibold">Linea de tiempo</h1>
                 </div>
 
                 <div className="h-auto w-auto flex flex-col gap-y-6 pt-10">
@@ -80,10 +80,10 @@ export default function Nosotros() {
                     <div className="h-auto w-full px-10 sm:px-10 md:px-20 lg:px-40">
 
                         <div className="pt-12 pb-12 text-center">
-                            <h1 className="text-6xl text-black font-bold">Quienes Somos</h1>
+                            <h1 className="text-3xl lg:text-5xl xl:text-6xl font-semibold">Quienes Somos</h1>
                         </div>
 
-                        <div className="lg:h-64 h-auto w-full flex lg:flex-row flex-col sm:items-center items-center lg:justify-end md:justify-end sm:justify-center justify-center">
+                        <div className="lg:h-64 h-auto w-full flex lg:flex-row flex-col sm:items-center items-center lg:justify-end md:justify-end sm:justify-center justify-center" data-aos="fade-righ">
                             <div className="pt-6">
                                 <img className="h-[14rem] " src={mision} alt="" />
                             </div>
@@ -135,7 +135,7 @@ export default function Nosotros() {
 
             <div className="h-full w-auto pt-12 px-10 sm:px-10 md:px-20 lg:px-40">
                 <div className="">
-                    <h1 className="font-bold text-6xl">¿Por qué elegirnos?</h1>
+                    <h1 className="text-3xl lg:text-5xl xl:text-6xl font-semibold text-center lg:text-start">¿Por qué elegirnos?</h1>
                 </div>
                 <div className="w-full h-auto flex lg:flex-row md:flex-col flex-col justify-center gap-x-24 py-24 md:gap-y-12 gap-y-12 md:items-center items-center">
                     <div className="text-white h-44 w-44 flex flex-col justify-center items-center bg-blue shadow-md rounded-sm" data-aos="fade-down" >

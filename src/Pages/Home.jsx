@@ -58,7 +58,7 @@ import AppMclogs from "../Components/App_Mclogs_descarga";
 
 
 const ServiceCard = ({ delay, className, imgSrc, title, description, link }) => (
-    <div data-aos="fade-down" data-aos-delay={delay} className="flex flex-col bg-white h-[26rem] sm:h-[36rem] w-auto lg:w-[24rem] xl:w-[24rem] shadow-lg rounded-md text-center overflow-hidden">
+    <div data-aos="fade-down" data-aos-delay={delay} className="flex flex-col bg-white h-[26rem] md:h-[36rem] w-auto lg:w-[24rem] xl:w-[24rem] shadow-lg rounded-md text-center overflow-hidden">
         <div className="w-full h-1/3 bg-clip-border flex justify-center items-center" style={{ backgroundImage: `url(${white})`, backgroundSize: 'cover' }}>
             <img className={className} src={imgSrc} alt={title} />
         </div>
@@ -124,8 +124,7 @@ export default function Homepage() {
                     playsInline ></video>
                 <div className="flex w-full h-full text-white px-10 sm:px-10 md:px-20 lg:px-40 items-center">
                     <div className={`h-72 w-auto text-wrap ${fade ? 'fade-out' : 'fade-in'}`}>
-                        <h1 className="w-auto text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl py-4" data-aos="fade-down" data-aos-duration="500">{currentText.title}</h1>
-                        <p className="w-2/3 text-4xl sm:text-5xl md:text-5xl lg:text-7xl xl:text-8xl" data-aos="fade-up" data-aos-duration="400" data-aos-delay="600">{currentText.subtitle}</p>
+                        <p className="w-3/4 text-4xl sm:text-5xl md:text-5xl lg:text-7xl xl:text-8xl" data-aos="fade-up" data-aos-duration="400" data-aos-delay="600">{currentText.subtitle}</p>
                         <p className="text-lg font-semibold py-4" data-aos="fade-up" data-aos-duration="500" data-aos-delay="1300">{currentText.description}</p>
                     </div>
                 </div>
@@ -161,7 +160,7 @@ export default function Homepage() {
             {/* Nuestros Servicios */}
             <div className="w-full h-auto xl:h-screen pb-16">
                 <div className="flex w-full h-24 items-center justify-center px-4 sm:px-10 md:px-20 lg:px-40 text-center">
-                    <h3 className="text-3xl sm:text-3xl md:text-5xl font-bold" data-aos="fade-down">Descubre nuestros servicios</h3>
+                    <h3 className="text-3xl sm:text-3xl md:text-5xl font-bold" data-aos="fade-down">Nuestros servicios</h3>
                 </div>
                 <div className="flex justify-center h-auto w-full pt-8 px-4 sm:px-10 md:px-20 lg:px-40">
                     <div className="grid lg:grid-cols-3 md:grid-cols-2  gap-y-12 gap-x-6 justify-items-center w-full">
@@ -189,10 +188,10 @@ export default function Homepage() {
 
             {/* Seccion de compañias */}
             <div className="w-full h-auto bg-gray-200">
-                <div className="flex bg-center bg-fixed w-full h-full pb-24 pt-8 md:py-20" style={{ backgroundImage: `url(${''})`, backgroundSize: 'cover' }}>
+                <div className="flex bg-center bg-fixed w-full h-full pb-2 pt-12 md:py-20" style={{ backgroundImage: `url(${''})`, backgroundSize: 'cover' }}>
                     <div className="flex flex-col w-full h-full items-center justify-center px-10 sm:px-10 md:px-20 lg:px-40">
-                        <div className="pb-10 text-center">
-                            <h1 className="text-6xl font-semibold text-black">
+                        <div className="pb-0 md:pb-10 text-center">
+                            <h1 className="text-3xl sm:text-3xl md:text-5xl font-bold text-black">
                                 Nuestras Divisiones
                             </h1>
                         </div>
@@ -227,23 +226,24 @@ export default function Homepage() {
             </div>
 
             <div className="h-auto w-full pt-8">
-                <div className="flex flex-col h-full justify-center px-4 sm:px-10 md:px-20 lg:px-40">
+                <div className="flex flex-col h-full justify-center px-10 sm:px-10 md:px-20 lg:px-40">
 
-                    <div className="flex w-full h-auto">
-                        <div className="h-auto w-auto py-8">
-                            <h1 className="text-4xl sm:text-4xl md:text-4xl lg:text-6xl xl:text-6xl font-medium">¿Por qué elegirnos?</h1>
+                    <div className="flex w-full h-auto justify-center lg:justify-start">
+                        <div className="h-auto w-auto py-8 ">
+                            <h1 className="text-3xl sm:text-3xl md:text-5xl font-bold">¿Por qué elegirnos?</h1>
                         </div>
                     </div>
 
                     <div className="flex xl:flex-row lg:flex-row md:flex-col sm:flex-col flex-col h-auto w-full lg:h-full">
-                        <div className="flex flex-col pt-8  lg:w-1/2 w-full">
+                        <div className="flex flex-col  lg:w-1/2 w-full">
 
-                            <div className="wrap w-auto">
-                                <p className="font-light md:text-xl lg:text-2xl xl:text-2xl">Integramos los actores de la cadena de suministro mediante el flujo constante de información rápida y certera para asegurar que nuestros clientes tomen, siempre, la decisión correcta.
-                                    <br />Porque lo que somos lo debemos a nuestros clientes, encontrarán siempre en nosotros el apoyo deseado. Siempre prestos a servir.</p>
+                            <div className="wrap h-full w-auto text-center lg:text-start">
+                                <p className="font-light md:text-xl lg:text-2xl xl:text-2xl leading-loose">
+                                Integramos a todos los actores de la cadena de suministro mediante un flujo constante de información rápida y certera, asegurando que nuestros clientes siempre tomen la decisión correcta. Nuestra existencia y éxito se deben a la lealtad de nuestros clientes, por lo que nos comprometemos a ser su apoyo incondicional, superando expectativas y estando siempre disponibles para brindar soluciones efectivas. Con un equipo altamente capacitado y dedicado, ofrecemos un servicio de calidad excepcional y atención personalizada, reafirmando nuestro compromiso de ser un aliado confiable y dispuesto a adaptarse a sus necesidades.
+                                </p>
                             </div>
 
-                            <div className=" w-auto h-full grid grid-cols-2 md:grid-cols-4 py-12 gap-y-12 justify-items-center">
+                            <div className=" w-auto h-auto grid grid-cols-2 md:grid-cols-4 py-12 gap-y-12 justify-items-center">
                                 <div className="h-20 w-20 lg:h-28 lg:w-32 flex flex-col justify-center items-center bg-slate-50 shadow-md rounded-sm" data-aos="fade-down" >
                                     <img className="h-8 w-8 lg:h-12 lg:w-12" src={confiable} alt="" />
                                     <p className="text-xs">Confiabilidad</p>

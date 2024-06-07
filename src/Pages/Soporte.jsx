@@ -17,10 +17,10 @@ export default function Soporte() {
                 {submit === false ?
 
                     <div className="flex flex-col items-center">
-                        <div className="py-10 h-full w-full">
+                        <div className="py-2 lg:py-10 h-full w-full">
                             <div className="text-center">
-                                <h1 className="text-7xl font-bold">Soporte</h1>
-                                <p className="pt-4">Estamos siempre prestos a servir, porfavor, llene el formulario</p>
+                                <h1 className="text-4xl sm:text-4xl md:text-5xl lg:text-7xl font-semibold">Soporte</h1>
+                                <p className="text-sm lg:text-regular pt-4">Estamos siempre prestos a servir, por favor, llene el formulario</p>
                             </div>
                         </div>
                         <div className="flex flex-col md:flex-row w-full md:w-1/2 justify-between gap-4">

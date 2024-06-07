@@ -31,16 +31,16 @@ const lineadetiempodatos = [
         color_circulo: `bg-bluemunsell`,
         transicion: "fade-up"
     }, 
+    // {
+    //     id: 5,
+    //     titulo: "ADT",
+    //     ano: "2019",
+    //     texto: "Transporte Terrestre y de paqueteo domestico en la República Dominicana",
+    //     color_circulo:`bg-blue`,
+    //     transicion: "fade-up"
+    // },
     {
         id: 5,
-        titulo: "ADT",
-        ano: "2019",
-        texto: "Transporte Terrestre y de paqueteo domestico en la República Dominicana",
-        color_circulo:`bg-blue`,
-        transicion: "fade-up"
-    },
-    {
-        id: 6,
         titulo: "Aniversario",
         ano: "2020",
         texto: "MC Logistics cumple su 15 aniversario",

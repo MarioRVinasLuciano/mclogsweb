@@ -50,7 +50,7 @@ export default function Servicios() {
                 </div>
             </div>
 
-            <div className="flex flex-col justify-center h-auto w-full py-10 md:py-20 xl:py-0">
+            <div className="flex flex-col justify-center h-auto w-full py-10 md:py-20 xl:py-20">
                 <div className="flex flex-col h-auto w-full px-10 sm:px-10 md:px-20 lg:px-40">
 
 

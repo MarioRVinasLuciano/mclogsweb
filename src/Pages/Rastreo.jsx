@@ -168,11 +168,11 @@ export default function Tracking() {
 
   return (
     <div className='h-full w-full font-Encode-Sans pt-20'>
-      <div className='relative flex flex-col px-10 sm:px-10 md:px-20 lg:px-40 h-screen'>
+      <div className='relative flex flex-col px-10 sm:px-10 md:px-20 lg:px-40 h-screen items-center justify-center'>
         <video className="absolute z-[-10] inset-0 w-full h-full object-cover brightness-50" src={Video2} loop autoPlay muted controls={false} onContextMenu={(e) => e.preventDefault()} playsInline ></video>
-
-        <div className="w-full text-center">
-          <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-7xl py-32 font-bold text-white">Rastrea tu embarque</h1>
+      <div className='w-auto h-2/3 flex flex-col items-center justify-start'>
+      <div className="w-full text-center pb-24">
+          <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-7xl font-bold text-white">Rastrea tu embarque</h1>
         </div>
         <div className="w-full backdrop-blur h-44 bg-white/40 rounded-lg items-center p-8">
           <div className="flex flex-col md:flex-row lg:flex-row xl:flex-row text-white gap-2 ">
@@ -211,33 +211,36 @@ export default function Tracking() {
 
           </div>
         </div>
+      </div> 
       </div>
 
       {error && <div className="track_no_result_section">{error}</div>}
 
       {trackResult && (
         <div className="relative track_result_section px-10 sm:px-10 md:px-20 lg:px-40 h-auto pb-16" ref={scrollRef}>
-          <div className="imagesContainer text-center pt-24">
+          <div className="imagesContainer text-center pt-8 lg:pt-24">
             <div className='w-full h-44 flex justify-center'>
               {renderImages()}
             </div>
-            <h1 className="text-3xl font-semibold pt-10">{trackResult.State}</h1>
+            <div className='text-center py-4 lg:py-10'>
+              <h1 className="text-3xl font-semibold text-aureolin ">{trackResult.State}</h1>
+            </div>
           </div>
 
-          <div className="flex flex-col lg:flex-row xl:flex-row items-center justify-center gap-10 h-auto w-full">
-            <div className="flex flex-row items-center h-56 ">
+          <div className="flex flex-col lg:flex-row xl:flex-row items-center justify-center gap-2 md:gap-10 h-auto w-full">
+            <div className="flex flex-row items-center h-32 lg:h-56 ">
               <h1 className="font-semibold">Fecha estimada de llegada:</h1>
               <p className='px-10'>{`${new Date(trackResult.ETA).toDateString()},${new Date(trackResult.ETA).toLocaleTimeString()}`}</p>
             </div>
-            <div className=" flex flex-row items-center text-center">
+            <div className=" flex flex-row items-center text-center h-32 lg:h-56">
               <div>
                 <p className="font-semibold">Estado de HBL: </p>
               </div>
               <div className="flex-non">
                 {trackResult.TelexRelease === true ?
-                  <img className="h-56 w-auto" src={TELEX_RELEASE} alt="" />
+                  <img className="h-32 lg:h-56 w-auto" src={TELEX_RELEASE} alt="" />
                   :
-                  <img className="h-56 w-56 flex-none" src={COPIA_BL} alt="" />
+                  <img className="h-32 lg:h-56 w-56" src={COPIA_BL} alt="" />
                 }
               </div>
             </div>

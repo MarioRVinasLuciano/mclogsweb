@@ -33,7 +33,6 @@ export default function Agentes() {
     setAgentsInContinent(agentsInSelectedContinent);
   }, [selectedContinent, agents]);
 
-  const continents = [...new Set(agents.map((agent) => agent.continent))];
 
   const handleContinentClick = (continent) => {
     setSelectedContinent(continent);
@@ -52,6 +51,18 @@ export default function Agentes() {
   const uniqueCountryNames = [...new Set(agentsInContinent.map(agent => agent.country.trimEnd()))];
 
 
+  const continents = [
+    'Asia', 
+    'Oceania', 
+    'Europa', 
+    'África', 
+    'Norte América', 
+    'Centro América', 
+    'Sur América'
+  ];
+
+
+
 
   return (
     <div className="h-auto w-full font-Encode-Sans ">
@@ -67,11 +78,11 @@ export default function Agentes() {
       <div className="flex flex-col h-auto w-full pt-4 md:pt-16 pb-20 sm:pb-56 px-10 sm:px-10 md:px-20 lg:px-40">
         <div className="flex flex-col w-full  h-auto gap-y-6 pb-16">
           <div className="bg-white pt-4 md:p-4 w-full">
-            <div className="grid xl:grid-cols-7 lg:grid-cols-4 md:grid-cols-4 sm:grid-cols-4 sm:grid-rows-2 md:grid-rows-2 lg:grid-rows-1 gap-y-6 grid-rows-auto gap-x-20 w-full justify-items-center">
+            <div className="grid xl:grid-cols-7 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-3 sm:grid-rows-3 md:grid-rows-3 lg:grid-rows-1 gap-y-4 grid-rows-auto gap-x-20 w-full justify-items-center">
               {continents.map((continent, index) => (
                 <button
                   key={index}
-                  className={`hover:border-aureolin border-2 w-full md:w-36 h-10 rounded-md text-aureolin ${selectedContinent === continent ? 'border-2 border-aureolin' : ''}`}
+                  className={`hover:border-aureolin border-2 w-full sm:w-40 md:w-40 xl:w-36 h-10 rounded-md text-aureolin ${selectedContinent === continent ? 'bg-aureolin text-white border-0' : ''}`}
                   onClick={() => handleContinentClick(continent)}
                 >
                   {continent}
@@ -98,10 +109,10 @@ export default function Agentes() {
                       .filter(agent => agent.country.trimEnd() === countryName)
                       .map(agent => (
                         <div key={agent.oid} className="bg-white shadow-md rounded-md p-4 mb-4 w-72 h-56 overflow-auto">
-                          <p className="font-semibold text-aureolin">{agent.name}</p>
+                          <p className="font-semibold text-black">{agent.name}</p>
                           <p>
                             {agent.web_page.length !== 0 ? (
-                              <span>Pagina: <a href={agent.web_page} className="text-blue">{agent.web_page}</a></span>
+                              <span>Pagina: <a href={agent.web_page} className="text-sky-600">{agent.web_page}</a></span>
                             ) : (
                               ""
                             )}
