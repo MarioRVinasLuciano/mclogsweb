@@ -46,9 +46,9 @@ export default function NavBar() {
 
 
     const hr = isHomepage ? scrollPosition >= 100
-        ? "hidden"
+        ? `${open ? `bg-black h-0.2 w-[100%]` : ""}`
         : "bg-white h-0.2 w-[100%]"
-        : "";
+        : `${open ? `bg-black h-0.2 w-[100%]` : ""}`;
 
     // Hyperlinks that lead to other pages
     const Links = [
@@ -90,7 +90,7 @@ export default function NavBar() {
                     {Links.map((link) => (
                         <li>
                         <Link
-                            className="font-Encoded-Sans-Expanded md:text-md lg:text-lg hover:text-slate-300"
+                            className="font-Encoded-Sans-Expanded md:text-md lg:text-lg hover:text-slate-700"
                             onClick={toggleMenu} to={link.link}
                         >
                             <li key={link.name} className="hover:bg-gray-100 xl:hover:bg-transparent flex-none px-4 py-4 items-center rounded-md border-b border-gray-300 last:border-b-0 xl:border-none">

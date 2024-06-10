@@ -123,7 +123,7 @@ export default function Homepage() {
             <div className="relative  h-screen w-full">
                 <video className="absolute inset-0 w-full h-full object-cover brightness-50" src={Video} loop autoPlay muted controls={false} onContextMenu={(e) => e.preventDefault()}
                     playsInline ></video>
-                <div className="flex w-full h-full text-white px-10 sm:px-10 md:px-20 lg:px-40 items-center">
+                <div className="relative flex w-full h-full text-white px-10 sm:px-10 md:px-20 lg:px-40 items-center">
                     <div className={`h-72 w-auto text-wrap ${fade ? 'fade-out' : 'fade-in'}`}>
                         <p className="w-3/4 text-4xl sm:text-5xl md:text-5xl lg:text-7xl xl:text-8xl" data-aos="fade-up" data-aos-duration="400" data-aos-delay="600">{currentText.subtitle}</p>
                         <p className="text-lg font-semibold py-4" data-aos="fade-up" data-aos-duration="500" data-aos-delay="1300">{currentText.description}</p>
@@ -164,7 +164,7 @@ export default function Homepage() {
                     <h3 className="text-3xl sm:text-3xl md:text-5xl font-bold" data-aos="fade-down">Nuestros servicios</h3>
                 </div>
                 <div className="flex justify-center h-auto w-full pt-8 px-4 sm:px-10 md:px-20 lg:px-40">
-                    <div className="grid lg:grid-cols-3 md:grid-cols-2  gap-y-12 gap-x-6 justify-items-center w-full">
+                    <div className="grid xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-2  gap-y-12 gap-x-6 justify-items-center w-full">
                         {serviciosdatos.map((servicio) => (
                             <NuestrosServicios
                                 key={servicio.id}

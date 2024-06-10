@@ -11,7 +11,7 @@ import paqueteria from "../Icons/Paqueteria_2.png";
 const serviciosdatos = [
     {
         id: 1,
-        espacio: "flex flex-col justify-center items-center text-white bg-bluemunsell h-72 w-full lg:col-span-1 lg:col-start-1 md:col-span-1 md:col-start-1 rounded-md shadow-md lg:transform lg:transition-transform lg:duration-100 lg:hover:scale-105 lg:hover:-translate-y-2 md:transform md:transition-transform md:duration-100 md:hover:scale-105 md:hover:-translate-y-2",
+        espacio: "flex flex-col justify-center items-center text-white bg-bluemunsell h-72 w-full  rounded-md shadow-md lg:transform lg:transition-transform lg:duration-100 lg:hover:scale-105 lg:hover:-translate-y-2 md:transform md:transition-transform md:duration-100 md:hover:scale-105 md:hover:-translate-y-2",
         imagen: en_transito,
         claseImagen: `h-24 w-24 invert` ,
         titulo: "Transporte Marítimo",
@@ -20,7 +20,7 @@ const serviciosdatos = [
     },
     {
         id: 2,
-        espacio:`flex flex-col justify-center items-center bg-slate-50 h-72 w-full lg:col-span-1 lg:col-start-2 md:col-span-1 md:col-start-2 rounded-md shadow-md lg:transform lg:transition-transform lg:duration-100 lg:hover:scale-105 lg:hover:-translate-y-2 md:transform md:transition-transform md:duration-100 md:hover:scale-105 md:hover:-translate-y-2`,
+        espacio:`flex flex-col justify-center items-center bg-slate-50 h-72 w-full rounded-md shadow-md lg:transform lg:transition-transform lg:duration-100 lg:hover:scale-105 lg:hover:-translate-y-2 md:transform md:transition-transform md:duration-100 md:hover:scale-105 md:hover:-translate-y-2`,
         imagen: en_transito_aereo,
         claseImagen: `h-24 w-24` ,
         titulo: "Transporte Aéreo",
@@ -29,7 +29,7 @@ const serviciosdatos = [
     },
     {
         id: 3,
-        espacio:`flex flex-col justify-center items-center text-white bg-blue h-72 w-full lg:col-span-1 lg:col-start-3 md:col-span-1 md:col-start-3 rounded-md shadow-md lg:transform lg:transition-transform lg:duration-100 lg:hover:scale-105 lg:hover:-translate-y-2 md:transform md:transition-transform md:duration-100 md:hover:scale-105 md:hover:-translate-y-2`,
+        espacio:`flex flex-col justify-center items-center text-white bg-blue h-72 w-full rounded-md shadow-md lg:transform lg:transition-transform lg:duration-100 lg:hover:scale-105 lg:hover:-translate-y-2 md:transform md:transition-transform md:duration-100 md:hover:scale-105 md:hover:-translate-y-2`,
         imagen: transporte_terrestre,
         claseImagen: `h-24 w-24 invert` ,
         titulo: "Transporte Terrestre",
@@ -39,7 +39,7 @@ const serviciosdatos = [
     },
     {
         id: 4,
-        espacio:`flex flex-col justify-center items-center bg-slate-50 h-72  w-full lg:col-span-1 lg:col-start-1 md:col-span-1 md:col-start-1 rounded-md shadow-md lg:transform lg:transition-transform lg:duration-100 lg:hover:scale-105 lg:hover:-translate-y-2 md:transform md:transition-transform md:duration-100 md:hover:scale-105 md:hover:-translate-y-2`,
+        espacio:`flex flex-col justify-center items-center bg-slate-50 h-72  w-full rounded-md shadow-md lg:transform lg:transition-transform lg:duration-100 lg:hover:scale-105 lg:hover:-translate-y-2 md:transform md:transition-transform md:duration-100 md:hover:scale-105 md:hover:-translate-y-2`,
         imagen: almacenaje,
         claseImagen: `h-24 w-24` ,
         titulo:"Almacenaje",
@@ -49,7 +49,7 @@ const serviciosdatos = [
     },
     {
         id: 5,
-        espacio:`flex flex-col justify-center items-center text-white bg-oldgold h-72 w-full lg:col-span-1 lg:col-start-2 md:col-span-1 md:col-start-2 rounded-md shadow-md lg:transform lg:transition-transform lg:duration-100 lg:hover:scale-105 lg:hover:-translate-y-2 md:transform md:transition-transform md:duration-100 md:hover:scale-105 md:hover:-translate-y-2`,
+        espacio:`flex flex-col justify-center items-center text-white bg-oldgold h-72 w-full rounded-md shadow-md lg:transform lg:transition-transform lg:duration-100 lg:hover:scale-105 lg:hover:-translate-y-2 md:transform md:transition-transform md:duration-100 md:hover:scale-105 md:hover:-translate-y-2`,
         imagen: gestion_aduanal,
         claseImagen: `h-24 w-24 invert` ,
         titulo:"Gestión Aduanal",
@@ -59,7 +59,7 @@ const serviciosdatos = [
     },
     {
         id: 6,
-        espacio:`flex flex-col justify-center items-center bg-slate-50 h-72 w-full lg:col-span-1 lg:col-start-3 md:col-span-1 md:col-start-3 rounded-md shadow-md lg:transform lg:transition-transform lg:duration-100 lg:hover:scale-105 lg:hover:-translate-y-2 md:transform md:transition-transform md:duration-100 md:hover:scale-105 md:hover:-translate-y-2`,
+        espacio:`flex flex-col justify-center items-center bg-slate-50 h-72 w-full rounded-md shadow-md lg:transform lg:transition-transform lg:duration-100 lg:hover:scale-105 lg:hover:-translate-y-2 md:transform md:transition-transform md:duration-100 md:hover:scale-105 md:hover:-translate-y-2`,
         imagen: paqueteria,
         claseImagen: `h-24 w-24` ,
         titulo:"Paquetería",
