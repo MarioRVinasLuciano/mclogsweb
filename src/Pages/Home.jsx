@@ -29,11 +29,12 @@ import slider_4 from "../Images/Homepageimgs/slider4.jpg"
 
 
 //Animacion
+import 'swiper/swiper-bundle.css';
 import 'animate.css';
 import 'animate.css/animate.min.css';
 import Aos from "aos";
 import 'aos/dist/aos.css';
-import 'swiper/css/effect-cards';
+import 'swiper/css/effect-creative';
 
 //Videos
 import Video from "../Videos/Video1.mp4";
@@ -41,7 +42,7 @@ import Video from "../Videos/Video1.mp4";
 
 //Swiper 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, EffectCards } from "swiper/modules";
+import { Autoplay, EffectCreative } from "swiper/modules";
 import 'swiper/css';
 import 'swiper/css/effect-creative';
 import 'swiper/css/pagination';
@@ -111,7 +112,7 @@ export default function Homepage() {
 
     const currentText = texts[currentIndex];
 
-  
+
 
 
 
@@ -139,8 +140,8 @@ export default function Homepage() {
                             <h1 className="block text-2xl sm:text-4xl md:text-5xl lg:text-3xl xl:text-5xl" data-aos="fade-up" data-aos-delay="50">Somos</h1>
                             <h1 className="block text-3xl sm:text-5xl md:text-4xl lg:text-4xl xl:text-6xl font-semibold pt-4" data-aos="fade-up" data-aos-delay="60">MC Logistics</h1>
                             <p className="block py-4 font-thin text-md sm:text-xl md:text-lg lg:text-md xl:text-lg" data-aos="fade-up" data-aos-delay="70">Tu socio estratégico en logística a nivel global. Desde el origen hasta el destino final, maximizando la rentabilidad de nuestros clientes y socios con una gestión eficiente de mercancías, energía e información.</p>
-                            <hr className="h-0.5 lg:block xl:block hidden sm:hidden md:hidden bg-slate-50" data-aos="fade-up" data-aos-delay="80" />
-                            <p className="lg:block xl:block hidden sm:hidden md:hidden py-4 text-sm sm:text-sm md:text-md lg:text-lg xl:text-xl" data-aos="fade-up" data-aos-delay="85">Nacemos en el 2005 de la inquietud de crear valor en el proceso de gestión de la cadena de suministro, viendo oportunidades en el sector logístico de mejor flujo de información.</p>
+                            <hr className="h-0.5 lg:hidden xl:block hidden sm:hidden md:hidden bg-slate-50" data-aos="fade-up" data-aos-delay="80" />
+                            <p className="lg:hidden xl:block hidden sm:hidden md:hidden py-4 text-sm sm:text-sm md:text-md lg:text-lg xl:text-xl" data-aos="fade-up" data-aos-delay="85">Nacemos en el 2005 de la inquietud de crear valor en el proceso de gestión de la cadena de suministro, viendo oportunidades en el sector logístico de mejor flujo de información.</p>
                             <button className="block h-12 w-32 rounded-md bg-DarkBlue hover:bg-blue" data-aos="fade-down" data-aos-delay="0">
                                 <a className="text-white" href="/#/nosotros">Leer más</a>
                             </button>
@@ -195,7 +196,7 @@ export default function Homepage() {
                                 Nuestras Divisiones
                             </h1>
                         </div>
-                        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-20 gap-x-10 gap-y-8  w-full h-full py-10 justify-items-center">
+                        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 lg:gap-x-32 gap-x-10 gap-y-8  w-full h-full py-10 justify-items-center">
                             <ServiceCard
                                 delay={""}
                                 className={" h-32 w-36 z-10"}
@@ -229,17 +230,17 @@ export default function Homepage() {
                 <div className="flex flex-col h-full justify-center px-10 sm:px-10 md:px-20 lg:px-40">
 
                     <div className="flex w-full h-auto justify-center lg:justify-start">
-                        <div className="h-auto w-auto py-8 ">
+                        <div className="h-auto xl:w-auto w-full py-8 text-center">
                             <h1 className="text-3xl sm:text-3xl md:text-5xl font-bold">¿Por qué elegirnos?</h1>
                         </div>
                     </div>
 
-                    <div className="flex xl:flex-row lg:flex-row md:flex-col sm:flex-col flex-col h-auto w-full lg:h-full">
-                        <div className="flex flex-col  lg:w-1/2 w-full">
+                    <div className="flex 2xl:flex-row xl:flex-row lg:flex-col md:flex-col sm:flex-col flex-col h-auto w-full lg:h-full">
+                        <div className="flex flex-col xl:w-1/2 w-full">
 
-                            <div className="wrap h-full w-auto text-center lg:text-start">
-                                <p className="font-light md:text-xl lg:text-2xl xl:text-2xl leading-loose">
-                                Integramos a todos los actores de la cadena de suministro mediante un flujo constante de información rápida y certera, asegurando que nuestros clientes siempre tomen la decisión correcta. Nuestra existencia y éxito se deben a la lealtad de nuestros clientes, por lo que nos comprometemos a ser su apoyo incondicional, superando expectativas y estando siempre disponibles para brindar soluciones efectivas. Con un equipo altamente capacitado y dedicado, ofrecemos un servicio de calidad excepcional y atención personalizada, reafirmando nuestro compromiso de ser un aliado confiable y dispuesto a adaptarse a sus necesidades.
+                            <div className="wrap h-full w-auto text-center xl:text-start">
+                                <p className="font-light md:text-xl lg:text-2xl xl:text-2xl leading-loose text-justify">
+                                    Integramos a todos los actores de la cadena de suministro mediante un flujo constante de información rápida y certera, asegurando que nuestros clientes siempre tomen la decisión correcta. Nuestra existencia y éxito se deben a la lealtad de nuestros clientes, por lo que nos comprometemos a ser su apoyo incondicional, superando expectativas y estando siempre disponibles para brindar soluciones efectivas. Con un equipo altamente capacitado y dedicado, ofrecemos un servicio de calidad excepcional y atención personalizada, reafirmando nuestro compromiso de ser un aliado confiable y dispuesto a adaptarse a sus necesidades.
                                 </p>
                             </div>
 
@@ -263,28 +264,40 @@ export default function Homepage() {
                             </div>
 
                         </div>
-                        <div className="flex flex-col h-full w-full lg:w-1/2 xl:w-1/2 pl-0 md:pl-8 items-center justify-center">
+                        <div className="flex flex-col h-full w-full xl:w-1/2 pl-0 md:pl-8 items-center justify-center">
                             <Swiper
-                                effect={'cards'}
-                                style={{ width: '100%', maxWidth: '100%', height: '100%' }}
+                                effect={'creative'}
+                                creativeEffect={{
+                                    prev: {
+                                      origin: 'left center',
+                                      translate: ['-5%', 0, -200],
+                                      rotate: [0, 100, 0],
+                                    },
+                                    next: {
+                                      origin: 'right center',
+                                      translate: ['5%', 0, -200],
+                                      rotate: [0, -100, 0],
+                                    },
+                                  }}
                                 autoplay={{
                                     delay: 3500,
                                     disableOnInteraction: false,
                                 }}
-                                modules={[Autoplay, EffectCards]}
+                                modules={[Autoplay, EffectCreative]}
                                 className="mySwiper"
+                                style={{ width: '100%', height: '100%' }}
                             >
                                 <SwiperSlide>
-                                    <img src={slider_1} alt="" />
+                                    <img className="rounded-md" src={slider_1} alt="Slide 1" />
                                 </SwiperSlide>
                                 <SwiperSlide>
-                                    <img src={slider_2} alt="" />
+                                    <img className="rounded-md" src={slider_2} alt="Slide 2" />
                                 </SwiperSlide>
                                 <SwiperSlide>
-                                    <img src={slider_3} alt="" />
+                                    <img className="rounded-md" src={slider_3} alt="Slide 3" />
                                 </SwiperSlide>
                                 <SwiperSlide>
-                                    <img src={slider_4} alt="" />
+                                    <img className="rounded-md" src={slider_4} alt="Slide 4" />
                                 </SwiperSlide>
                             </Swiper>
                         </div>
@@ -293,7 +306,7 @@ export default function Homepage() {
                     </div>
 
                     {/* <hr className="h-0.2 bg-slate-100 w-full" /> */}
-                    <div className="flex flex-col lg:flex-row xl:flex-row h-full justify-between pb-24 pt-12">
+                    <div className="flex flex-col lg:flex-col xl:flex-row h-full justify-between pb-24 pt-12">
                         <div className="flex flex-col">
                             <div className="w-full text-start">
                                 <h1 className="text-sm sm:text-2xl md:text-2xl lg:text-3xl xl:text-3xl font-extrabold text-DarkBlue">Nuestras Certificaciones</h1>
@@ -307,7 +320,7 @@ export default function Homepage() {
                                 </div>
                             </div>
                         </div>
-                        <div className="flex flex-col text-start lg:text-end xl:text-end">
+                        <div className="flex flex-col text-start xl:text-end">
                             <div className="w-full">
                                 <h1 className="text-sm sm:text-2xl md:text-2xl lg:text-3xl xl:text-3xl font-extrabold text-DarkBlue">Miembros</h1>
                             </div>

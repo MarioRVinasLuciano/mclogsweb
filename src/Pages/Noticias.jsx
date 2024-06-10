@@ -54,7 +54,7 @@ export default function Noticias() {
       ) : filteredNoticias.length === 0 ? (
         <p className="text-6xl py-56 px-10 sm:px-10 md:px-20 lg:px-40 text-center">No se encontraron noticias.</p>
       ) : (
-        <div className="grid lg:grid-cols-4 grid-cols-1 gap-6 lg:gap-10 px-10 sm:px-10 md:px-20 lg:px-40 pt-10">
+        <div className="grid xl:grid-cols-4 lg:grid-cols-3 grid-cols-1 gap-6 lg:gap-10 px-10 sm:px-10 md:px-20 lg:px-40 pt-10">
           {filteredNoticias.map((contenido, index) => (
             <div
               key={contenido.oid}

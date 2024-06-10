@@ -3,7 +3,7 @@ import React from "react";
 export default function LineaDeTiempo (props) {
     return (
 
-        <div className="flex flex-row w-full h-auto md:h-64 bg-white shadow-xl " data-aos={props.transicion}>
+        <div className="flex flex-row w-full h-auto xl:h-64 bg-white shadow-xl " data-aos={props.transicion}>
                         <div className="flex-col p-10 w-6">
                             <div className={`h-6 w-6 rounded-full ${props.color_circulo}`}></div>
                             <div className="h-full w-0.5 bg-black ml-2.5 mt-2"></div>

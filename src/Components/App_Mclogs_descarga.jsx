@@ -1,5 +1,4 @@
 import React from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 //Logos
 import apple from "../Icons/Apple.png"; // Logo de apple
@@ -17,7 +16,7 @@ export default function AppMclogs() {
                     <p className="pt-4 text-md">Descarga nuestra app en tu dispositivo</p>
                     <div className="flex flex-row items-center justify-center gap-x-10">
                         <div>
-                            <a href='https://apps.apple.com/do/app/mclogs/id1504701375' target="_blank">
+                            <a href='https://apps.apple.com/do/app/mclogs/id1504701375' target="_blank" rel="noreferrer">
                                 <div className="pt-4 py-2 gap-x-2 flex flex-row">
                                     <img className="h-6 w-6" src={apple} alt="Apple Store" />
                                     <p className="text-xl">Apple Store</p>
@@ -25,7 +24,7 @@ export default function AppMclogs() {
                             </a>
                         </div>
                         <div>
-                            <a href='https://play.google.com/store/apps/details?id=com.mclogs.www' target="_blank">
+                            <a href='https://play.google.com/store/apps/details?id=com.mclogs.www' target="_blank" rel="noreferrer">
                                 <div className="pt-4 py-2 gap-x-2 flex flex-row">
                                     <img className=" h-6 w-6" src={android} alt="Google Play" />
                                     <p className="flex text-xl">Google Play</p>
@@ -37,13 +36,13 @@ export default function AppMclogs() {
 
                 <div className="w-full h-full flex justify-center items-center flex-col px-10 sm:px-10 md:px-20 lg:px-40 pb-16 gap-16">
 
-                    <video className="py-32 lg:py-0 w-[56rem] h-full object-cover" src={App_descarga} loop autoPlay muted></video>
+                    <video className="py-32 lg:py-12 w-[56rem] h-full object-cover" src={App_descarga} loop autoPlay muted></video>
 
 
                     <div className="flex flex-col sm:flex-col md:flex-col lg:flex-row xl:flex-row">
 
                         <div className="relative h-full w-auto lg:w-1/2 xl:w-1/2 flex items-center justify-center flex-col pb-10 lg:pb-0">
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center w-full lg:w-auto">
+                            <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 items-center w-full lg:w-auto">
                                 
                                 <div className="flex flex-col p-4 gap-2 w-full lg:w-auto h-auto bg-slate-200 rounded-md text-start items-center shadow-md"  data-aos="zoom-in-down" data-aos-duration="500">
                                     <div className="h-10 w-10 text-center opacity-80 flex items-center justify-center">
@@ -101,7 +100,7 @@ export default function AppMclogs() {
                         <div className="flex flex-col items-center justify-center w-full lg:w-1/2 xl:w-1/2">
                             <div className="text-center bg-slate-200 rounded-md p-8 gap-8 shadow-md h-full w-full" data-aos="fade-up" data-aos-duration="800" data-aos-delay="800">
                             <p className="font-medium md:text-2xl lg:text-3xl text-slate-600" data-aos="fade-down" data-aos-anchor-placement="bottom-bottom">En MC Logistics estamos centrados en el cliente e impulsados por la data, razon por lo que creamos la app McLogs para tí.</p>
-                            <p className="font-regular md:text-xl lg:text-2xl text-slate-500" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration="800" data-aos-delay="200" >McLogs es la aplicación que ponemos a su disposición para gestionar toda la información que necesita de forma directa y en vivo de sus órdenes de servicio, desde el punto de coordinación, hasta la entrega de su carga, como otras funciones que facilitaran su gestión en la cadena logística.</p>
+                            <p className="font-regular md:text-xl lg:text-2xl text-slate-500 py-4 lg:py-12 xl:py-4" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration="800" data-aos-delay="200" >McLogs es la aplicación que ponemos a su disposición para gestionar toda la información que necesita de forma directa y en vivo de sus órdenes de servicio, desde el punto de coordinación, hasta la entrega de su carga, como otras funciones que facilitaran su gestión en la cadena logística.</p>
                             </div>
                         </div>
                     </div>

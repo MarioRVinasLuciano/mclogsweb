@@ -57,7 +57,7 @@ export default function Contacto() {
                             />
                         </svg>
                         <h1 className="text-2xl font-semibold">Dirección</h1>
-                        <a href="https://www.google.com/maps/place/M.C.+Logistics+SRL/@18.501022,-69.9557977,17z/data=!3m1!4b1!4m5!3m4!1s0x8eaf8987ea6ea207:0x7bcfa7fa8182db54!8m2!3d18.501022!4d-69.953609" target="_blank">Ave. Carlos Perez Ricart #5,
+                        <a href="https://www.google.com/maps/place/M.C.+Logistics+SRL/@18.501022,-69.9557977,17z/data=!3m1!4b1!4m5!3m4!1s0x8eaf8987ea6ea207:0x7bcfa7fa8182db54!8m2!3d18.501022!4d-69.953609" target="_blank" rel="noreferrer">Ave. Carlos Perez Ricart #5,
                             Santo Domingo, DN, R.D.</a>
                     </div>
 
