@@ -90,7 +90,7 @@ export default function Footer() {
         </div>
       </div>
     </div>
-    <div className="px-10 sm:px-10 md:px-20 lg:px-40">
+    <div className="px-10 sm:px-10 md:px-20 lg:px-30 xl:px-40">
     <hr className="h-0.5 bg-slate-200 w-full " />
     </div>
       <div className="flex items-center justify-center px-4 py-6 text-center">

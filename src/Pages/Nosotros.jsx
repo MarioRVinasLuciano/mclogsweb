@@ -36,7 +36,7 @@ export default function Nosotros() {
 
             <div className="w-full  h-auto xl:h-screen pb-10 pt-20">
                 <div className="h-full w-auto flex xl:flex-row flex-col items-center">
-                    <div className="flex flex-col items-center w-full py-10 lg:w-1/2 xl:w-1/2 px-10 sm:px-10 md:px-20 lg:px-40" data-aos="zoom-out-down" data-aos-delay="200">
+                    <div className="flex flex-col items-center w-full py-10 lg:w-1/2 xl:w-1/2 px-10 sm:px-10 md:px-20 lg:px-30 xl:px-30 2xl:px-40" data-aos="zoom-out-down" data-aos-delay="200">
                         <div className="pb-10 text-center w-full lg:w-96">
                             <h1 className="w-full xl:text-6xl lg:text-4xl text-4xl font-semibold ">Nuestra Historia</h1>
                         </div>
@@ -54,7 +54,7 @@ export default function Nosotros() {
                 </div>
             </div>
 
-            <div className="w-auto h-full pb-10 px-10 sm:px-10 md:px-20 lg:px-40 pt-12">
+            <div className="w-auto h-full pb-10 px-10 sm:px-10 md:px-20 lg:px-30 xl:px-30 2xl:px-40 pt-12">
 
                 <div className="h-auto w-auto py-0 md:py-8 text-center lg:text-start">
                     <h1 className="text-2xl lg:text-4xl xl:text-5xl font-semibold">Linea de tiempo</h1>
@@ -77,7 +77,7 @@ export default function Nosotros() {
 
             <div className="h-auto w-full ">
                 <div className="flex h-full bg-center relative bg-fixed  ">
-                    <div className="h-auto w-full px-10 sm:px-10 md:px-20 lg:px-40">
+                    <div className="h-auto w-full px-10 sm:px-10 md:px-20 lg:px-30 xl:px-30 2xl:px-40">
 
                         <div className="lg:pt-16 lg:pb-12 md:pt-12 md:pb-8 text-center">
                             <h1 className="text-3xl lg:text-5xl xl:text-6xl font-semibold">Quienes Somos</h1>
@@ -97,7 +97,7 @@ export default function Nosotros() {
                             </div>
                         </div>
 
-                        <div className="mt-12 lg:h-64 h-auto w-full flex lg:flex-row flex-col sm:items-center items-center lg:justify-start md:justify-start sm:justify-center justify-center">
+                        <div className="mt-12 lg:h-64 h-auto w-full flex lg:flex-row flex-col-reverse sm:items-center items-center lg:justify-start md:justify-start sm:justify-center justify-center">
                             <div className="h-full w-full lg:w-[26rem] xl:lg:w-[26rem] flex flex-col bg-slate-100 shadow-md rounded-sm p-4" >
                                 <h2 className="text-2xl">
                                     Visión
@@ -133,7 +133,7 @@ export default function Nosotros() {
                 </div>
             </div>
 
-            <div className="h-full w-auto px-10 sm:px-10 md:px-20 lg:px-40">
+            <div className="h-full w-auto px-10 sm:px-10 md:px-20 lg:px-30 xl:px-30 2xl:px-40">
                 <div className="pt-12">
                     <h1 className="text-3xl lg:text-5xl xl:text-6xl font-semibold text-center lg:text-start">¿Por qué elegirnos?</h1>
                 </div>

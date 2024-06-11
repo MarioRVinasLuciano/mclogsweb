@@ -49,7 +49,7 @@ function ArticulosPagina() {
     }
 
     return (
-        <div className='h-full w-full relative font-Encode-Sans pt-32 px-10 sm:px-10 md:px-20 lg:px-40 xl:px-[20%]'>
+        <div className='h-full w-full relative font-Encode-Sans pt-32 px-10 sm:px-10 md:px-20 lg:px-30 xl:px-[20%]'>
             <div className='flex flex-col justify-center items-center pb-12'>
                 <div className='w-full text-start'>
                     <p className="text-sm text-slate-500">{contenido.type}</p>

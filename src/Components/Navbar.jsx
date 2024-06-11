@@ -33,9 +33,9 @@ export default function NavBar() {
 
     const navbarClass = isHomepage
         ? scrollPosition >= 100
-            ? "top-0 w-[100%] fixed z-20 h-20 bg-white backdrop-blur-md px-10 sm:px-10 md:px-20 lg:px-40 text-black"
-            : `top-0 w-[100%] fixed z-20 h-20 bg-slate/70 px-10 sm:px-10 md:px-20 lg:px-40  ${open ? `bg-white text-black` : "lg:text-white text-white"}`
-        : "top-0 w-[100%] fixed z-20 h-20 bg-gray-50 px-10 sm:px-10 md:px-20 lg:px-40 text-black";
+            ? "top-0 w-[100%] fixed z-20 h-20 bg-white backdrop-blur-md px-10 sm:px-10 md:px-20 lg:px-30 xl:px-30 2xl:px-40 text-black"
+            : `top-0 w-[100%] fixed z-20 h-20 bg-slate/70 px-10 sm:px-10 md:px-20 lg:px-30 xl:px-30 2xl:px-40  ${open ? `bg-white text-black` : "lg:text-white text-white"}`
+        : "top-0 w-[100%] fixed z-20 h-20 bg-gray-50 px-10 sm:px-10 md:px-20 lg:px-30 xl:px-30 2xl:px-40 text-black";
 
     const imageClass = isHomepage
         ? scrollPosition >= 100
@@ -48,7 +48,7 @@ export default function NavBar() {
     const hr = isHomepage ? scrollPosition >= 100
         ? `${open ? `bg-black h-0.2 w-[100%]` : ""}`
         : "bg-white h-0.2 w-[100%]"
-        : `${open ? `bg-black h-0.2 w-[100%]` : ""}`;
+        : ``;
 
     // Hyperlinks that lead to other pages
     const Links = [
@@ -85,7 +85,7 @@ export default function NavBar() {
                     </span>
                 </div>
                 <ul
-                    className={` xl:flex-none  xl:z-auto z-[-1] top-20 sm:top-20 xl:top-20 xl:h-auto lg:items-center left-0 w-full xl:w-auto xl:flex xl:items-center xl:pb-0 xl:pl-0 py-8 xl:py-0 px-10 sm:px-10 md:px-20 lg:px-40 xl:px-0 xl:static absolute ${open ? "bg-white xl:bg-transparent text-black " : "hidden"}`}
+                    className={` xl:flex-none  xl:z-auto z-[-1] top-20 sm:top-20 xl:top-20 xl:h-auto items-center left-0 w-full xl:w-auto xl:flex xl:items-center xl:pb-0 xl:pl-0 py-8 xl:py-0 px-10 sm:px-10 md:px-20 lg:px-0 xl:px-0 2xl:px-0 xl:static absolute ${open ? "bg-white xl:bg-transparent text-black " : "hidden"}`}
                 >
                     {Links.map((link) => (
                         <li>
@@ -93,7 +93,7 @@ export default function NavBar() {
                             className="font-Encoded-Sans-Expanded md:text-md lg:text-md xl:text-lg lg:hover:text-slate-700 xl:hover:text-slate-400"
                             onClick={toggleMenu} to={link.link}
                         >
-                            <li key={link.name} className="hover:bg-gray-100 xl:hover:bg-transparent flex-none xl:py-0 lg:py-4 px-4 items-center rounded-md border-b border-gray-300 last:border-b-0 xl:border-none">
+                            <li key={link.name} className="hover:bg-gray-100 xl:hover:bg-transparent flex-none xl:py-0 py-4 px-4 items-center rounded-md border-b border-gray-300 last:border-b-0 xl:border-none">
                                 {link.name}
                             </li>
                         </Link>

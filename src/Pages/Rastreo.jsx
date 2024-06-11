@@ -22,7 +22,7 @@ export default function Tracking() {
   }, [trackSearch]);
 
   useEffect(() => {
-    if (trackResult && scrollRef.current) {
+    if (trackResult || error && scrollRef.current) {
       scrollRef.current.scrollIntoView({ behavior: "smooth" });
     }
   }, [trackResult]);
@@ -46,6 +46,10 @@ export default function Tracking() {
       setError('No se encontraron resultados');
       setTrackResult(null);
     }
+  };
+
+  const handleClearSearch = async () => {
+    setTrackSearch('');
   };
 
   const handleSearchChange = (e) => {
@@ -168,7 +172,7 @@ export default function Tracking() {
 
   return (
     <div className='h-full w-full font-Encode-Sans pt-20'>
-      <div className='relative flex flex-col px-10 sm:px-10 md:px-20 lg:px-40 h-screen items-center justify-center'>
+      <div className='relative flex flex-col px-10 sm:px-10 md:px-20 lg:px-30 xl:px-30 2xl:px-40 h-screen items-center justify-center'>
         <video className="absolute z-[-10] inset-0 w-full h-full object-cover brightness-50" src={Video2} loop autoPlay muted controls={false} onContextMenu={(e) => e.preventDefault()} playsInline ></video>
       <div className='w-auto h-2/3 flex flex-col items-center justify-start'>
       <div className="w-full text-center pb-24">
@@ -214,11 +218,24 @@ export default function Tracking() {
       </div> 
       </div>
 
-      {error && <div className="track_no_result_section">{error}</div>}
+      {error && <div className="track_no_result_section h-screen flex items-center justify-center" ref={scrollRef}> 
+      <div>
+      <h1  className='text-3xl sm:text-4xl md:text-4xl lg:text-7xl px-10 sm:px-10 md:px-20 lg:px-30 xl:px-30 2xl:px-40'>{error}</h1>
+      <div className='w-full flex items-center justify-center pt-16'>
+            <button className='rounded-md h-10 w-auto bg-oldgold px-4 text-white' onClick={handleClearSearch}>Limpiar busqueda</button>
+          </div>
+      </div>
+      
+      
+      </div>}
 
       {trackResult && (
-        <div className="relative track_result_section px-10 sm:px-10 md:px-20 lg:px-40 h-auto pb-16" ref={scrollRef}>
-          <div className="imagesContainer text-center pt-8 lg:pt-24">
+        <div className="relative track_result_section px-10 sm:px-10 md:px-20 lg:px-30 xl:px-30 2xl:px-40 h-auto pb-16" ref={scrollRef}>
+          <div className='w-full flex items-center justify-center pt-16'>
+            <button className='rounded-md h-10 w-auto bg-oldgold px-4 text-white' onClick={handleClearSearch}>Limpiar busqueda</button>
+          </div>
+          <div className="imagesContainer text-center pt-8">
+          
             <div className='w-full h-44 flex justify-center'>
               {renderImages()}
             </div>
@@ -228,7 +245,7 @@ export default function Tracking() {
           </div>
 
           <div className="flex flex-col lg:flex-row xl:flex-row items-center justify-center gap-2 md:gap-10 h-auto w-full">
-            <div className="flex flex-row items-center h-32 lg:h-56 ">
+            <div className="flex flex-row items-center text-center h-32 lg:h-56 ">
               <h1 className="font-semibold">Fecha estimada de llegada:</h1>
               <p className='px-10'>{`${new Date(trackResult.ETA).toDateString()},${new Date(trackResult.ETA).toLocaleTimeString()}`}</p>
             </div>
@@ -246,8 +263,8 @@ export default function Tracking() {
             </div>
           </div>
           <div>
-            <div className="shadow-md sm:rounded-lg overflow-hidden">
-              <table className='w-full text-sm text-left text-gray-500 dark:text-gray-400'>
+            <div className="shadow-md sm:rounded-lg overflow-x-auto ">
+              <table className='w-full text-sm text-left text-gray-500 dark:text-gray-400 '>
                 <thead className="text-xs text-gray-700 uppercase">
                   <tr className="border-b bg-slate-100">
                     <th scope="col" className="py-3 px-6">Estado</th>

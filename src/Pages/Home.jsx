@@ -125,7 +125,7 @@ export default function Homepage() {
             <div className="relative  h-screen w-full">
                 <video className="absolute inset-0 w-full h-full object-cover brightness-50" src={Video} loop autoPlay muted controls={false} onContextMenu={(e) => e.preventDefault()}
                     playsInline ></video>
-                <div className="relative flex w-full h-full text-white px-10 sm:px-10 md:px-20 lg:px-40 items-center">
+                <div className="relative flex w-full h-full text-white px-10 sm:px-10 md:px-20 lg:px-30 xl:px-30 2xl:px-40 items-center">
                     <div className={`h-72 w-auto text-wrap ${fade ? 'fade-out' : 'fade-in'}`}>
                         <p className="w-3/4 text-4xl sm:text-5xl md:text-5xl lg:text-7xl xl:text-8xl" data-aos="fade-up" data-aos-duration="400" data-aos-delay="600">{currentText.subtitle}</p>
                         <p className="text-lg font-semibold py-4" data-aos="fade-up" data-aos-duration="500" data-aos-delay="1300">{currentText.description}</p>
@@ -134,7 +134,7 @@ export default function Homepage() {
             </div>
 
             {/* Seccion de Somos */}
-            <div className="w-full lg:h-screen h-auto bg-white flex px-10 sm:px-10 md:px-20 lg:px-40">
+            <div className="w-full lg:h-screen h-auto bg-white flex px-10 sm:px-10 md:px-20 lg:px-30 xl:px-30 2xl:px-40">
                 <div className="flex h-full w-full items-center justify-center py-8">
                     <div className="flex flex-col md:flex-row items-center justify-center shadow-md rounded-md bg-SoftGrey max-w-[100rem] xl:h-3/4 2xl:2/3" data-aos="fade-up">
 
@@ -162,10 +162,10 @@ export default function Homepage() {
 
             {/* Nuestros Servicios */}
             <div className="w-full h-auto pb-16">
-                <div className="flex w-full h-24 items-center justify-center px-4 sm:px-10 md:px-20 lg:px-40 text-center">
+                <div className="flex w-full h-24 items-center justify-center px-10 sm:px-10 md:px-20 lg:px-30 xl:px-30 2xl:px-40 text-center">
                     <h3 className="text-3xl sm:text-3xl md:text-5xl font-bold" data-aos="fade-down">Nuestros servicios</h3>
                 </div>
-                <div className="flex justify-center h-auto w-full pt-8 px-4 sm:px-10 md:px-20 lg:px-40">
+                <div className="flex justify-center h-auto w-full pt-8 px-10 sm:px-10 md:px-20 lg:px-30 xl:px-30 2xl:px-40">
                     <div className="grid xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-2  gap-y-12 gap-x-6 justify-items-center w-full">
                         {serviciosdatos.map((servicio) => (
                             <NuestrosServicios
@@ -192,7 +192,7 @@ export default function Homepage() {
             {/* Seccion de compañias */}
             <div className="w-full h-auto bg-gray-200">
                 <div className="flex bg-center bg-fixed w-full h-full pb-2 pt-12 md:py-20" style={{ backgroundImage: `url(${''})`, backgroundSize: 'cover' }}>
-                    <div className="flex flex-col w-full h-full items-center justify-center px-10 sm:px-10 md:px-20 lg:px-40">
+                    <div className="flex flex-col w-full h-full items-center justify-center px-10 sm:px-10 md:px-20 lg:px-30 xl:px-40">
                         <div className="pb-0 md:pb-10 text-center">
                             <h1 className="text-3xl sm:text-3xl md:text-5xl font-bold text-black">
                                 Nuestras Divisiones
@@ -229,7 +229,7 @@ export default function Homepage() {
             </div>
 
             <div className="h-auto w-full pt-8">
-                <div className="flex flex-col h-full justify-center px-10 sm:px-10 md:px-20 lg:px-40">
+                <div className="flex flex-col h-full justify-center px-10 sm:px-10 md:px-20 lg:px-30 xl:px-30 2xl:px-40">
 
                     <div className="flex w-full h-auto justify-center lg:justify-start">
                         <div className="h-auto xl:w-auto w-full py-8 text-center">

@@ -75,10 +75,10 @@ export default function Agentes() {
             </div>
       </div>
 
-      <div className="flex flex-col h-auto w-full pt-4 md:pt-16 pb-20 sm:pb-56 px-10 sm:px-10 md:px-20 lg:px-40">
+      <div className="flex flex-col h-auto w-full pt-4 md:pt-16 pb-20 sm:pb-56 px-10 sm:px-10 md:px-20 lg:px-30 xl:px-30 2xl:px-40">
         <div className="flex flex-col w-full  h-auto gap-y-6 pb-16">
-          <div className="bg-white pt-4 md:p-4 w-full">
-            <div className="grid xl:grid-cols-7 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-3 sm:grid-rows-3 md:grid-rows-3 lg:grid-rows-1 gap-y-4 grid-rows-auto gap-x-8 w-full justify-items-center">
+          <div className="bg-white pt-4 w-full">
+            <div className="grid xl:grid-cols-7 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-3 sm:grid-rows-3 md:grid-rows-3 lg:grid-rows-1 gap-y-4 grid-rows-auto gap-x-6 w-full justify-items-center">
               {continents.map((continent, index) => (
                 <button
                   key={index}

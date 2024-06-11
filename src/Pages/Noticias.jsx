@@ -38,7 +38,7 @@ export default function Noticias() {
 
   return (
     <div className="h-sreen w-full font-Encode-Sans pb-12 pt-16 ">
-      <div className="flex justify-center items-center bg-top w-full h-44 md:h-72 px-10 sm:px-10 md:px-20 lg:px-40" style={{ backgroundImage: `url(${imagen_background})`, backgroundSize: 'cover' }}>
+      <div className="flex justify-center items-center bg-top w-full h-44 md:h-72 px-10 sm:px-10 md:px-20 lg:px-30 xl:px-30 2xl:px-40" style={{ backgroundImage: `url(${imagen_background})`, backgroundSize: 'cover' }}>
         <div className="flex flex-col md:flex-row lg:flex-row xl:flex-row items-center  justify-between w-full gap-y-4">
           <h1 className="text-white text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-6xl font-semibold">Noticias</h1>
           <input
@@ -52,9 +52,9 @@ export default function Noticias() {
       {cargando ? (
         <p className="text-6xl text-center py-56 w-full">Cargando...</p>
       ) : filteredNoticias.length === 0 ? (
-        <p className="text-6xl py-56 px-10 sm:px-10 md:px-20 lg:px-40 text-center">No se encontraron noticias.</p>
+        <p className="text-6xl py-56 px-10 sm:px-10 md:px-20 lg:px-30 xl:px-30 2xl:px-40 text-center">No se encontraron noticias.</p>
       ) : (
-        <div className="grid xl:grid-cols-4 lg:grid-cols-3 grid-cols-1 gap-6 lg:gap-10 px-10 sm:px-10 md:px-20 lg:px-40 pt-10">
+        <div className="grid xl:grid-cols-4 lg:grid-cols-3 grid-cols-1 gap-6 lg:gap-10 px-10 sm:px-10 md:px-20 lg:px-30 xl:px-30 2xl:px-40 pt-10">
           {filteredNoticias.map((contenido, index) => (
             <div
               key={contenido.oid}

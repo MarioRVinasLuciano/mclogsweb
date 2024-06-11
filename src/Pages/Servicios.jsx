@@ -43,7 +43,7 @@ export default function Servicios() {
             </div>
 
             <div className="flex flex-col justify-center h-auto w-full py-10 md:py-20 xl:py-20">
-                <div className="flex flex-col h-auto w-full px-10 sm:px-10 md:px-20 lg:px-40">
+                <div className="flex flex-col h-auto w-full px-10 sm:px-10 md:px-20 lg:px-30 xl:px-30 2xl:px-40">
 
                     <ServiciosComponentes/>
 
