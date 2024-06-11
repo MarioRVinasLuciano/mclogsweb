@@ -59,11 +59,13 @@ import AppMclogs from "../Components/App_Mclogs_descarga";
 
 
 const ServiceCard = ({ delay, className, imgSrc, title, description, link }) => (
-    <div data-aos="fade-down" data-aos-delay={delay} className="flex flex-col bg-white h-[26rem] md:h-[36rem] w-auto lg:w-[24rem] xl:w-[24rem] shadow-lg rounded-md text-center overflow-hidden">
-        <div className="w-full h-1/3 bg-clip-border flex justify-center items-center" style={{ backgroundImage: `url(${white})`, backgroundSize: 'cover' }}>
+    <div data-aos="fade-down" data-aos-delay={delay} className="flex flex-col bg-white h-[26rem] md:h-[36rem] w-auto lg:w-[24rem] xl:w-auto 2xl:w-[24rem] shadow-lg rounded-md text-center overflow-hidden">
+        <div className="w-full h-52 bg-clip-border flex justify-center items-center" style={{ backgroundImage: `url(${white})`, backgroundSize: 'cover' }}>
             <img className={className} src={imgSrc} alt={title} />
         </div>
-        <p className="p-8 overflow-y-auto text-sm sm:text-lg lg:text-md font-regular text-slate-500 flex-grow">{description}</p>
+        <div className="h-60 overflow-auto">
+            <p className="p-8 overflow-y-auto text-sm sm:text-lg lg:text-md font-regular text-slate-500 flex-grow">{description}</p>
+        </div>
         <div className="mt-auto">
             <button className="h-10 w-auto bg-bluemunsell hover:bg-cyan-600 my-8 rounded-md">
                 <a className="p-4 text-white" href={link}>Saber Más</a>
@@ -134,20 +136,20 @@ export default function Homepage() {
             {/* Seccion de Somos */}
             <div className="w-full lg:h-screen h-auto bg-white flex px-10 sm:px-10 md:px-20 lg:px-40">
                 <div className="flex h-full w-full items-center justify-center py-8">
-                    <div className="flex flex-col md:flex-row items-center justify-center shadow-md rounded-md bg-SoftGrey max-w-[100rem] h-2/3" data-aos="fade-up">
+                    <div className="flex flex-col md:flex-row items-center justify-center shadow-md rounded-md bg-SoftGrey max-w-[100rem] xl:h-3/4 2xl:2/3" data-aos="fade-up">
 
-                        <div className="h-full flex flex-col items-start justify-center w-auto md:w-1/2 py-4 px-8">
-                            <h1 className="block text-2xl sm:text-4xl md:text-5xl lg:text-3xl xl:text-5xl" data-aos="fade-up" data-aos-delay="50">Somos</h1>
-                            <h1 className="block text-3xl sm:text-5xl md:text-4xl lg:text-4xl xl:text-6xl font-semibold pt-4" data-aos="fade-up" data-aos-delay="60">MC Logistics</h1>
-                            <p className="block py-4 font-thin text-md sm:text-xl md:text-lg lg:text-md xl:text-lg" data-aos="fade-up" data-aos-delay="70">Tu socio estratégico en logística a nivel global. Desde el origen hasta el destino final, maximizando la rentabilidad de nuestros clientes y socios con una gestión eficiente de mercancías, energía e información.</p>
-                            <hr className="h-0.5 lg:hidden xl:block hidden sm:hidden md:hidden bg-slate-50" data-aos="fade-up" data-aos-delay="80" />
-                            <p className="lg:hidden xl:block hidden sm:hidden md:hidden py-4 text-sm sm:text-sm md:text-md lg:text-lg xl:text-xl" data-aos="fade-up" data-aos-delay="85">Nacemos en el 2005 de la inquietud de crear valor en el proceso de gestión de la cadena de suministro, viendo oportunidades en el sector logístico de mejor flujo de información.</p>
+                        <div className="h-full flex flex-col items-start justify-center w-auto md:w-2/3 xl:w-1/2 py-4 px-8 overflow-y-auto">
+                            <h1 className="block text-2xl sm:text-4xl md:text-5xl lg:text-3xl xl:text-4xl 2xl:text-5xl" data-aos="fade-up" data-aos-delay="50">Somos</h1>
+                            <h1 className="block text-3xl sm:text-5xl md:text-4xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-semibold pt-4" data-aos="fade-up" data-aos-delay="60">MC Logistics</h1>
+                            <p className="block py-4 font-thin text-md sm:text-xl md:text-lg lg:text-md xl:text-xl" data-aos="fade-up" data-aos-delay="70">Tu socio estratégico en logística a nivel global. Desde el origen hasta el destino final, maximizando la rentabilidad de nuestros clientes y socios con una gestión eficiente de mercancías, energía e información.</p>
+
+                            <p className="lg:hidden xl:block hidden sm:hidden md:hidden py-4 text-sm sm:text-sm md:text-md lg:text-lg xl:text-lg 2xl:text-xl" data-aos="fade-up" data-aos-delay="85">Nacemos en el 2005 de la inquietud de crear valor en el proceso de gestión de la cadena de suministro, viendo oportunidades en el sector logístico de mejor flujo de información.</p>
                             <button className="block h-12 w-32 rounded-md bg-DarkBlue hover:bg-blue" data-aos="fade-down" data-aos-delay="0">
                                 <a className="text-white" href="/#/nosotros">Leer más</a>
                             </button>
                         </div>
 
-                        <div className="h-96 md:h-full m-0 w-full md:w-1/2 shrink-0 overflow-hidden bg-clip-border">
+                        <div className="h-96 md:h-full m-0 w-full md:w-1/3 xl:w-1/2 shrink-0 overflow-hidden bg-clip-border">
                             <img className="h-full w-full object-cover rounded-md " src={contenedores_cielo} alt="Logistics" />
                         </div>
                     </div>
@@ -159,7 +161,7 @@ export default function Homepage() {
 
 
             {/* Nuestros Servicios */}
-            <div className="w-full h-auto xl:h-screen pb-16">
+            <div className="w-full h-auto pb-16">
                 <div className="flex w-full h-24 items-center justify-center px-4 sm:px-10 md:px-20 lg:px-40 text-center">
                     <h3 className="text-3xl sm:text-3xl md:text-5xl font-bold" data-aos="fade-down">Nuestros servicios</h3>
                 </div>
@@ -196,7 +198,7 @@ export default function Homepage() {
                                 Nuestras Divisiones
                             </h1>
                         </div>
-                        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 lg:gap-x-32 gap-x-10 gap-y-8  w-full h-full py-10 justify-items-center">
+                        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3  gap-x-10 gap-y-8  w-full h-full py-10 justify-items-center">
                             <ServiceCard
                                 delay={""}
                                 className={" h-32 w-36 z-10"}
@@ -244,20 +246,20 @@ export default function Homepage() {
                                 </p>
                             </div>
 
-                            <div className=" w-auto h-auto grid grid-cols-2 md:grid-cols-4 py-12 gap-y-12 justify-items-center">
-                                <div className="h-20 w-20 lg:h-28 lg:w-32 flex flex-col justify-center items-center bg-slate-50 shadow-md rounded-sm" data-aos="fade-down" >
+                            <div className=" w-auto h-auto grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 py-12 gap-y-12 gap-x-4 justify-items-center">
+                                <div className="flex flex-col justify-center items-center bg-slate-50 shadow-md rounded-sm p-6" data-aos="fade-down" >
                                     <img className="h-8 w-8 lg:h-12 lg:w-12" src={confiable} alt="" />
                                     <p className="text-xs">Confiabilidad</p>
                                 </div>
-                                <div className="h-20 w-20 lg:h-28 lg:w-32 flex flex-col justify-center items-center bg-slate-50 shadow-md rounded-sm" data-aos="fade-down" data-aos-delay="200">
+                                <div className="flex flex-col justify-center items-center bg-slate-50 shadow-md rounded-sm p-6" data-aos="fade-down" data-aos-delay="200">
                                     <img className="h-8 w-8 lg:h-12 lg:w-12" src={innovacion} alt="" />
                                     <p className="text-xs">Innovación</p>
                                 </div>
-                                <div className="h-20 w-20 lg:h-28 lg:w-32 flex flex-col justify-center items-center bg-slate-50 shadow-md rounded-sm" data-aos="fade-down" data-aos-delay="300">
+                                <div className="flex flex-col justify-center items-center bg-slate-50 shadow-md rounded-sm p-6" data-aos="fade-down" data-aos-delay="300">
                                     <img className="h-8 w-8 lg:h-12 lg:w-12" src={flexible} alt="" />
                                     <p className="text-xs">Flexibilidad</p>
                                 </div>
-                                <div className="h-20 w-20 lg:h-28 lg:w-32 flex flex-col justify-center items-center bg-slate-50 shadow-md rounded-sm" data-aos="fade-down" data-aos-delay="400">
+                                <div className="flex flex-col justify-center items-center bg-slate-50 shadow-md rounded-sm p-6" data-aos="fade-down" data-aos-delay="400">
                                     <img className="h-8 w-8 lg:h-12 lg:w-12" src={tecnologia} alt="" />
                                     <p className="text-xs">Tecnología</p>
                                 </div>

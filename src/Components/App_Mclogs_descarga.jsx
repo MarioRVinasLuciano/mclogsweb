@@ -88,7 +88,7 @@ export default function AppMclogs() {
                                     <div className="h-10 w-10 text-center opacity-80 flex items-center justify-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="#038EA3ff" d="M152 24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H64C28.7 64 0 92.7 0 128v16 48V448c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V192 144 128c0-35.3-28.7-64-64-64H344V24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H152V24zM48 192H400V448c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V192z"/></svg>
                                     </div>
-                                    <div className="flex items-center h-14">
+                                    <div className="flex items-center h-14 text-center">
                                         <p className="text-xl text-bluemunsell" >Calendario de actividades</p>
                                     </div>
                                 </div>
@@ -97,7 +97,7 @@ export default function AppMclogs() {
 
                             </div>
                         </div>
-                        <div className="flex flex-col items-center justify-center w-full lg:w-1/2 xl:w-1/2">
+                        <div className="flex flex-col items-center justify-center w-full lg:w-1/2 xl:w-1/2 lg:px-8 xl:px-8">
                             <div className="text-center bg-slate-200 rounded-md p-8 gap-8 shadow-md h-full w-full" data-aos="fade-up" data-aos-duration="800" data-aos-delay="800">
                             <p className="font-medium md:text-2xl lg:text-3xl text-slate-600" data-aos="fade-down" data-aos-anchor-placement="bottom-bottom">En MC Logistics estamos centrados en el cliente e impulsados por la data, razon por lo que creamos la app McLogs para tí.</p>
                             <p className="font-regular md:text-xl lg:text-2xl text-slate-500 py-4 lg:py-12 xl:py-4" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration="800" data-aos-delay="200" >McLogs es la aplicación que ponemos a su disposición para gestionar toda la información que necesita de forma directa y en vivo de sus órdenes de servicio, desde el punto de coordinación, hasta la entrega de su carga, como otras funciones que facilitaran su gestión en la cadena logística.</p>

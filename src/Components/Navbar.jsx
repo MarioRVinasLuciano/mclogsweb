@@ -85,15 +85,15 @@ export default function NavBar() {
                     </span>
                 </div>
                 <ul
-                    className={` xl:z-auto z-[-1] top-20 sm:top-20 lg:top-20 lg:h-auto lg:items-center left-0 w-full xl:w-auto xl:flex xl:items-center xl:pb-0 xl:pl-0 py-8 xl:py-0 px-10 sm:px-10 md:px-20 lg:px-40 xl:px-0 xl:static absolute ${open ? "bg-white xl:bg-transparent text-black " : "hidden"}`}
+                    className={` xl:flex-none  xl:z-auto z-[-1] top-20 sm:top-20 xl:top-20 xl:h-auto lg:items-center left-0 w-full xl:w-auto xl:flex xl:items-center xl:pb-0 xl:pl-0 py-8 xl:py-0 px-10 sm:px-10 md:px-20 lg:px-40 xl:px-0 xl:static absolute ${open ? "bg-white xl:bg-transparent text-black " : "hidden"}`}
                 >
                     {Links.map((link) => (
                         <li>
                         <Link
-                            className="font-Encoded-Sans-Expanded md:text-md lg:text-lg hover:text-slate-700"
+                            className="font-Encoded-Sans-Expanded md:text-md lg:text-md xl:text-lg lg:hover:text-slate-700 xl:hover:text-slate-400"
                             onClick={toggleMenu} to={link.link}
                         >
-                            <li key={link.name} className="hover:bg-gray-100 xl:hover:bg-transparent flex-none px-4 py-4 items-center rounded-md border-b border-gray-300 last:border-b-0 xl:border-none">
+                            <li key={link.name} className="hover:bg-gray-100 xl:hover:bg-transparent flex-none xl:py-0 lg:py-4 px-4 items-center rounded-md border-b border-gray-300 last:border-b-0 xl:border-none">
                                 {link.name}
                             </li>
                         </Link>

@@ -78,11 +78,11 @@ export default function Agentes() {
       <div className="flex flex-col h-auto w-full pt-4 md:pt-16 pb-20 sm:pb-56 px-10 sm:px-10 md:px-20 lg:px-40">
         <div className="flex flex-col w-full  h-auto gap-y-6 pb-16">
           <div className="bg-white pt-4 md:p-4 w-full">
-            <div className="grid xl:grid-cols-7 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-3 sm:grid-rows-3 md:grid-rows-3 lg:grid-rows-1 gap-y-4 grid-rows-auto gap-x-20 w-full justify-items-center">
+            <div className="grid xl:grid-cols-7 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-3 sm:grid-rows-3 md:grid-rows-3 lg:grid-rows-1 gap-y-4 grid-rows-auto gap-x-8 w-full justify-items-center">
               {continents.map((continent, index) => (
                 <button
                   key={index}
-                  className={`hover:border-aureolin border-2 w-full sm:w-40 md:w-40 xl:w-36 h-10 rounded-md text-aureolin ${selectedContinent === continent ? 'bg-aureolin text-white border-0' : ''}`}
+                  className={`hover:border-aureolin border-2 w-full h-auto p-2 rounded-md text-aureolin ${selectedContinent === continent ? 'bg-aureolin text-white border-0' : ''}`}
                   onClick={() => handleContinentClick(continent)}
                 >
                   {continent}
