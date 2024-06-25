@@ -71,7 +71,9 @@ const ServiciosComponentes = () => {
             <motion.div className="flex flex-col-reverse xl:flex-row">
                 <div className="flex flex-col w-full xl:w-1/2 items-center text-center justify-center">
                     <h1 id="transporte_maritimo" className="text-xl md:text-2xl lg:text-4xl xl:text-4xl w-2/3 font-bold">{t("maritim_transport")}</h1>
-                    <p className="text-sm md:text-2xl lg:text-2xl xl:text-2xl pt-4 font-normal w-full lg:w-auto px-0 md:px-20 text-center lg:text-justify whitespace-normal">{t("maritim_transport_description")}</p>
+                    <div className="w-full lg:w-2/3 xl:w-3/4 2xl:w-3/4">
+                        <p className="text-sm md:text-2xl lg:text-2xl xl:text-2xl pt-4 font-normal w-full lg:w-auto text-center lg:text-justify text-balance whitespace-normal hyphens-auto break-words">{t("maritim_transport_description")}</p>
+                    </div>
                 </div>
                 <div className="w-full py-4 md:py-10 xl:w-1/2 md:px-8 flex items-center justify-center">
                     <img className="relative h-full md:h-4/5 w-full md:w-[40rem] object-cover rounded-md" src={Transporte_Maritimo} alt="Transporte Maritimo" />
@@ -84,14 +86,23 @@ const ServiciosComponentes = () => {
                 </div>
                 <div className="flex flex-col w-full xl:w-1/2 items-center text-center justify-center">
                     <h1 id="transporte_aereo" className="text-xl md:text-2xl lg:text-4xl xl:text-4xl w-full font-bold">{t("air_transport")}</h1>
-                    <p className="text-sm md:text-2xl lg:text-2xl xl:text-2xl pt-4 font-normal w-full lg:w-auto px-0 md:px-20 text-center lg:text-justify ">{t("air_transport_description")}</p>
+                    <div className="w-full lg:w-2/3 xl:w-3/4 2xl:w-3/4">
+                        <p className="text-sm md:text-2xl lg:text-2xl xl:text-2xl pt-4 font-normal w-full lg:w-auto text-center lg:text-justify text-balance whitespace-normal hyphens-auto break-words">
+                            {t("air_transport_description")}
+                        </p>
+                    </div>
                 </div>
             </motion.div>
 
             <motion.div ref={groundAnimation.ref} style={{ y: groundAnimation.y, opacity: groundAnimation.opacity, scale: groundAnimation.scale, rotate: groundAnimation.rotate }} className="flex flex-col-reverse xl:flex-row pt-16">
                 <div className="flex flex-col w-full xl:w-1/2 items-center text-center justify-center">
                     <h1 id="transporte_terrestre" className="text-xl md:text-2xl lg:text-4xl xl:text-4xl w-full font-bold">{t("ground_transport")}</h1>
-                    <p className="text-sm md:text-2xl lg:text-2xl xl:text-2xl pt-4 font-normal w-full lg:w-auto px-0 md:px-20 text-center lg:text-justify">{t("ground_transport_description")}</p>
+
+                    <div className="w-full lg:w-2/3 xl:w-3/4 2xl:w-3/4">
+                        <p className="text-sm md:text-2xl lg:text-2xl xl:text-2xl pt-4 font-normal w-full lg:w-auto text-center lg:text-justify text-balance whitespace-normal hyphens-auto break-words">
+                            {t("ground_transport_description")}
+                        </p>
+                    </div>
                 </div>
                 <div className="w-full py-4 md:py-10 xl:w-1/2 md:px-8 flex items-center justify-center">
                     <img className="relative h-full md:h-4/5 w-full md:w-[40rem] object-cover rounded-md" src={Transporte_terrestre} alt="Transporte Terrestre" />
@@ -104,14 +115,22 @@ const ServiciosComponentes = () => {
                 </div>
                 <div className="flex flex-col w-full xl:w-1/2 items-center text-center justify-center">
                     <h1 id="almacenaje" className="text-xl md:text-2xl lg:text-4xl xl:text-4xl w-full font-bold">{t("storage")}</h1>
-                    <p className="text-sm md:text-2xl lg:text-2xl xl:text-2xl pt-4 font-normal w-full lg:w-auto px-0 md:px-20 text-center lg:text-justify">{t("storage_description")}</p>
+                    <div className="w-full lg:w-2/3 xl:w-3/4 2xl:w-3/4">
+                        <p className="text-sm md:text-2xl lg:text-2xl xl:text-2xl pt-4 font-normal w-full lg:w-auto text-center lg:text-justify text-balance whitespace-normal hyphens-auto break-words">
+                            {t("storage_description")}
+                        </p>
+                    </div>
                 </div>
             </motion.div>
 
             <motion.div ref={customsAnimation.ref} style={{ y: customsAnimation.y, opacity: customsAnimation.opacity, scale: customsAnimation.scale, rotate: customsAnimation.rotate }} className="flex flex-col-reverse xl:flex-row pt-16">
                 <div className="flex flex-col w-full xl:w-1/2 items-center text-center justify-center">
                     <h1 id="gestion_aduanal" className="text-xl md:text-2xl lg:text-4xl xl:text-4xl w-full font-bold">{t("customs_zone")}</h1>
-                    <p className="text-sm md:text-2xl lg:text-2xl xl:text-2xl pt-4 font-normal w-full lg:w-auto px-0 md:px-20 text-center lg:text-justify">{t("customs_zone_description")}</p>
+                    <div className="w-full lg:w-2/3 xl:w-3/4 2xl:w-3/4">
+                        <p className="text-sm md:text-2xl lg:text-2xl xl:text-2xl pt-4 font-normal w-full lg:w-auto text-center lg:text-justify text-balance whitespace-normal hyphens-auto break-words">
+                            {t("customs_zone_description")}
+                        </p>
+                    </div>
                 </div>
                 <div className="w-full py-4 md:py-10 xl:w-1/2 md:px-8 flex items-center justify-center">
                     <img className="relative h-full md:h-4/5 w-full md:w-[40rem] object-cover rounded-md" src={Gestion_aduanal} alt="Gestion aduanal" />
@@ -124,14 +143,22 @@ const ServiciosComponentes = () => {
                 </div>
                 <div className="flex flex-col w-full xl:w-1/2 items-center text-center justify-center">
                     <h1 id="paqueteria" className="text-xl md:text-2xl lg:text-4xl xl:text-4xl w-full font-bold">{t("packaging")}</h1>
-                    <p className="text-sm md:text-2xl lg:text-2xl xl:text-2xl pt-4 font-normal w-full lg:w-auto px-0 md:px-20 text-center lg:text-justify">{t("packagin_description")}</p>
+                    <div className="w-full lg:w-2/3 xl:w-3/4 2xl:w-3/4">
+                        <p className="text-sm md:text-2xl lg:text-2xl xl:text-2xl pt-4 font-normal w-full lg:w-auto text-center lg:text-justify text-balance whitespace-normal hyphens-auto break-words">
+                            {t("packagin_description")}
+                        </p>
+                    </div>
                 </div>
             </motion.div>
 
             <motion.div ref={inspectionAnimation.ref} style={{ y: inspectionAnimation.y, opacity: inspectionAnimation.opacity, scale: inspectionAnimation.scale, rotate: inspectionAnimation.rotate }} className="flex flex-col-reverse xl:flex-row pt-16">
                 <div className="flex flex-col w-full xl:w-1/2 items-center text-center justify-center">
                     <h1 id="inspeccion_carga" className="text-xl md:text-2xl lg:text-4xl xl:text-4xl w-full font-bold">{t("cargo_inspection")}</h1>
-                    <p className="text-sm md:text-2xl lg:text-2xl xl:text-2xl pt-4 font-normal w-full lg:w-auto px-0 md:px-20 text-center lg:text-justify">{t("cargo_inspection_description")}</p>
+                    <div className="w-full lg:w-2/3 xl:w-3/4 2xl:w-3/4">
+                        <p className="text-sm md:text-2xl lg:text-2xl xl:text-2xl pt-4 font-normal w-full lg:w-auto text-center lg:text-justify text-balance whitespace-normal hyphens-auto break-words">
+                            {t("cargo_inspection_description")}
+                        </p>
+                    </div>
                 </div>
                 <div className="w-full py-4 md:py-10 xl:w-1/2 md:px-8 flex items-center justify-center">
                     <img className="relative h-full md:h-4/5 w-full md:w-[40rem] object-cover rounded-md" src={Inspeccion} alt="Inspeccion de Carga" />
@@ -144,14 +171,22 @@ const ServiciosComponentes = () => {
                 </div>
                 <div className="flex flex-col w-full xl:w-1/2 items-center text-center justify-center">
                     <h1 id="seguro" className="text-xl md:text-2xl lg:text-4xl xl:text-4xl w-full font-bold">{t("risk_administration")}</h1>
-                    <p className="text-sm md:text-2xl lg:text-2xl xl:text-2xl pt-4 font-normal w-full lg:w-auto px-0 md:px-20 text-center lg:text-justify">{t("risk_administration_description")}</p>
+                    <div className="w-full lg:w-2/3 xl:w-3/4 2xl:w-3/4">
+                        <p className="text-sm md:text-2xl lg:text-2xl xl:text-2xl pt-4 font-normal w-full lg:w-auto text-center lg:text-justify text-balance whitespace-normal hyphens-auto break-words">
+                            {t("risk_administration_description")}
+                        </p>
+                    </div>
                 </div>
             </motion.div>
 
             <motion.div ref={lclAnimation.ref} style={{ y: lclAnimation.y, opacity: lclAnimation.opacity, scale: lclAnimation.scale, rotate: lclAnimation.rotate }} className="flex flex-col-reverse xl:flex-row pt-16">
                 <div className="flex flex-col w-full xl:w-1/2 items-center text-center justify-center">
                     <h1 id="lcl" className="text-xl md:text-2xl lg:text-4xl xl:text-4xl w-full font-bold">{t("loose_cargo")}</h1>
-                    <p className="text-sm md:text-2xl lg:text-2xl xl:text-2xl pt-4 font-normal w-full lg:w-auto px-0 md:px-20 text-center lg:text-justify">{t("loose_cargo_description")}</p>
+                    <div className="w-full lg:w-2/3 xl:w-3/4 2xl:w-3/4">
+                        <p className="text-sm md:text-2xl lg:text-2xl xl:text-2xl pt-4 font-normal w-full lg:w-auto text-center lg:text-justify text-balance whitespace-normal hyphens-auto break-words">
+                            {t("loose_cargo_description")}
+                        </p>
+                    </div>
                 </div>
                 <div className="w-full py-4 md:py-10 xl:w-1/2 md:px-8 flex items-center justify-center">
                     <img className="relative h-full md:h-4/5 w-full md:w-[40rem] object-cover rounded-md" src={Cargo_completo} alt="Cargo completo" />
@@ -164,7 +199,11 @@ const ServiciosComponentes = () => {
                 </div>
                 <div className="flex flex-col w-full xl:w-1/2 items-center text-center justify-center">
                     <h1 id="fcl" className="text-xl md:text-2xl lg:text-4xl xl:text-4xl w-full font-bold">{t("complete_cargo")}</h1>
-                    <p className="text-sm md:text-2xl lg:text-2xl xl:text-2xl pt-4 font-normal w-full lg:w-auto px-0 md:px-20 text-center lg:text-justify">{t("complete_cargo_description")}</p>
+                    <div className="w-full lg:w-2/3 xl:w-3/4 2xl:w-3/4">
+                        <p className="text-sm md:text-2xl lg:text-2xl xl:text-2xl pt-4 font-normal w-full lg:w-auto text-center lg:text-justify text-balance whitespace-normal hyphens-auto break-words">
+                        {t("complete_cargo_description")}
+                        </p>
+                    </div>
                 </div>
             </motion.div>
         </div>

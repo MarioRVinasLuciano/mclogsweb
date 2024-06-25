@@ -47,7 +47,7 @@ export default function Nosotros() {
 
 
     return (
-        <div className="h-auto w-full font-Encode-Sans pt-20 2xl:pt-0">
+        <div className="h-auto w-full font-Encode-Sans pt-20 lg:pt-24 xl:pt-0 2xl:pt-0">
             <div className="flex items-center justify-centerw-full h-auto xl:h-screen ">
                 <div className="h-full w-auto flex xl:flex-row flex-col items-center px-10 sm:px-10 md:px-20 lg:px-30 xl:px-30 2xl:px-40 pt-10 lg:pt-0 py-0">
                     <div className="grid grid-cols-1 lg:grid-cols-2 w-full gap-10">

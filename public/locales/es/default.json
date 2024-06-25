@@ -36,7 +36,7 @@
   "continents": "Asia Oceania Europa África Norte América Centro América Sur América",
   "customs_zone": "Gestión Aduanal",
   "customs_zone_description": "El comercio global ha ido cambiando de manera constante y la cadena logística requiere del uso de mejor tecnología para procesar y gestionar información y cumplir con las regulaciones aduanales y fiscales, administrar riesgo y llevar a cabo gestiones efectivas. Conociendo esto contamos de una actualizada asesoría, en materia de comercio exterior, aduanas, logística, transporte y distribución.",
-  "dashboard": "Dashboards",
+  "dashboard": "Dashboard",
   "data_driven": "Impulsados por la DATA",
   "download": "Descarga nuestra app en tu dispositivo",
   "efficiency_profitability": "Para aumentar la rentabilidad de nuestros clientes a través de la EFICIENCIA",
@@ -197,7 +197,4 @@
 "form_placeholder2": "Digite su email",
 "form_placeholder3": "Digite el título",
 "form_placeholder4": "Digite la descripción de su problema"
-
-
-
 }

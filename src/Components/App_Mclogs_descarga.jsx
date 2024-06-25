@@ -64,8 +64,8 @@ export default function AppMclogs() {
                             </div>
                             <div className="flex flex-col px-0 lg:px-10 justify-center h-full w-auto col-span-full xl:row-start-2 row-start-6 col-start-1 lg:col-start-3 lg:row-span-3">
                                 <div className="flex flex-col items-center justify-center bg-slate-200 rounded-md p-8 gap-y-8 shadow-md h-full w-full" data-aos="fade-up" data-aos-duration="" data-aos-delay="">
-                                    <p className="font-medium md:text-2xl lg:text-3xl text-slate-600 text-balance text-center" data-aos="fade-down" data-aos-anchor-placement="bottom-bottom">{t("app_description1")}</p>
-                                    <p className="font-regular md:text-xl lg:text-2xl text-slate-500 text-balance text-center" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration="800" data-aos-delay="200" >{t("app_description2")}</p>
+                                    <p className="font-medium md:text-2xl lg:text-3xl text-slate-600 text-balance text-start" data-aos="fade-down" data-aos-anchor-placement="bottom-bottom">{t("app_description1")}</p>
+                                    <p className="font-regular md:text-xl lg:text-2xl text-slate-500 text-balance text-start" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration="800" data-aos-delay="200" >{t("app_description2")}</p>
                                 </div>
                             </div>
                             <div className="flex flex-col py-10 items-center justify-center h-full w-auto col-span-1 col-start-1 bg-slate-200 rounded-md shadow-md" data-aos="zoom-in-right" data-aos-delay="600" data-aos-duration="1200">

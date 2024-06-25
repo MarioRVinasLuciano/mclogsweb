@@ -62,7 +62,7 @@ const ServiceCard = ({ delay, className, imgSrc, title, description, link }) => 
     return (
         <div data-aos="fade-down" data-aos-delay={delay} className="flex flex-col bg-slate-100 h-[24rem] md:h-[24rem] w-full  shadow-lg rounded-md text-center overflow-hidden">
 
-            <div className="flex justify-center items-center h-64">
+            <div className="flex justify-center items-center h-64 px-4">
                 <img className={className} src={imgSrc} alt={title} />
             </div>
             <div className="h-auto">
@@ -185,7 +185,7 @@ export default function Homepage() {
             <AppMclogs />
 
             {/* Seccion de compañias */}
-            <div className="w-full h-auto xl:h-screen bg-white ">
+            <div className="w-full h-auto xl:h-screen bg-zinc-50">
                 <div className="flex bg-center bg-fixed w-full h-full pb-2 pt-12 md:py-20" style={{ backgroundImage: `url(${''})`, backgroundSize: 'cover' }}>
                     <div className="flex flex-col w-full h-full items-center justify-center px-10 sm:px-10 md:px-20 lg:px-30 xl:px-30 2xl:px-40">
                         <div className="pb-0 md:pb-10 text-center">
@@ -225,7 +225,7 @@ export default function Homepage() {
                 <div className="flex flex-col h-full justify-center px-10 sm:px-10 md:px-20 lg:px-30 xl:px-30 2xl:px-40">
                     <div className="flex w-full h-auto justify-center lg:justify-start">
                         <div className="h-auto xl:w-auto w-full py-8 text-center">
-                            <h1 className="text-3xl sm:text-3xl md:text-5xl font-bold">{t("why_choose_us")}</h1>
+                            <h1 className="text-3xl sm:text-3xl md:text-4xl xl:text-4xl 2xl:text-5xl font-bold">{t("why_choose_us")}</h1>
                         </div>
                     </div>
 
