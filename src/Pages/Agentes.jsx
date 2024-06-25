@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
-import imagen_background from "../Images/Agentes/introimg2.jpg";
+import imagen_background from "../Images/Agentes/introimg2.webp";
 
 
 export default function Agentes() {
@@ -8,6 +9,7 @@ export default function Agentes() {
   const [selectedContinent, setSelectedContinent] = useState("");
   const [agentsInContinent, setAgentsInContinent] = useState([]);
   const [search, setSearch] = useState("");
+  const { t, i18n } = useTranslation();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -50,6 +52,7 @@ export default function Agentes() {
 
   const uniqueCountryNames = [...new Set(agentsInContinent.map(agent => agent.country.trimEnd()))];
 
+  
 
   const continents = [
     'Asia', 
@@ -69,8 +72,8 @@ export default function Agentes() {
       <div className="flex flex-col h-auto w-full items-center gap-y-6 pt-20">
       <div className="flex justify-center items-center bg-center w-full h-40 md:h-80" style={{ backgroundImage: `url(${imagen_background})`, backgroundSize: 'cover' }}>
                 <div className="flex flex-col text-center">
-                    <h1 className="text-white text-2xl lg:text-5xl xl:text-6xl font-semibold">Nuestros Agentes</h1>
-                    <p className="text-white font-regular pt-4 px-2">Contamos con agentes en todos los continentes</p>
+                    <h1 className="text-white text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-6xl font-semibold">{t("our_agents")}</h1>
+                    <p className="text-white font-regular pt-4 px-2">{t("our_agents_description")}</p>
                 </div>
             </div>
       </div>
@@ -99,17 +102,18 @@ export default function Agentes() {
 
 
         <div>
-          <div className="flex flex-col w-auto h-auto gap-4">
+          <div className="flex flex-col w-auto h-auto gap-6">
             {uniqueCountryNames.length > 0 ? (
               uniqueCountryNames.map(countryName => (
                 <div key={countryName}>
                   <h1 className="text-2xl font-semibold pb-6 text-blue">{countryName}</h1>
-                  <div className="flex flex-wrap gap-4">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
                     {agentsInContinent
                       .filter(agent => agent.country.trimEnd() === countryName)
                       .map(agent => (
-                        <div key={agent.oid} className="bg-white shadow-md rounded-md p-4 mb-4 w-72 h-56 overflow-auto">
-                          <p className="font-semibold text-black">{agent.name}</p>
+                        <div key={agent.oid} className="bg-white shadow-md rounded-md p-4 mb-4 w-auto h-auto overflow-auto">
+                          <p className="font-bold text-slate-600">{agent.name}</p>
+                          <p className=" font-semibold text-slate-400">Ciudad: {agent.town}</p>
                           <p>
                             {agent.web_page.length !== 0 ? (
                               <span>Pagina: <a href={agent.web_page} className="text-sky-600">{agent.web_page}</a></span>
@@ -117,8 +121,6 @@ export default function Agentes() {
                               ""
                             )}
                           </p>
-
-                          <p>Ciudad: {agent.town}</p>
                           <p>Email: {agent.email}</p>
                           <p>Tipo: {agent.type}</p>
                         </div>

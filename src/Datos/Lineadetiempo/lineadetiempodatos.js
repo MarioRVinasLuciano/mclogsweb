@@ -1,49 +1,41 @@
 const lineadetiempodatos = [
     {
         id: 1,
-        titulo: "Incorporación",
+        titulo: "incorporation",
         ano: "2005",
-        texto: "Miguel Melo Chabebe, luego de once años en el sector transportista, decide emprender con 2 colaboradores. Aquí es donde inicia lo que hoy es MC Logistics.",
+        texto: "timeline_text1",
         color_circulo: `bg-blue`,
         transicion: "fade-up"
     },
     {
         id: 2,
-        titulo: "Fusión",
+        titulo: "fusion",
         ano: "2007",
-        texto: "Hugo Polanco decide unirse a MC Logistics fusionando su empresa llamada CODOTRANS.",
+        texto: "timeline_text-2",
         color_circulo: `bg-bluemunsell`,
         transicion: "fade-up"
     },
     {
         id: 3,
-        titulo: "Paqueteria",
+        titulo: "packaging",
         ano: "2015",
-        texto: "MC Logistics lanza el servicio de envios expreso de paqueteria, bajo la mara ASW EXPRESS",
+        texto: "timeline_text-3",
         color_circulo: `bg-lime-400`,
         transicion: "fade-up"
     },
     {
         id: 4,
-        titulo: "Consilia Logistics, Hcpl, Gestion de Aduanas",
+        titulo: "title_timeline-2018",
         ano: "2018",
-        texto: "CONSILIA Logistics, operador logistico dentro de Caucedo Logistics Center, inicia operaciones, HIGH PERFORMANCE CARGO LOGISTICS, inicia en miami, Lanzamiento del servicio de Gestion Aduanal",
+        texto: "timeline_text-4",
         color_circulo: `bg-bluemunsell`,
         transicion: "fade-up"
     }, 
-    // {
-    //     id: 5,
-    //     titulo: "ADT",
-    //     ano: "2019",
-    //     texto: "Transporte Terrestre y de paqueteo domestico en la República Dominicana",
-    //     color_circulo:`bg-blue`,
-    //     transicion: "fade-up"
-    // },
     {
         id: 5,
-        titulo: "Aniversario",
+        titulo: "title_timeline-2020",
         ano: "2020",
-        texto: "MC Logistics cumple su 15 aniversario",
+        texto: "timeline_text-5",
         color_circulo: `bg-lime-400`,
         transicion: "fade-up"
     }

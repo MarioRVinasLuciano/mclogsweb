@@ -1,26 +1,52 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 
 export default function Terminos() {
+    const { t, i18n } = useTranslation();
     return (
-        <div className="h-screen w-full font-Encode-Sans pt-20 px-10 sm:px-10 md:px-20 lg:px-40 xl:px-40">
-            <div className="h-auto w-full py-12">
+        <div className="h-auto w-full font-Encode-Sans pt-20 px-10 sm:px-10 md:px-20 lg:px-40 xl:px-40">
+            <div className="h-auto w-full py-16">
                 <div>
-                    <h1 className="text-4xl">Politica de Privacidad</h1>
+                    <h1 className="text-5xl font-semibold text-bluemunsell">{t("userterms_maintitle")}</h1>
                 </div>
-                <div className="pt-20">
-                    <p>Su privacidad es muy importante para nosotros. En consecuencia, hemos desarrollado esta Política para que comprenda cómo recopilamos, usamos, comunicamos, divulgamos y hacemos uso de la información personal. Lo siguiente describe nuestra política de privacidad.</p>
+                <div className="pt-12">
+                    <div className="border-l-4 border-oldgold">
+                        <div className="pl-8">
+                            <h2 className="text-xl text-bluemunsell">{t("useterms_title")}</h2>
+                            <p className="text-lg leading-2">{t("userterms_description_1")}</p>
 
-                    <ul className="list-disc">
-                        <li>Antes o al momento de recopilar información personal, identificaremos los propósitos para los cuales se recopila la información.</li>
-                        <li>Recopilaremos y utilizaremos información personal únicamente con el objetivo de cumplir con los fines especificados por nosotros y para otros fines compatibles, a menos que obtengamos el consentimiento de la persona en cuestión o según lo exija la ley.</li>
-                        <li>Solo conservaremos información personal el tiempo que sea necesario para el cumplimiento de esos propósitos.</li>
-                        <li>Recopilaremos información personal por medios legales y justos y, cuando corresponda, con el conocimiento o consentimiento de la persona interesada.</li>
-                        <li>Los datos personales deben ser relevantes para los fines para los que se utilizarán y, en la medida necesaria para esos fines, deben ser precisos, completos y actualizados.</li>
-                        <li>Pondremos a disposición de los clientes información sobre nuestras políticas y prácticas relacionadas con la gestión de la información personal.</li>
-                    </ul>
+                            <h2 className="text-xl text-bluemunsell pt-4">{t("userterms_title2")}</h2>
+                            <p className="text-lg leading-2">{t("userterms_description_2")}</p>
+                            <ul className="text-lg gap-y-4 list-disc list-inside pt-2">
+                                <li>{t("userterms_item1")}</li>
+                                <li>{t("userterms_item2")}</li>
+                                <li>{t("userterms_item3")}</li>
+                                <li>{t("userterms_item4")}</li>
+                                <li>{t("userterms_item5")}</li>
+                                <li>{t("userterms_items6")}</li>
+                            </ul>
+                            <p className="text-lg leading-2">{t("userterms_subdescription")}</p>
 
-                    <p>Estamos comprometidos a llevar a cabo nuestro negocio de acuerdo con estos principios para garantizar que la confidencialidad de la información personal esté protegida y mantenida.</p>
+                            <h2 className="text-xl text-bluemunsell pt-4">{t("useterms_title3")}</h2>
+                            <p className="text-lg leading-2">{t("userterms_description_3")}</p>
+
+                            <h2 className="text-xl text-bluemunsell pt-4">{t("userterms_title4")}</h2>
+                            <p className="text-lg leading-2">{t("userterms_description")}</p>
+
+                            <h2 className="text-xl text-bluemunsell pt-4">{t("userterms_title5")}</h2>
+                            <p className="text-lg leading-2">{t("userterms_description_5")}</p>
+
+                            <h2 className="text-xl text-bluemunsell pt-4">{t("userterms_title6")}</h2>
+                            <p className="text-lg leading-2">{t("userterms_description_6")}</p>
+
+                            <h2 className="text-xl text-bluemunsell pt-4">{t("userterms_title7")}</h2>
+                            <p className="text-lg leading-2">{t("userterms_description_7")}</p>
+
+                            <h2 className="text-xl text-bluemunsell pt-4">{t("userterms_title8")}</h2>
+                            <p className="text-lg leading-2">{t("userterms_description_8")}</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

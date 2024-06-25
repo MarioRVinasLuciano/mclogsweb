@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 //Animacion de AOS
 import Aos from "aos";
@@ -12,10 +13,13 @@ import lineadetiempodatos from "../Datos/Lineadetiempo/lineadetiempodatos";
 
 
 //Imagenes importadas localmente
-import bote from "../Images/Nosotros/Bote_grande.jpg";
+import bote from "../Images/Nosotros/bote_grande.webp";
+import mclogistics from "../Images/Nosotros/mclogistics.webp"
 import mision from "../Images/Nosotros/Mision.webp";
 import vision from "../Images/Nosotros/Vision.webp";
 import valores from "../Images/Nosotros/Valores.webp";
+import equipo_vertical from "../Images/Nosotros/Equipo_horizontal.webp";
+import equipo_horizontal from "../Images/Nosotros/equipo.jpg";
 
 //iconos
 import confiable from "../Icons/Confiable.png";
@@ -25,39 +29,55 @@ import tecnologia from "../Icons/Tecnologia.png";
 
 
 export default function Nosotros() {
+    const { t, i18n } = useTranslation();
+
+    let [values, setValues] = useState([]);
+
+    useEffect(() => {
+        let valuesText = t('values_text'); // Get the string
+        let valuesArray = valuesText.split("\n"); // Split the string into an array
+        setValues(valuesArray); // Set the array to state
+    }, [t]);
+
+
+
     useEffect(() => {
         Aos.init({ duration: 1000 });
     }, [])
 
 
     return (
-        <div className="h-auto w-full font-Encode-Sans ">
-            
+        <div className="h-auto w-full font-Encode-Sans pt-20 2xl:pt-0">
+            <div className="flex items-center justify-centerw-full h-auto xl:h-screen ">
+                <div className="h-full w-auto flex xl:flex-row flex-col items-center px-10 sm:px-10 md:px-20 lg:px-30 xl:px-30 2xl:px-40 pt-10 lg:pt-0 py-0">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 w-full gap-10">
+                        <div className="flex flex-col items-center justify-center">
+                            <div className="pb-5 text-center w-full">
+                                <h1 className="w-full text-4xl lg:text-5xl 2xl:text-6xl font-semibold ">{t("ourstory")}</h1>
+                            </div>
+                            <div className="flex items-center justify-center text-justify" >
+                               <div className="w-full lg:w-2/3 xl:w-3/4 2xl:w-3/4">
+                               <p className="text-xl font-regular text-balance hyphens-auto" lang="de">
+                                    {t("born")}
 
-            <div className="w-full  h-auto xl:h-screen pb-10 pt-20">
-                <div className="h-full w-auto flex xl:flex-row flex-col items-center">
-                    <div className="flex flex-col items-center w-full py-10 lg:w-1/2 xl:w-1/2 px-10 sm:px-10 md:px-20 lg:px-30 xl:px-30 2xl:px-40" data-aos="zoom-out-down" data-aos-delay="200">
-                        <div className="pb-10 text-center w-full lg:w-96">
-                            <h1 className="w-full xl:text-6xl lg:text-4xl text-4xl font-semibold ">Nuestra Historia</h1>
+                                    <br /><br />
+                                    {t("ourstory_description")}
+                                </p>
+                               </div>
+                            </div>
                         </div>
-                        <div className="h-auto lg:w-[30rem] w-auto text-justify">
-                            <p className="text-xl lg:text-2xl font-regular">Nacemos en el 2005 de la inquietud de crear valor en el proceso de gestión de la cadena de suministro, viendo oportunidades en el sector logístico de mejor flujo de información.
+                        <div className="flex items-center justify-center">
+                            <img className="w-auto h-auto lg:h-3/4 rounded-md " src={bote} alt="" />
+                        </div>
 
-                            <br/>
-                                Hoy, bajo el nombre de MCLogistics cubrimos mercados de manera efectiva y eficiente estando, SIEMPRE, el cliente como piedra angular en el desarrollo de nuestra empresa.
-                            </p>
-                        </div>
-                    </div>
-                    <div className="lg:w-1/2 w-3/4 h-auto  z-[-10] right-0 top-0" data-aos="fade-right" >
-                        <img className="w-[101rem] h-auto rounded-md " src={bote} alt="" />
                     </div>
                 </div>
             </div>
 
-            <div className="w-auto h-full pb-10 px-10 sm:px-10 md:px-20 lg:px-30 xl:px-30 2xl:px-40 pt-12">
+            <div className="w-auto h-full pb-6 lg:pb-10 pt-12 px-10 sm:px-10 md:px-20 lg:px-30 xl:px-30 2xl:px-40">
 
                 <div className="h-auto w-auto py-0 md:py-8 text-center lg:text-start">
-                    <h1 className="text-2xl lg:text-4xl xl:text-5xl font-semibold">Linea de tiempo</h1>
+                    <h1 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold">{t("timeline")}</h1>
                 </div>
 
                 <div className="h-auto w-auto flex flex-col gap-y-6">
@@ -65,9 +85,9 @@ export default function Nosotros() {
                         lineadetiempodatos.map(props => (
                             <LineaDeTiempo
                                 key={props.id}
-                                titulo={props.titulo}
+                                titulo={t(props.titulo)}
                                 ano={props.ano}
-                                texto={props.texto}
+                                texto={t(props.texto)}
                                 color_circulo={props.color_circulo}
                                 transicion={props.transicion}
                             />
@@ -75,35 +95,61 @@ export default function Nosotros() {
                 </div>
             </div>
 
-            <div className="h-auto w-full ">
-                <div className="flex h-full bg-center relative bg-fixed  ">
+            <div className="w-full  h-auto xl:h-screen pb-6 lg:pb-10 pt-12">
+                <div className="h-full w-auto flex xl:flex-row flex-col items-center px-10 sm:px-10 md:px-20 lg:px-30 xl:px-30 2xl:px-40">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 w-full gap-10">
+                        <div className="flex items-center justify-center">
+                            <img className="w-auto h-auto lg:h-3/4 rounded-md " src={mclogistics} alt="" />
+                        </div>
+                        <div className="flex flex-col items-center justify-center">
+                            <div className="pb-5 text-center w-full">
+                                <h1 className="w-full text-4xl lg:text-5xl 2xl:text-6xl font-semibold ">{t("the_bussiness")}</h1>
+                            </div>
+                            <div className="flex items-center justify-center text-justify" >
+                               <div className="w-full lg:w-2/3 xl:w-3/4 2xl:w-3/4">
+                               <p className="text-xl font-regular text-balance hyphens-auto" lang="de">
+                               {t("the_bussiness_text1")}
+                                    <br /><br />{t("the_bussiness_text2")}
+
+                                    <br /><br />{t("the_bussiness_text3")}
+                                </p>
+                               </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div className="h-auto w-full pb-6 lg:pb-10">
+                <div className="flex h-full bg-center ">
                     <div className="h-auto w-full px-10 sm:px-10 md:px-20 lg:px-30 xl:px-30 2xl:px-40">
 
-                        <div className="lg:pt-16 lg:pb-12 md:pt-12 md:pb-8 text-center">
-                            <h1 className="text-3xl lg:text-5xl xl:text-6xl font-semibold">Quienes Somos</h1>
+                        <div className="lg:pb-12 pt-10 lg:pt-0 md:pb-5 text-center">
+                            <h1 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold">{t("Who_are_we")}</h1>
                         </div>
 
-                        <div className="lg:h-64 h-auto w-full flex lg:flex-row flex-col sm:items-center items-center lg:justify-end md:justify-end sm:justify-center justify-center" data-aos="fade-righ">
+                        <div className="lg:h-64 h-auto w-full flex lg:flex-row flex-col sm:items-center items-center lg:justify-end md:justify-end sm:justify-center justify-center" data-aos="fade-in">
                             <div className="pt-6">
+                                <source />
                                 <img className="h-[14rem] " src={mision} alt="" />
                             </div>
                             <div className="h-full w-full lg:w-[26rem] xl:lg:w-[26rem] flex flex-col bg-slate-100 shadow-md rounded-sm p-4">
                                 <h2 className="text-2xl">
-                                    Misión
+                                    {t("mision")}
                                 </h2>
                                 <p className="pt-4">
-                                    <b>Integrar</b> junto a socios responsables, de manera eficiente la cadena de suministro tanto de manera local como regional, en un ambiente de trabajo proactivo y ameno creando oportunidades de desarrollo constante a nuestros colaboradores.
+                                    {t("mision_text")}
                                 </p>
                             </div>
                         </div>
 
-                        <div className="mt-12 lg:h-64 h-auto w-full flex lg:flex-row flex-col-reverse sm:items-center items-center lg:justify-start md:justify-start sm:justify-center justify-center">
+                        <div className="mt-12 lg:h-64 h-auto w-full flex lg:flex-row flex-col-reverse sm:items-center items-center lg:justify-start md:justify-start sm:justify-center justify-center" data-aos="fade-in">
                             <div className="h-full w-full lg:w-[26rem] xl:lg:w-[26rem] flex flex-col bg-slate-100 shadow-md rounded-sm p-4" >
                                 <h2 className="text-2xl">
-                                    Visión
+                                    {t("vision")}
                                 </h2>
                                 <p className="pt-4 text-sm sm:text-sm md:text-md lg:text-lg">
-                                    <b>Ser líder</b> en la integración de los servicios logísticos, mediante la innovación, agilidad, honestidad y compromiso con nuestros clientes y colaboradores, generando rentabilidad a nuestros clientes, socios y colaboradores a través de la eficiencia.
+                                    {t("vision_text")}
                                 </p>
                             </div>
                             <div className="lg:pt-6">
@@ -111,48 +157,68 @@ export default function Nosotros() {
                             </div>
                         </div>
 
-                        <div className="mt-12 lg:h-64 h-auto w-full flex lg:flex-row flex-col sm:items-center items-center lg:justify-end md:justify-end sm:justify-center justify-center">
+                        <div className="mt-12 lg:h-64 h-auto w-full flex lg:flex-row flex-col sm:items-center items-center lg:justify-end md:justify-end sm:justify-center justify-center" data-aos="fade-in">
                             <div className="pt-6">
                                 <img className="h-[14rem] " src={valores} alt="" />
                             </div>
                             <div className="h-full w-full lg:w-[26rem] xl:lg:w-[26rem] flex flex-col bg-slate-100 shadow-md rounded-sm p-4">
                                 <h2 className="text-2xl">
-                                    Valores
+                                    {t("values")}
                                 </h2>
-                                <ul className="pt-4 pl-4 list-disc">
-                                    <li>Pasión</li>
-                                    <li>Proactividad</li>
-                                    <li>Honestidad</li>
-                                    <li>Respeto</li>
-                                    <li>Humildad</li>
-                                    <li>Integridad</li>
+                                <ul className="list-disc list-inside">
+                                    {values.map((value, index) => (
+                                        <li key={index}>{value}</li>
+                                    ))}
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div className="h-full w-auto px-10 sm:px-10 md:px-20 lg:px-30 xl:px-30 2xl:px-40">
-                <div className="pt-12">
-                    <h1 className="text-3xl lg:text-5xl xl:text-6xl font-semibold text-center lg:text-start">¿Por qué elegirnos?</h1>
-                </div>
-                <div className="w-full h-auto flex lg:flex-row md:flex-col flex-col justify-center gap-x-24 xl:py-24 py-16 md:gap-y-12 gap-y-12 md:items-center items-center">
-                    <div className="text-white h-44 w-44 flex flex-col justify-center items-center bg-blue shadow-md rounded-sm" data-aos="fade-down" >
-                        <img className="h-24 w-24 invert" src={confiable} alt="" />
-                        <p>Confiabilidad</p>
+            <div className="h-auto 2xl:h-screen w-auto px-10 sm:px-10 md:px-20 lg:px-30 xl:px-30 2xl:px-40 py-24">
+                <div className="grid grid-cols-1 xl:grid-cols-2 gap-10">
+                    <div className="h-full w-auto overflow-hidden">
+                        <picture className="h-full">
+                            <source media="(min-width: 1024px)" srcSet={equipo_horizontal} />
+                            <source media="(max-width: 1023px)" srcSet={equipo_vertical} />
+                            <img className="h-full w-auto rounded-md object-cover" src={equipo_horizontal} alt="Equipo" />
+                        </picture>
                     </div>
-                    <div className="text-white h-44 w-44 flex flex-col justify-center items-center bg-aureolin shadow-md rounded-sm" data-aos="fade-down" data-aos-delay="200">
-                        <img className="h-24 w-24 invert" src={innovacion} alt="" />
-                        <p>Innovación</p>
-                    </div>
-                    <div className="text-white h-44 w-44 flex flex-col justify-center items-center bg-bluemunsell shadow-md rounded-sm" data-aos="fade-down" data-aos-delay="300">
-                        <img className="h-24 w-24 invert" src={flexible} alt="" />
-                        <p>Flexibilidad</p>
-                    </div>
-                    <div className="text-white h-44 w-44 flex flex-col justify-center items-center bg-aureolin shadow-md rounded-sm" data-aos="fade-down" data-aos-delay="400">
-                        <img className="h-24 w-24 invert" src={tecnologia} alt="" />
-                        <p>Tecnología</p>
+                    <div className="h-full">
+                        <div >
+                            <h1 className="text-3xl lg:text-5xl 2xl:text-6xl font-semibold text-center xl:text-start">{t("why_choose_us")}</h1>
+                        </div>
+                        <div className="pt-4 xl:pt-8">
+                            <ul className="list-disc list-inside text-justify text-md lg:text-lg xl:text-xl 2xl:text-2xl tracking-wide">
+                                <li>
+                                    {t("integration")}
+                                </li>
+                                <li>
+                                    {t("loyalty_commitment")}
+                                </li>
+                                <li>
+                                    {t("quality_service")}
+                                </li>
+                            </ul>
+                        </div>
+                        <div className="w-full h-auto grid grid-cols-2 lg:grid-cols-4 gap-x-12 md:gap-y-12 gap-y-12 justify-items-center pt-12 xl:pt-6">
+                            <div className="text-white h-28 w-28 flex flex-col justify-center items-center bg-blue shadow-md rounded-sm" data-aos="fade-down" >
+                                <img className="h-12 w-12 invert" src={confiable} alt="" />
+                                <p>{t("reliability")}</p>
+                            </div>
+                            <div className="text-white h-28 w-28 flex flex-col justify-center items-center bg-aureolin shadow-md rounded-sm" data-aos="fade-down" data-aos-delay="200">
+                                <img className="h-12 w-12 invert" src={innovacion} alt="" />
+                                <p>{t("innovation")}</p>
+                            </div>
+                            <div className="text-white h-28 w-28 flex flex-col justify-center items-center bg-bluemunsell shadow-md rounded-sm" data-aos="fade-down" data-aos-delay="300">
+                                <img className="h-12 w-12 invert" src={flexible} alt="" />
+                                <p>{t("flexibility")}</p>
+                            </div>
+                            <div className="text-white h-28 w-28 flex flex-col justify-center items-center bg-aureolin shadow-md rounded-sm" data-aos="fade-down" data-aos-delay="400">
+                                <img className="h-12 w-12 invert" src={tecnologia} alt="" />
+                                <p>{t("technology")}</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

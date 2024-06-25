@@ -23,7 +23,7 @@ export default function ScrollToTopButton() {
   };
 
   return (
-    <div className="fixed bottom-10 right-16">
+    <div className="fixed bottom-10 right-16 z-40">
       <button className={`h-10 w-10  rounded-full shadow-xl ${scrollToTopClass}`} onClick={scrollToTop}>
         <svg
           xmlns="http://www.w3.org/2000/svg"

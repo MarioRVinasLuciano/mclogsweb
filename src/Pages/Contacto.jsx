@@ -1,14 +1,17 @@
 import React from "react";
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 import Aos from "aos";
 import 'aos/dist/aos.css';
 
 //Imagenes
-import imagen_background from "../Images/Contactos/bg_image_1.jpg";
+import imagen_background from "../Images/Contactos/bg_image_1.webp";
 
 
 export default function Contacto() {
+    const { t, i18n } = useTranslation();
+
     useEffect(() => {
         Aos.init({ duration: 1000 });
     }, []);
@@ -18,9 +21,9 @@ export default function Contacto() {
     return (
         <div className="w-full h-auto bg-white pt-20 ">
 
-            <div className="flex justify-center items-center bg-center bg-fixed w-full h-40 md:h-80" style={{ backgroundImage: `url(${imagen_background})`, backgroundSize: 'cover' }}>
+            <div className="flex justify-center items-center bg-left bg-fixed w-full h-40 md:h-80" style={{ backgroundImage: `url(${imagen_background})`, backgroundSize: 'cover', backgroundPosition: "center" }}>
                 <div className="text-center">
-                    <h1 className="text-white text-3xl lg:text-5xl xl:text-6xl font-semibold">Contactanos</h1>
+                    <h1 className="text-white text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-6xl font-semibold">{t("contact_us")}</h1>
                 </div>
             </div>
 
@@ -29,14 +32,14 @@ export default function Contacto() {
 
                 <div className="flex flex-col lg:flex-row xl:flex-row w-full h-auto justify-between items-center gap-5 py-10">
 
-                    <div className="flex flex-col items-center justify-center rounded-md bg-cyan-500 h-56 w-full sm:w-96 text-white shadow-sm">
+                    <a href="tel:18095653265" className="flex flex-col items-center justify-center rounded-md bg-cyan-500 hover:bg-cyan-600 h-56 w-full lg:w-96 text-white shadow-sm">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-16 w-16 p-2">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
                         </svg>
-                        <h1 className="text-2xl font-semibold">Teléfono</h1>
-                        <a href="https://wa.me/18095653265">+1 (809)-565-3265</a>
-                    </div>
-                    <div className="flex flex-col items-center justify-center rounded-md bg-slate-50 h-56 w-full sm:w-96 text-center px-10 shadow-sm" >
+                        <h1 className="text-2xl font-semibold">{t("contact_us_number")}</h1>
+                        <p>+1 (809)-565-3265</p>
+                    </a>
+                    <a className="flex flex-col items-center justify-center rounded-md bg-slate-50 hover:bg-slate-200 h-56 w-full lg:w-96  text-center px-10 shadow-sm" href="https://www.google.com/maps/place/M.C.+Logistics+SRL/@18.501022,-69.9557977,17z/data=!3m1!4b1!4m5!3m4!1s0x8eaf8987ea6ea207:0x7bcfa7fa8182db54!8m2!3d18.501022!4d-69.953609" target="_blank" rel="noreferrer">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
@@ -56,27 +59,28 @@ export default function Contacto() {
                                 d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
                             />
                         </svg>
-                        <h1 className="text-2xl font-semibold">Dirección</h1>
-                        <a href="https://www.google.com/maps/place/M.C.+Logistics+SRL/@18.501022,-69.9557977,17z/data=!3m1!4b1!4m5!3m4!1s0x8eaf8987ea6ea207:0x7bcfa7fa8182db54!8m2!3d18.501022!4d-69.953609" target="_blank" rel="noreferrer">Ave. Carlos Perez Ricart #5,
-                            Santo Domingo, DN, R.D.</a>
-                    </div>
+                        <h1 className="text-2xl font-semibold">{t("contact_us_address")}</h1>
+                        <p href="https://www.google.com/maps/place/M.C.+Logistics+SRL/@18.501022,-69.9557977,17z/data=!3m1!4b1!4m5!3m4!1s0x8eaf8987ea6ea207:0x7bcfa7fa8182db54!8m2!3d18.501022!4d-69.953609" target="_blank" rel="noreferrer">Ave. Carlos Perez Ricart #5,
+                            Santo Domingo, DN, R.D.</p>
+                    </a>
 
-                    <div className="flex flex-col items-center justify-center rounded-md bg-DarkBlue h-56 w-full sm:w-96 text-white shadow-sm">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-16 w-16 p-2">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
-                        </svg>
-                        <h1 className="text-2xl font-semibold">Correo</h1>
-                        <a href="mailto:info@mclogs.com">info@mclogs.com</a>
-                    </div>
-
-                    <div className="flex flex-col items-center justify-center rounded-md bg-oldgold h-56 w-full sm:w-96 text-white shadow-sm">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-16 w-16 p-2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                    <a href="mailto:info@mclogs.com" className="flex flex-col items-center justify-center rounded-md bg-blue  hover:bg-DarkBlue h-56 w-full lg:w-96 text-white shadow-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="h-16 w-16 p-2">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
                         </svg>
 
-                        <h1 className="text-2xl font-semibold">Horario</h1>
+                        <h1 className="text-2xl font-semibold">{t("contact_us_mail")}</h1>
+                        <p href="mailto:info@mclogs.com">info@mclogs.com</p>
+                    </a>
+
+                    <div className="flex flex-col items-center justify-center rounded-md hover:bg-oldgold bg-aureolin  h-56 w-full lg:w-96 text-white shadow-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="h-16 w-16 p-2">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                        </svg>
+
+                        <h1 className="text-2xl font-semibold">{t("contact_us_open")}</h1>
                         <div className="px-4">
-                            <p className="text-center">Lunes a Viernes 8:00 am - 5:00 pm Sábados 8:00 am - 1:00 pm</p>
+                            <p className="text-center">{t("contact_us_hours1")}<br></br>{t("contact_us_hours2")}</p>
                         </div>
                     </div>
 
@@ -102,8 +106,8 @@ export default function Contacto() {
                     </div>
                     <div className="flex flex-col w-full lg:w-1/2 h-full items-center" data-aos="fade-up">
                         <div className="flex flex-col w-full h-full py-6 lg:py-0 lg:px-20 text-center items-center justify-center">
-                            <h1 className="text-4xl font-bold">Sucursal en Santo Domingo</h1>
-                            <p className="text-xl font-thin">Ave. Carlos Perez Ricart #5, Santo Domingo, DN, R.D.</p>
+                            <h1 className="text-4xl font-bold">Santo Domingo</h1>
+                            <p className="text-xl font-thin pt-4">Ave. Carlos Perez Ricart #5, Santo Domingo, DN, R.D.</p>
                         </div>
                     </div>
                 </div>
@@ -111,8 +115,8 @@ export default function Contacto() {
                 <div className="flex flex-col-reverse lg:flex-row h-auto w-full items-center justify-between mt-20" data-aos="fade-up">
                     <div className="flex flex-col w-full lg:w-1/2 h-full items-center">
                         <div className="flex flex-col w-full h-full py-6 lg:py-0 lg:px-20 text-center items-center justify-center">
-                            <h1 className="text-4xl font-bold">Sucursal en Santiago</h1>
-                            <p className="text-xl font-thin">F866+MFG, Santiago de los Caballeros 51000</p>
+                            <h1 className="text-4xl font-bold">Santiago</h1>
+                            <p className="text-xl font-thin pt-4">F866+MFG, Santiago de los Caballeros 51000</p>
                         </div>
                     </div>
                     <div className="flex flex-col w-full lg:w-1/2 h-full justify-center items-center" data-aos="fade-up">
@@ -148,7 +152,7 @@ export default function Contacto() {
                     <div className="flex flex-col w-full lg:w-1/2 h-full items-center" data-aos="fade-up">
                         <div className="flex flex-col w-full h-full py-6 lg:py-0 lg:px-20 text-center items-center justify-center">
                             <h1 className="text-4xl font-bold">Caucedo, Zona Franca</h1>
-                            <p className="text-xl font-thin">C9G7+9WX, Andrés, Dominican Republic</p>
+                            <p className="text-xl font-thin pt-4">C9G7+9WX, Andrés, Dominican Republic</p>
                         </div>
                     </div>
                 </div>
@@ -157,7 +161,7 @@ export default function Contacto() {
                     <div className="flex flex-col w-full lg:w-1/2 h-full items-center">
                         <div className="flex flex-col w-full h-full py-6 lg:py-0 lg:px-20 text-center items-center justify-center">
                             <h1 className="text-4xl font-bold">High Performance Cargo Logistics</h1>
-                            <p className="text-xl font-thin">Por determinar</p>
+                            <p className="text-xl font-thin pt-4">11600 NW 91st St, Miami, FL 33178, USA</p>
                         </div>
                     </div>
                     <div className="flex flex-col w-full lg:w-1/2 h-full justify-center items-center" data-aos="fade-up">

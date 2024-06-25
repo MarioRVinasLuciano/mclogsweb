@@ -13,6 +13,7 @@ module.exports = {
         DarkBlue: '#003366',
         SoftBlue: '#4A90E2',
 
+        Estadoverde: '#a7b65e',
         persiangreen: '#389483ff',
         aureolin: '#BCBB0C',
         bluemunsell: '#038EA3ff',
