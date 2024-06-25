@@ -257,6 +257,7 @@ export default function Homepage() {
                                 <div className="flex flex-col justify-center items-center bg-slate-50 shadow-md rounded-sm p-6" data-aos="fade-down" data-aos-delay="300">
                                     <img className="h-8 w-8 lg:h-12 lg:w-12" src={flexible} alt="" />
                                     <p className="text-xs">{t("flexibility")}</p>
+                                    <p>Prueba a ver si el ci/cd funciona</p>
                                 </div>
                                 <div className="flex flex-col justify-center items-center bg-slate-50 shadow-md rounded-sm p-6" data-aos="fade-down" data-aos-delay="400">
                                     <img className="h-8 w-8 lg:h-12 lg:w-12" src={tecnologia} alt="" />
